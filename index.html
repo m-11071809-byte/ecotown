@@ -1,1 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>EcoQuest 🌱</title>
+
+  <body>
+
+
+   <div class="main">
+
+    <!-- =========================================
+         CITY
+    ========================================= -->
+
+    <div class="city" id="city">
+
+        <!-- WEATHER LABEL -->
+
+        <div class="weather-label" id="weather">
+            ☀️ SUNNY
+        </div>
+
+
+        <!-- WEATHER EFFECTS -->
+
+        <div class="weather-effects">
+
+            <div class="sun">☀️</div>
+
+            <div class="moon">🌙</div>
+
+            <div class="cloud cloud1">☁️</div>
+            <div class="cloud cloud2">☁️</div>
+            <div class="cloud cloud3">☁️</div>
+            <div class="cloud cloud4">☁️</div>
+            <div class="cloud cloud5">☁️</div>
+            <div class="cloud cloud6">☁️</div>
+            <div class="cloud cloud7">☁️</div>
+            <div class="cloud cloud8">☁️</div>
+
+            <div class="rain"></div>
+
+        </div>
+
+
+        <!-- =========================================
+             WORLD MAP
+        ========================================= -->
+
+        <div class="world-map" id="worldMap">
+
+
+            <!-- ROADS -->
+
+            <div class="road-horizontal"></div>
+            <div class="road-vertical"></div>
+
+
+            <!-- WATER -->
+
+            <div class="water-area"></div>
+
+
+            <!-- TREE -->
+
+            <div class="building tree"
+                 onclick="build('tree')">
+
+                <div class="feature-icon" id="treeIcon">
+                    🌱
+                </div>
+
+                <span>
+                    TREE Lv.<b id="treeLevel">1</b>
+                </span>
+
+            </div>
+
+
+            <!-- SOLAR -->
+
+            <div class="building solar"
+                 onclick="build('solar')">
+
+                <div class="feature-icon" id="solarIcon">
+                    🔆
+                </div>
+
+                <span>
+                    SOLAR Lv.<b id="solarLevel">1</b>
+                </span>
+
+            </div>
+
+
+            <!-- RECYCLE -->
+
+            <div class="building recycle"
+                 onclick="build('recycle')">
+
+                <div class="feature-icon" id="recycleIcon">
+                    🗑️
+                </div>
+
+                <span>
+                    RECYCLE Lv.<b id="recycleLevel">1</b>
+                </span>
+
+            </div>
+
+
+            <!-- BIKE -->
+
+            <div class="building bike"
+                 onclick="build('bike')">
+
+                <div class="feature-icon" id="bikeIcon">
+                    🚲
+                </div>
+
+                <span>
+                    BIKE Lv.<b id="bikeLevel">1</b>
+                </span>
+
+            </div>
+
+
+            <!-- BUS -->
+
+            <div class="building bus"
+                 onclick="build('bus')">
+
+                <div class="feature-icon" id="busIcon">
+                    🚏
+                </div>
+
+                <span>
+                    BUS Lv.<b id="busLevel">1</b>
+                </span>
+
+            </div>
+
+
+            <!-- HOUSE -->
+
+            <div class="building house"
+                 onclick="build('house')">
+
+                <div class="feature-icon" id="houseIcon">
+                    🛖
+                </div>
+
+                <span>
+                    HOUSE Lv.<b id="houseLevel">1</b>
+                </span>
+
+            </div>
+
+
+            <!-- HOUSE 2 -->
+
+            <div class="building house2"
+                 onclick="build('house')">
+
+                <div class="feature-icon" id="houseIcon2">
+                    🛖
+                </div>
+
+                <span>
+                    HOUSE Lv.<b id="houseLevel2">1</b>
+                </span>
+
+            </div>
+
+
+            <!-- =====================================
+                 NPC 1
+            ====================================== -->
+
+            <div class="npc" id="npc1">
+
+                🧑
+
+                <div class="speech"
+                     id="speech1">
+                </div>
+
+            </div>
+
+
+            <!-- NPC 2 -->
+
+            <div class="npc" id="npc2">
+
+                👩
+
+                <div class="speech"
+                     id="speech2">
+                </div>
+
+            </div>
+
+
+            <!-- NPC 3 -->
+
+            <div class="npc" id="npc3">
+
+                🧒
+
+                <div class="speech"
+                     id="speech3">
+                </div>
+
+            </div>
+
+
+            <!-- =====================================
+                 WILDLIFE
+            ====================================== -->
+
+            <div class="wildlife"
+                 id="bird"
+                 style="left:35%;top:18%;">
+
+                🐦
+
+            </div>
+
+
+            <div class="wildlife"
+                 id="butterfly"
+                 style="left:60%;top:20%;">
+
+                🦋
+
+            </div>
+
+
+            <div class="wildlife"
+                 id="squirrel"
+                 style="left:25%;top:75%;">
+
+                🐿️
+
+            </div>
+
+
+            <!-- =====================================
+                 MESSAGE
+            ====================================== -->
+
+            <div class="message"
+                 id="message">
+
+                🌱 Welcome, Mayor!
+
+                <br><br>
+
+                Build eco-friendly facilities
+                and make the town happier.
+
+            </div>
+
+
+        </div>
+        <!-- END WORLD MAP -->
+
+
+    </div>
+    <!-- END CITY -->
+
+
+    <!-- =========================================
+         SIDE PANEL
+    ========================================= -->
+
+    <div class="panel">
+
+
+        <h2>
+            🏙️ ECO TOWN
+        </h2>
+
+
+        <!-- AIR -->
+
+        <div class="stat">
+
+            <div class="stat-title">
+
+                <span>🌬️ AIR</span>
+
+                <span id="airText">
+                    20%
+                </span>
+
+            </div>
+
+            <div class="bar">
+
+                <div class="fill"
+                     id="air">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ENERGY -->
+
+        <div class="stat">
+
+            <div class="stat-title">
+
+                <span>⚡ ENERGY</span>
+
+                <span id="energyText">
+                    20%
+                </span>
+
+            </div>
+
+            <div class="bar">
+
+                <div class="fill"
+                     id="energy">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- WASTE -->
+
+        <div class="stat">
+
+            <div class="stat-title">
+
+                <span>♻️ WASTE</span>
+
+                <span id="wasteText">
+                    20%
+                </span>
+
+            </div>
+
+            <div class="bar">
+
+                <div class="fill"
+                     id="waste">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- HAPPINESS -->
+
+        <div class="stat">
+
+            <div class="stat-title">
+
+                <span>😊 HAPPINESS</span>
+
+                <span id="happyText">
+                    20%
+                </span>
+
+            </div>
+
+            <div class="bar">
+
+                <div class="fill"
+                     id="happy">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- NATURE -->
+
+        <div class="stat">
+
+            <div class="stat-title">
+
+                <span>🌱 NATURE</span>
+
+                <span id="natureText">
+                    20%
+                </span>
+
+            </div>
+
+            <div class="bar">
+
+                <div class="fill"
+                     id="nature">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================================
+             BUILD MENU
+        ========================================= -->
+
+        <div class="menu-box">
+
+            <h3>
+                🏗️ BUILD
+            </h3>
+
+
+            <button class="build-button"
+                    onclick="startMiniGame('tree')">
+
+                🌳 TREE — 10 🪙
+
+            </button>
+
+
+            <button class="build-button"
+                    onclick="startMiniGame('solar')">
+
+                ☀️ SOLAR PANEL — 20 🪙
+
+            </button>
+
+
+            <button class="build-button"
+                    onclick="build('recycle')">
+
+                ♻️ RECYCLING — 25 🪙
+
+            </button>
+
+
+            <button class="build-button"
+                    onclick="build('bike')">
+
+                🚲 BIKE LANE — 15 🪙
+
+            </button>
+
+
+            <button class="build-button"
+                    onclick="build('bus')">
+
+                🚌 BUS STATION — 30 🪙
+
+            </button>
+
+
+            <button class="build-button"
+                    onclick="build('house')">
+
+                🏠 ECO HOUSE — 35 🪙
+
+            </button>
+
+        </div>
+
+
+        <!-- =========================================
+             QUEST
+        ========================================= -->
+
+        <div class="mission">
+
+            <h3>
+                🎯 QUEST
+            </h3>
+
+            <p id="mission">
+                Plant 3 trees 🌳
+            </p>
+
+            <strong>
+                REWARD: +50 🪙
+            </strong>
+
+        </div>
+
+
+        <!-- =========================================
+             REAL WORLD QUEST
+        ========================================= -->
+
+        <div class="challenge">
+
+            <h3>
+                🌍 REAL WORLD QUEST
+            </h3>
+
+            <p id="challengeText">
+                ♻️ Recycle something today!
+            </p>
+
+            <button onclick="completeChallenge()">
+                ✓ I DID IT
+            </button>
+
+        </div>
+
+
+        <!-- =========================================
+             CITY EVENT
+        ========================================= -->
+
+        <div class="event">
+
+            <h3>
+                🚨 EVENT
+            </h3>
+
+            <p id="eventText">
+                🌱 The town is peaceful.
+            </p>
+
+        </div>
+
+
+    </div>
+    <!-- END PANEL -->
+
+
+</div>
+<!-- END MAIN -->
+
+
+<!-- ================================
+     MINI GAME POPUP
+================================ -->
+
+<div class="minigame-overlay"
+     id="minigameOverlay">
+
+    <div class="minigame-box">
+
+        <button class="close-game"
+                onclick="closeMiniGame()">
+            ✕
+        </button>
+
+        <h2 id="miniGameTitle">
+            🌱 ECO CHALLENGE
+        </h2>
+
+        <p id="miniGameDescription">
+            Complete the challenge!
+        </p>
+
+        <div class="mini-game-area"
+             id="miniGameArea">
+        </div>
+
+        <div class="mini-game-info">
+
+            <span>
+                ⏱️
+                <b id="miniTimer">15</b>
+            </span>
+
+            <span>
+                ⭐
+                <b id="miniScore">0</b>
+            </span>
+
+        </div>
+
+        <p id="miniGameMessage"></p>
+
+    </div>
+
+</div>
