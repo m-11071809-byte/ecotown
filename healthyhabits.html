@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Healthy Habits 🌱 | LifeHub</title>
+
+    <link
+        rel="stylesheet"
+        href="healthyhabits.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BACK BUTTON
+===================================================== -->
+
+<a
+    href="index1.html"
+    class="back-button">
+
+    ← Back to LifeHub
+
+</a>
+
+
+
+<!-- =====================================================
+     FLOATING DECORATIONS
+===================================================== -->
+
+<div class="floating-decoration decoration-one">
+    🌿
+</div>
+
+<div class="floating-decoration decoration-two">
+    💧
+</div>
+
+<div class="floating-decoration decoration-three">
+    ⭐
+</div>
+
+<div class="floating-decoration decoration-four">
+    ☀️
+</div>
+
+
+
+<!-- =====================================================
+     MAIN CONTAINER
+===================================================== -->
+
+<main class="habit-container">
+
+
+    <!-- =================================================
+         HEADER
+    ================================================= -->
+
+    <header class="habit-header">
+
+        <div class="header-icon">
+            🌱
+        </div>
+
+        <div>
+
+            <span class="small-title">
+                LIFEHUB • EVERYDAY LIFE
+            </span>
+
+            <h1>
+                Healthy Habits
+            </h1>
+
+            <p>
+                Build small habits that help you
+                feel ready for everyday life! ✨
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         PLAYER HUD
+    ================================================= -->
+
+    <section class="habit-hud">
+
+
+        <div class="hud-item">
+
+            <span class="hud-icon">
+                🌱
+            </span>
+
+            <div>
+
+                <small>
+                    HABIT XP
+                </small>
+
+                <strong id="habit-xp">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="hud-item">
+
+            <span class="hud-icon">
+                🔥
+            </span>
+
+            <div>
+
+                <small>
+                    STREAK
+                </small>
+
+                <strong id="habit-streak">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="hud-item">
+
+            <span class="hud-icon">
+                🏆
+            </span>
+
+            <div>
+
+                <small>
+                    LEVEL
+                </small>
+
+                <strong id="habit-level">
+                    1
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="hud-item">
+
+            <span class="hud-icon">
+                🌟
+            </span>
+
+            <div>
+
+                <small>
+                    HABITS
+                </small>
+
+                <strong id="habit-count">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         XP BAR
+    ================================================= -->
+
+    <section class="xp-section">
+
+        <div class="xp-label">
+
+            <span>
+                🌱 Habit Growth
+            </span>
+
+            <span id="xp-percent">
+                0%
+            </span>
+
+        </div>
+
+        <div class="xp-bar">
+
+            <div
+                id="xp-fill"
+                class="xp-fill">
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         INTRO
+    ================================================= -->
+
+    <section
+        id="intro-screen"
+        class="screen intro-screen">
+
+
+        <div class="intro-plant">
+            🌱
+        </div>
+
+
+        <h2>
+            Welcome to Habit Quest!
+        </h2>
+
+
+        <p>
+            Healthy habits don't have to be complicated.
+            Make thoughtful everyday choices and watch
+            your little habit garden grow! 🌿
+        </p>
+
+
+
+        <!-- HABIT CATEGORIES -->
+
+        <div class="habit-categories">
+
+
+            <div class="category-card">
+
+                <span>
+                    😴
+                </span>
+
+                <strong>
+                    Rest
+                </strong>
+
+                <small>
+                    Give yourself enough time to rest.
+                </small>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <span>
+                    💧
+                </span>
+
+                <strong>
+                    Hydration
+                </strong>
+
+                <small>
+                    Remember to drink water throughout
+                    the day.
+                </small>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <span>
+                    🚶
+                </span>
+
+                <strong>
+                    Movement
+                </strong>
+
+                <small>
+                    Add enjoyable movement to your day.
+                </small>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <span>
+                    🧘
+                </span>
+
+                <strong>
+                    Mind Reset
+                </strong>
+
+                <small>
+                    Give your mind time to relax.
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <button
+            class="main-button"
+            onclick="startHabitGame()">
+
+            🌱 Start Habit Quest
+
+        </button>
+
+    </section>
+
+
+
+    <!-- =================================================
+         GAME SCREEN
+    ================================================= -->
+
+    <section
+        id="game-screen"
+        class="screen game-screen hidden">
+
+
+        <!-- QUESTION -->
+
+        <div class="question-card">
+
+
+            <div class="question-top">
+
+                <span id="habit-round">
+                    HABIT 1 / 8
+                </span>
+
+                <span id="habit-category">
+                    🌱 DAILY ROUTINE
+                </span>
+
+            </div>
+
+
+            <div
+                id="habit-icon"
+                class="habit-question-icon">
+
+                🌱
+
+            </div>
+
+
+            <h2 id="habit-question">
+                Question
+            </h2>
+
+
+            <p id="habit-description">
+                Description
+            </p>
+
+        </div>
+
+
+
+        <!-- CHOICES -->
+
+        <div
+            id="habit-choices"
+            class="habit-choices">
+        </div>
+
+
+
+        <!-- FEEDBACK -->
+
+        <div
+            id="habit-feedback"
+            class="habit-feedback hidden">
+
+
+            <div
+                id="feedback-icon"
+                class="feedback-icon">
+
+                🌟
+
+            </div>
+
+
+            <div>
+
+                <h3 id="feedback-title">
+                    Nice choice!
+                </h3>
+
+
+                <p id="feedback-text">
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NEXT -->
+
+        <button
+            id="habit-next-button"
+            class="main-button next-button hidden"
+            onclick="nextHabit()">
+
+            Next Habit →
+
+        </button>
+
+    </section>
+
+
+
+    <!-- =================================================
+         HABIT GARDEN
+    ================================================= -->
+
+    <section class="garden-section">
+
+        <div class="garden-header">
+
+            <div>
+
+                <span>
+                    🌿 YOUR HABIT GARDEN
+                </span>
+
+                <h2>
+                    Growing Little by Little
+                </h2>
+
+            </div>
+
+            <div
+                id="garden-level"
+                class="garden-level">
+
+                🌱
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="habit-garden"
+            class="habit-garden">
+
+            <div class="garden-ground">
+
+                <span class="plant plant-one">
+                    🌱
+                </span>
+
+                <span class="plant plant-two">
+                    🌿
+                </span>
+
+                <span class="plant plant-three">
+                    🌱
+                </span>
+
+                <span class="plant plant-four">
+                    🌿
+                </span>
+
+                <span class="flower flower-one">
+                    🌼
+                </span>
+
+                <span class="flower flower-two">
+                    🌸
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         RESULT SCREEN
+    ================================================= -->
+
+    <section
+        id="result-screen"
+        class="screen result-screen hidden">
+
+
+        <div
+            id="result-icon"
+            class="result-icon">
+
+            🌳
+
+        </div>
+
+
+        <span class="result-label">
+            HABIT QUEST COMPLETE
+        </span>
+
+
+        <h2 id="result-title">
+            Habit Hero!
+        </h2>
+
+
+        <p id="result-description">
+            Great job!
+        </p>
+
+
+
+        <!-- FINAL STATS -->
+
+        <div class="final-stats">
+
+
+            <div>
+
+                <span>
+                    🌱
+                </span>
+
+                <strong id="final-xp">
+                    0
+                </strong>
+
+                <small>
+                    HABIT XP
+                </small>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    🔥
+                </span>
+
+                <strong id="final-streak">
+                    0
+                </strong>
+
+                <small>
+                    BEST STREAK
+                </small>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    🏆
+                </span>
+
+                <strong id="final-level">
+                    1
+                </strong>
+
+                <small>
+                    LEVEL
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FINAL TIP -->
+
+        <div class="final-message">
+
+            <span>
+                💡
+            </span>
+
+            <p id="final-tip">
+                Small healthy choices can add up over time.
+            </p>
+
+        </div>
+
+
+
+        <button
+            class="main-button"
+            onclick="restartHabitGame()">
+
+            🔄 Grow Again
+
+        </button>
+
+    </section>
+
+
+
+    <!-- =================================================
+         HEALTHY HABIT TIPS
+    ================================================= -->
+
+    <section class="tips-section">
+
+
+        <div class="tips-title">
+
+            <span>
+                🌿
+            </span>
+
+            <div>
+
+                <h2>
+                    Your Everyday Habit Guide
+                </h2>
+
+                <p>
+                    Simple ideas for taking care of yourself.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="tips-grid">
+
+
+            <div class="tip-card">
+
+                <span>
+                    😴
+                </span>
+
+                <h3>
+                    Rest
+                </h3>
+
+                <p>
+                    Try to keep a regular sleep routine
+                    and give yourself enough time to rest.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                <span>
+                    💧
+                </span>
+
+                <h3>
+                    Drink Water
+                </h3>
+
+                <p>
+                    Keep water nearby and remember to
+                    drink regularly throughout the day.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                <span>
+                    🚶
+                </span>
+
+                <h3>
+                    Keep Moving
+                </h3>
+
+                <p>
+                    Choose movement you enjoy, such as
+                    walking, stretching, dancing, or sports.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                <span>
+                    🧘
+                </span>
+
+                <h3>
+                    Take Breaks
+                </h3>
+
+                <p>
+                    Give your brain short breaks when
+                    studying or spending time on screens.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                <span>
+                    🍎
+                </span>
+
+                <h3>
+                    Balanced Choices
+                </h3>
+
+                <p>
+                    Try to include a variety of foods
+                    and enjoy meals without guilt.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                <span>
+                    🌤️
+                </span>
+
+                <h3>
+                    Fresh Air
+                </h3>
+
+                <p>
+                    Spending some time outdoors can be
+                    a refreshing part of your routine.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+         <!-- =====================================================
+     PLANTING GAME
+===================================================== -->
+
+<section class="planting-game">
+
+    <div class="planting-header">
+
+        <div class="planting-icon">
+            🌱
+        </div>
+
+        <div>
+
+            <h2>
+                🌻 Little Garden Game
+            </h2>
+
+            <p>
+                Plant, care, and grow your own
+                healthy little garden!
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         GARDEN STATS
+    ================================================= -->
+
+    <div class="garden-stats">
+
+        <div class="garden-stat">
+
+            <span>
+                🌱 Plants
+            </span>
+
+            <strong id="plant-count">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="garden-stat">
+
+            <span>
+                💧 Water
+            </span>
+
+            <strong id="water-count">
+                5
+            </strong>
+
+        </div>
+
+
+        <div class="garden-stat">
+
+            <span>
+                ☀️ Sunlight
+            </span>
+
+            <strong id="sun-count">
+                3
+            </strong>
+
+        </div>
+
+
+        <div class="garden-stat">
+
+            <span>
+                ⭐ Points
+            </span>
+
+            <strong id="garden-points">
+                0
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         GARDEN
+    ================================================= -->
+
+    <div class="garden-area">
+
+        <div class="garden-sky">
+
+            ☁️
+            <span>☁️</span>
+            ☀️
+
+        </div>
+
+
+        <div
+            id="garden"
+            class="garden">
+
+            <div class="empty-garden">
+
+                🌱
+
+                <p>
+                    Your garden is waiting!
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+     ACTIONS
+================================================= -->
+
+<div class="garden-actions">
+
+    <button
+        onclick="plantSeed()"
+        class="garden-button plant-button">
+
+        🌰 Plant Seed
+
+    </button>
+
+
+    <button
+        onclick="waterAllPlants()"
+        class="garden-button water-button">
+
+        💧 Water All Plants
+
+    </button>
+
+
+    <button
+        onclick="giveSunlightToAll()"
+        class="garden-button sun-button">
+
+        ☀️ Give Sunlight
+
+    </button>
+
+</div>
+
+
+    <!-- =================================================
+         MESSAGE
+    ================================================= -->
+
+    <div
+        id="garden-message"
+        class="garden-message">
+
+        🌱 Plant a seed to begin your garden!
+
+    </div>
+
+
+    <!-- =================================================
+         LEVEL
+    ================================================= -->
+
+    <div class="garden-level">
+
+        <span>
+            🏆 Garden Level
+        </span>
+
+        <strong id="garden-level">
+            1
+        </strong>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    🌱 Small habits • Everyday choices • Growing together 🌿
+
+</footer>
+
+
+
+<script src="healthyhabits.js"></script>
+
+</body>
+
+</html>
