@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LifeHub 🌍</title>
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            font-family: "Trebuchet MS", Arial, sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #dff7e3,
+                #d9f1ff,
+                #fff4d6
+            );
+
+            color: #263238;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 40px 20px;
+        }
+
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .home {
+            width: 100%;
+            max-width: 700px;
+
+            text-align: center;
+        }
+
+
+        /* =========================
+           TITLE
+        ========================= */
+
+        .logo {
+            font-size: 60px;
+            margin-bottom: 5px;
+
+            font-weight: bold;
+
+            color: #285943;
+
+            text-shadow:
+                3px 3px 0 white,
+                5px 5px 0 rgba(0,0,0,0.08);
+        }
+
+
+        .subtitle {
+            font-size: 20px;
+
+            color: #53666f;
+
+            margin-top: 0;
+            margin-bottom: 35px;
+        }
+
+
+        /* =========================
+           BUTTON CONTAINER
+        ========================= */
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+
+            gap: 15px;
+        }
+
+
+        /* =========================
+           MENU BUTTON
+        ========================= */
+
+        .menu-button {
+            width: 100%;
+
+            min-height: 70px;
+
+            border: none;
+            border-radius: 18px;
+
+            background: rgba(255, 255, 255, 0.9);
+
+            box-shadow:
+                0 6px 0 rgba(0, 0, 0, 0.08),
+                0 10px 20px rgba(0, 0, 0, 0.08);
+
+            cursor: pointer;
+
+            display: flex;
+            align-items: center;
+
+            padding: 15px 25px;
+
+            text-align: left;
+
+            font-family: inherit;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
+        }
+
+
+        /* =========================
+           BUTTON HOVER
+        ========================= */
+
+        .menu-button:hover {
+            transform: translateY(-4px);
+
+            background: white;
+
+            box-shadow:
+                0 10px 0 rgba(0, 0, 0, 0.08),
+                0 15px 25px rgba(0, 0, 0, 0.12);
+        }
+
+
+        .menu-button:active {
+            transform: translateY(2px);
+
+            box-shadow:
+                0 3px 0 rgba(0, 0, 0, 0.08);
+        }
+
+
+        /* =========================
+           ICON
+        ========================= */
+
+        .icon {
+            font-size: 34px;
+
+            width: 55px;
+
+            text-align: center;
+
+            margin-right: 15px;
+        }
+
+
+        /* =========================
+           BUTTON TEXT
+        ========================= */
+
+        .button-text {
+            flex: 1;
+        }
+
+
+        .button-title {
+            display: block;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            color: #263238;
+
+            margin-bottom: 3px;
+        }
+
+
+        .button-description {
+            display: block;
+
+            font-size: 14px;
+
+            color: #718087;
+        }
+
+
+        .arrow {
+            font-size: 25px;
+
+            color: #78909c;
+
+            margin-left: 10px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+            margin-top: 30px;
+
+            font-size: 13px;
+
+            color: #718087;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 25px 15px;
+            }
+
+            .logo {
+                font-size: 45px;
+            }
+
+            .subtitle {
+                font-size: 17px;
+                margin-bottom: 25px;
+            }
+
+            .menu-button {
+                min-height: 65px;
+
+                padding: 12px 18px;
+            }
+
+            .icon {
+                font-size: 28px;
+                width: 45px;
+            }
+
+            .button-title {
+                font-size: 17px;
+            }
+
+            .button-description {
+                font-size: 12px;
+            }
+
+            .arrow {
+                font-size: 20px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <main class="home">
+
+        <!-- TITLE -->
+
+        <div class="logo">
+            🌍 LIFEHUB
+        </div>
+
+        <p class="subtitle">
+            Useful tools for everyday life.
+        </p>
+
+
+        <!-- MENU -->
+
+        <div class="menu">
+
+
+            <!-- MIND -->
+
+            <button class="menu-button"
+                    onclick="goToPage('mind.html')">
+
+                <span class="icon">🧠</span>
+
+                <span class="button-text">
+
+                    <span class="button-title">
+                        Mind & Communication
+                    </span>
+
+                    <span class="button-description">
+                        Understand emotions and communicate better
+                    </span>
+
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </button>
+
+
+            <!-- PROBLEMS -->
+
+            <button class="menu-button"
+                    onclick="goToPage('problem-solution.html')">
+
+                <span class="icon">💡</span>
+
+                <span class="button-text">
+
+                    <span class="button-title">
+                        Problems & Solutions
+                    </span>
+
+                    <span class="button-description">
+                        Turn everyday problems into possible solutions
+                    </span>
+
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </button>
+
+
+            <!-- ENVIRONMENT -->
+
+            <button class="menu-button"
+                    onclick="goToPage('environment.html')">
+
+                <span class="icon">🌱</span>
+
+                <span class="button-text">
+
+                    <span class="button-title">
+                        Environment
+                    </span>
+
+                    <span class="button-description">
+                        Learn about recycling, waste and sustainability
+                    </span>
+
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </button>
+
+
+            <!-- COMMUNITY -->
+
+            <button class="menu-button"
+                    onclick="goToPage('community.html')">
+
+                <span class="icon">🤝</span>
+
+                <span class="button-text">
+
+                    <span class="button-title">
+                        Community
+                    </span>
+
+                    <span class="button-description">
+                        Connect, share skills and help others
+                    </span>
+
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </button>
+
+
+            <!-- SAFETY -->
+
+            <button class="menu-button"
+                    onclick="goToPage('safety.html')">
+
+                <span class="icon">🛡️</span>
+
+                <span class="button-text">
+
+                    <span class="button-title">
+                        Safety
+                    </span>
+
+                    <span class="button-description">
+                        Learn about online safety and warning signs
+                    </span>
+
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </button>
+
+
+            <!-- EVERYDAY LIFE -->
+
+            <button class="menu-button"
+                    onclick="goToPage('everyday.html')">
+
+                <span class="icon">🏠</span>
+
+                <span class="button-text">
+
+                    <span class="button-title">
+                        Everyday Life
+                    </span>
+
+                    <span class="button-description">
+                        Organize your space and everyday tasks
+                    </span>
+
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </button>
+
+
+            <!-- SMART SPENDING -->
+
+            <button class="menu-button"
+                    onclick="goToPage('smartspending.html')">
+
+                <span class="icon">💰</span>
+
+                <span class="button-text">
+
+                    <span class="button-title">
+                        Smart Spending
+                    </span>
+
+                    <span class="button-description">
+                        Make thoughtful decisions before buying
+                    </span>
+
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </button>
+
+
+            <!-- HEALTHY HABITS -->
+
+            <button class="menu-button"
+                    onclick="goToPage('healthyhabits.html')">
+
+                <span class="icon">🍎</span>
+
+                <span class="button-text">
+
+                    <span class="button-title">
+                        Healthy Habits
+                    </span>
+
+                    <span class="button-description">
+                        Build healthy everyday routines
+                    </span>
+
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </button>
+
+
+            <!-- ACCESSIBILITY -->
+
+            <button class="menu-button"
+                    onclick="goToPage('accessibility.html')">
+
+                <span class="icon">♿</span>
+
+                <span class="button-text">
+
+                    <span class="button-title">
+                        Accessibility
+                    </span>
+
+                    <span class="button-description">
+                        Explore accessibility and inclusive spaces
+                    </span>
+
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </button>
+
+
+            <!-- HELP -->
+
+            <button class="menu-button"
+                    onclick="goToPage('helpresources.html')">
+
+                <span class="icon">🆘</span>
+
+                <span class="button-text">
+
+                    <span class="button-title">
+                        Help & Resources
+                    </span>
+
+                    <span class="button-description">
+                        Find useful information and support resources
+                    </span>
+
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <div class="footer">
+            🌿 Small actions can make everyday life better.
+        </div>
+
+    </main>
+
+
+    <script>
+
+        function goToPage(page) {
+            window.location.href = page;
+        }
+
+    </script>
+
+</body>
+</html>
