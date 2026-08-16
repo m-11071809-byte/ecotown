@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Spending 💰 | LifeHub</title>
+
+    <link
+        rel="stylesheet"
+        href="smartspending.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BACK BUTTON
+===================================================== -->
+
+<a
+    href="index1.html"
+    class="back-button">
+
+    ← Back to LifeHub
+
+</a>
+
+
+
+<!-- =====================================================
+     FLOATING DECORATIONS
+===================================================== -->
+
+<div class="floating-money money-one">
+    🪙
+</div>
+
+<div class="floating-money money-two">
+    💵
+</div>
+
+<div class="floating-money money-three">
+    🛍️
+</div>
+
+<div class="floating-money money-four">
+    ⭐
+</div>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="game-container">
+
+
+    <!-- =================================================
+         HEADER
+    ================================================= -->
+
+    <header class="game-header">
+
+        <div class="header-icon">
+            💰
+        </div>
+
+        <div>
+
+            <span class="small-title">
+                LIFEHUB • LIFE SKILLS
+            </span>
+
+            <h1>
+                Smart Spending
+            </h1>
+
+            <p>
+                Make thoughtful money choices,
+                one decision at a time! 🧠✨
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         PLAYER HUD
+    ================================================= -->
+
+    <section class="player-hud">
+
+
+        <div class="hud-item">
+
+            <span class="hud-icon">
+                💵
+            </span>
+
+            <div>
+
+                <small>
+                    BUDGET
+                </small>
+
+                <strong id="budget">
+                    RM50
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="hud-item">
+
+            <span class="hud-icon">
+                ⭐
+            </span>
+
+            <div>
+
+                <small>
+                    SCORE
+                </small>
+
+                <strong id="score">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="hud-item">
+
+            <span class="hud-icon">
+                🔥
+            </span>
+
+            <div>
+
+                <small>
+                    STREAK
+                </small>
+
+                <strong id="streak">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="hud-item">
+
+            <span class="hud-icon">
+                🏆
+            </span>
+
+            <div>
+
+                <small>
+                    LEVEL
+                </small>
+
+                <strong id="level">
+                    1
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         MONEY BAR
+    ================================================= -->
+
+    <section class="money-bar-section">
+
+        <div class="bar-label">
+
+            <span>
+                💰 Money remaining
+            </span>
+
+            <span id="budget-percent">
+                100%
+            </span>
+
+        </div>
+
+        <div class="money-bar">
+
+            <div
+                id="money-fill"
+                class="money-fill">
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         GAME INTRO
+    ================================================= -->
+
+    <section
+        id="intro-screen"
+        class="screen intro-screen">
+
+        <div class="big-emoji">
+            🛒
+        </div>
+
+        <h2>
+            Welcome to Money Quest!
+        </h2>
+
+        <p>
+            You have <strong>RM50</strong>.
+            Different situations will appear,
+            and you must decide how to spend,
+            save, or think before buying.
+        </p>
+
+        <div class="rule-cards">
+
+            <div class="rule-card">
+
+                <span>
+                    🧠
+                </span>
+
+                <strong>
+                    Think
+                </strong>
+
+                <small>
+                    Don't rush your decisions.
+                </small>
+
+            </div>
+
+
+            <div class="rule-card">
+
+                <span>
+                    🧾
+                </span>
+
+                <strong>
+                    Need
+                </strong>
+
+                <small>
+                    Important things come first.
+                </small>
+
+            </div>
+
+
+            <div class="rule-card">
+
+                <span>
+                    🏦
+                </span>
+
+                <strong>
+                    Save
+                </strong>
+
+                <small>
+                    You don't have to spend everything.
+                </small>
+
+            </div>
+
+        </div>
+
+        <button
+            id="start-button"
+            class="main-button"
+            onclick="startGame()">
+
+            🚀 Start Money Quest
+
+        </button>
+
+    </section>
+
+
+
+    <!-- =================================================
+         GAME SCREEN
+    ================================================= -->
+
+    <section
+        id="game-screen"
+        class="screen game-screen hidden">
+
+
+        <!-- QUESTION -->
+
+        <div class="question-card">
+
+            <div class="question-top">
+
+                <span id="round-number">
+                    ROUND 1
+                </span>
+
+                <span id="question-category">
+                    🛍️ SHOPPING
+                </span>
+
+            </div>
+
+
+            <div
+                id="question-icon"
+                class="question-icon">
+
+                🛒
+
+            </div>
+
+
+            <h2 id="question">
+                Question goes here
+            </h2>
+
+
+            <p id="question-description">
+                Description goes here.
+            </p>
+
+        </div>
+
+
+
+        <!-- CHOICES -->
+
+        <div
+            id="choices"
+            class="choices">
+        </div>
+
+
+
+        <!-- FEEDBACK -->
+
+        <div
+            id="feedback"
+            class="feedback hidden">
+
+            <div
+                id="feedback-icon"
+                class="feedback-icon">
+
+                💡
+
+            </div>
+
+            <div>
+
+                <h3 id="feedback-title">
+                    Good choice!
+                </h3>
+
+                <p id="feedback-text">
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NEXT -->
+
+        <button
+            id="next-button"
+            class="main-button next-button hidden"
+            onclick="nextQuestion()">
+
+            Next Decision →
+            
+        </button>
+
+    </section>
+
+
+
+    <!-- =================================================
+         RESULT SCREEN
+    ================================================= -->
+
+    <section
+        id="result-screen"
+        class="screen result-screen hidden">
+
+        <div
+            id="result-icon"
+            class="result-icon">
+
+            🏆
+
+        </div>
+
+        <span class="result-label">
+            MONEY QUEST COMPLETE
+        </span>
+
+        <h2 id="result-title">
+            Smart Spender!
+        </h2>
+
+        <p id="result-description">
+            Great job!
+        </p>
+
+
+        <div class="final-stats">
+
+
+            <div>
+
+                <span>
+                    ⭐
+                </span>
+
+                <strong id="final-score">
+                    0
+                </strong>
+
+                <small>
+                    SCORE
+                </small>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    💵
+                </span>
+
+                <strong id="final-budget">
+                    RM50
+                </strong>
+
+                <small>
+                    LEFT
+                </small>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    🔥
+                </span>
+
+                <strong id="final-streak">
+                    0
+                </strong>
+
+                <small>
+                    BEST STREAK
+                </small>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="final-message">
+
+            <span>
+                💡
+            </span>
+
+            <p id="final-tip">
+                Smart spending is about making thoughtful choices.
+            </p>
+
+        </div>
+
+
+        <button
+            class="main-button"
+            onclick="restartGame()">
+
+            🔄 Play Again
+
+        </button>
+
+    </section>
+
+
+
+    <!-- =================================================
+         MONEY TIPS
+    ================================================= -->
+
+    <section class="tips-section">
+
+        <div class="tips-title">
+
+            <span>
+                💡
+            </span>
+
+            <div>
+
+                <h2>
+                    Smart Spending Rules
+                </h2>
+
+                <p>
+                    Little habits can make money decisions easier.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="tips-grid">
+
+
+            <div class="tip-card">
+
+                <span>
+                    🧠
+                </span>
+
+                <h3>
+                    Pause
+                </h3>
+
+                <p>
+                    Give yourself time before buying
+                    something you don't really need.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                <span>
+                    🧾
+                </span>
+
+                <h3>
+                    Needs First
+                </h3>
+
+                <p>
+                    Important needs usually deserve
+                    priority over optional wants.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                <span>
+                    🏦
+                </span>
+
+                <h3>
+                    Save Some
+                </h3>
+
+                <p>
+                    Keeping some money aside gives
+                    you more options later.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                <span>
+                    🛍️
+                </span>
+
+                <h3>
+                    Don't Shop Just Because
+                </h3>
+
+                <p>
+                    A sale doesn't automatically mean
+                    something is worth buying.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    💰 Think smart • Spend thoughtfully • Save for tomorrow ✨
+
+</footer>
+
+
+
+<script src="smartspending.js"></script>
+
+</body>
+
+</html>
