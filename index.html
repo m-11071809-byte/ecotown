@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EcoTown — Green City Simulator</title>
+
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="game">
+<header>
+<div class="brand">🌱 ECO<i>TOWN</i></div>
+<div class="stats">
+<div class="pill money">🪙 <span id="coins">300</span></div><div class="pill">⭐ LV <span id="level">1</span></div><div class="pill">👥 <span id="pop">4</span></div><div class="pill eco">🌱 <span id="score">20</span></div><div class="pill">😊 <span id="happy">20</span>%</div>
+</div><div class="clock" id="clock">☀️ Day 1 · 08:00</div><button class="save" onclick="save()">SAVE</button>
+</header>
+<main>
+<section class="map" id="map"><div id="npcLayer"></div>
+<div class="sky"></div><div class="sun" id="sun">☀️</div><div class="cloud c1">☁️</div><div class="cloud c2">☁️</div><div class="cloud c3">☁️</div><div class="ground"></div><div class="river"></div>
+<div class="road a"></div><div class="road b"></div><div class="road c"></div><div class="road d"></div><div class="grid"></div><div style="position:absolute;left:12px;top:28%;z-index:99;background:#fff;border:2px solid #517e57;border-radius:8px;padding:5px 8px;font-size:9px;font-weight:900">🧑‍🤝‍🧑 6 NPCs</div>
+</section>
+<aside class="side">
+<div class="panel"><h3>🏙️ MAYOR OFFICE</h3><div class="mini">Level <b id="lv">1</b> · XP <b id="xp">0</b>/<b id="need">100</b></div><div class="bar"><i id="xpbar" style="width:0%"></i></div><div class="hint">升级会解锁更高级建筑和奖励。</div></div>
+<div class="panel"><h3>🌍 CITY STATUS</h3><div class="two"><div class="metric">🌬️ Air <b id="air">20</b></div><div class="metric">🌳 Nature <b id="nature">20</b></div><div class="metric">♻️ Recycling <b id="recycle">20</b></div><div class="metric">⚡ Energy <b id="energy">20</b></div><div class="metric">💧 Water <b id="water">60</b></div><div class="metric">💰 Income <b id="income">0</b>/min</div></div></div>
+<div class="panel"><h3>🚦 CITY LIFE</h3>
+<div class="two">
+<div class="metric">🏠 Housing <b id="needHousing">70</b></div>
+<div class="metric">🛍️ Commerce <b id="needCommerce">20</b></div>
+<div class="metric">🎓 Education <b id="needEducation">20</b></div>
+<div class="metric">🎡 Fun <b id="needFun">20</b></div>
+<div class="metric">🚌 Transport <b id="needTransport">20</b></div>
+<div class="metric">🌳 Nature <b id="needNature">20</b></div>
+</div></div>
+<div class="panel"><h3>🏗️ BUILD</h3><button id="buildBtn" class="mode" onclick="toggleBuild()">🛠️ Enter Build Mode</button><div class="actions" style="margin-top:6px">
+<button class="act" onclick="selectBuild('house')">🏠 House · 35</button><button class="act" onclick="selectBuild('shop')">🏪 Shop · 55</button><button class="act" onclick="selectBuild('road')">🛣️ Road · 5</button><button class="act" onclick="selectBuild('plaza')">🧱 Plaza · 20</button><button class="act" onclick="selectBuild('tree')">🌳 Tree · 10</button><button class="act" onclick="selectBuild('park')">🌲 Park · 35</button><button class="act" onclick="selectBuild('solar')">☀️ Solar · 25</button><button class="act" onclick="selectBuild('recycle')">♻️ Recycle · 30</button><button class="act" onclick="selectBuild('bike')">🚲 Bike Hub · 20</button><button class="act" onclick="selectBuild('bus')">🚌 E-Bus · 25</button><button class="act" onclick="selectBuild('school')">🏫 School · 65</button><button class="act" onclick="selectBuild('lab')">🔬 Lab · 50</button></div><button class="act danger" style="width:100%;margin-top:5px" onclick="removeSelected()">🗑️ Remove selected</button><div class="hint">进入建造模式后，点击地图放置。拖动建筑可以移动。</div></div>
+<div class="panel"><h3>🎯 QUESTS</h3><div id="quests"></div></div>
+<div class="panel"><h3>🎲 EVENTS</h3><div class="actions"><button class="act" onclick="eventRandom()">⚡ Random Event</button><button class="act" onclick="story()">📖 Town Story</button><button class="act" onclick="quiz()">🧠 Eco Quiz</button><button class="act" onclick="recycleGame()">♻️ Sort Waste</button></div></div>
+<div class="panel"><h3>📜 TOWN LOG</h3><div class="log" id="log">🌱 Welcome, Mayor. Build a town where people and nature can thrive.<br></div></div>
+</aside>
+</main></div>
+<div id="toast" class="toast"></div>
+<div id="modal"><div class="dialog"><h2 id="mtitle"></h2><p id="mtext"></p><div id="mchoices"></div><button class="choice close" onclick="closeModal()">Close</button></div></div>
+
+
+<script src="js/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+*{image-rendering:pixelated}
+html,body{font-family:"Courier New",monospace!important}
+button,.pill,.panel,.metric,.quest,.act,.save,.mode,.dialog,.choice,.toast,.npcname,.speech{border-radius:2px!important;box-shadow:4px 4px 0 #173522!important}
+header{background:#f3e8c5!important;border-bottom:4px solid #31583a!important}
+.map{background:#6fb65e!important}.sky{background:linear-gradient(#77c9e2,#a8d995)!important}.ground{background:#78bd62!important}
+.river{background:#4aabd0!important;border:5px solid #327eaa!important}.road{background:#b6aa83!important;border-color:#7d7357!important}
+.road:after{content:"";position:absolute;inset:23px 0;border-top:4px dashed #e7dcad}
+.grid{background-image:linear-gradient(#fff3 2px,transparent 2px),linear-gradient(90deg,#fff3 2px,transparent 2px)!important;background-size:32px 32px!important}
+.place .icon,.avatar{filter:none!important;text-shadow:3px 3px 0 #25452d!important}
+.place .tag,.npcname{background:#fff7d7!important;border:2px solid #365e3b!important}
+.speech{background:#fff9e7!important;border:3px solid #31583a!important}.speech:after{border-top-color:#31583a!important}
+.side{background:#e9dfb9!important;border-left:4px solid #31583a!important}.panel{background:#f7efcf!important;border:3px solid #71865d!important}
+.panel h3{color:#315f3b!important}.metric{background:#eee5bd!important;border:2px solid #b3aa80!important}
+.act{background:#e5edc7!important;border:2px solid #6c8656!important}.primary,.mode{background:#315f3b!important;border-color:#203e28!important}
+.quest{background:#e8f0ca!important;border:2px solid #7c9665!important}.bar,.qbar{background:#c9c5a4!important}.bar>i,.qbar i{background:#4d8b4d!important}
+.npc{transition:left .08s linear,top .08s linear!important}.dialog{background:#f7efcf!important;border:4px solid #31583a!important}
+.choice{background:#e8f0ca!important;border:3px solid #6c8656!important}.toast{background:#315f3b!important;border:2px solid #e7efbd!important}
