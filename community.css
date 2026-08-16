@@ -1,0 +1,600 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+        "Comic Sans MS",
+        "Trebuchet MS",
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff1e6,
+            #eeeaff
+        );
+
+    color: #393444;
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-button {
+
+    display: inline-block;
+
+    margin: 20px;
+
+    padding: 10px 18px;
+
+    background: #40394d;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 15px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+
+}
+
+
+.back-button:hover {
+
+    transform: translateX(-4px);
+
+    background: #5a5068;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+
+    text-align: center;
+
+    padding: 10px 20px 35px;
+
+}
+
+
+.header-icon {
+
+    font-size: 65px;
+
+    animation: float 2.5s ease-in-out infinite;
+
+}
+
+
+.header h1 {
+
+    margin: 5px 0;
+
+    font-size: 44px;
+
+    color: #76548d;
+
+}
+
+
+.header p {
+
+    margin: 8px;
+
+    font-size: 18px;
+
+    color: #6d6475;
+
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro {
+
+    max-width: 900px;
+
+    margin: 0 auto 35px;
+
+    padding: 25px 30px;
+
+    background: #fffaf5;
+
+    border: 3px solid #e1c5ad;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 7px 0 #d0b29a;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.intro-icon {
+
+    font-size: 50px;
+
+}
+
+
+.intro h2 {
+
+    margin: 0 0 8px;
+
+    color: #805c42;
+
+}
+
+
+.intro p {
+
+    line-height: 1.5;
+
+    margin: 5px 0;
+
+}
+
+
+.intro strong {
+
+    color: #76548d;
+
+}
+
+
+/* =========================================================
+   COMMUNITY CONTAINER
+========================================================= */
+
+.community-container {
+
+    max-width: 1050px;
+
+    margin: auto;
+
+    padding: 0 20px 40px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+
+}
+
+
+/* =========================================================
+   COMMUNITY CARD
+========================================================= */
+
+.community-card {
+
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 24px;
+
+    border: 3px solid #ded8e4;
+
+    box-shadow:
+        0 7px 0 #c5becd;
+
+    transition: 0.25s;
+
+}
+
+
+.community-card:hover {
+
+    transform: translateY(-6px);
+
+}
+
+
+.card-top {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.community-icon {
+
+    font-size: 48px;
+
+}
+
+
+.card-top h2 {
+
+    margin: 0;
+
+    color: #684d79;
+
+}
+
+
+.problem-label {
+
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 5px 10px;
+
+    border-radius: 10px;
+
+    background: #ffe2d5;
+
+    color: #995c42;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+}
+
+
+.community-card p {
+
+    line-height: 1.5;
+
+    color: #625d67;
+
+}
+
+
+/* =========================================================
+   ACTION BUTTON
+========================================================= */
+
+.action-button {
+
+    border: none;
+
+    padding: 11px 17px;
+
+    border-radius: 14px;
+
+    background: #9875ad;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.action-button:hover {
+
+    background: #7f5c96;
+
+    transform: scale(1.04);
+
+}
+
+
+/* =========================================================
+   SOLUTION
+========================================================= */
+
+.solution {
+
+    display: none;
+
+    margin-top: 18px;
+
+    padding: 18px;
+
+    background: #f5eff9;
+
+    border: 2px dashed #ad8dc0;
+
+    border-radius: 18px;
+
+    animation: popIn 0.3s ease;
+
+}
+
+
+.solution h3 {
+
+    margin-top: 0;
+
+    color: #72528a;
+
+}
+
+
+.solution ul {
+
+    padding-left: 20px;
+
+}
+
+
+.solution li {
+
+    margin-bottom: 8px;
+
+    line-height: 1.4;
+
+}
+
+
+.impact {
+
+    margin-top: 12px;
+
+    padding: 10px;
+
+    background: #fff6d9;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   COMMUNITY CHALLENGE
+========================================================= */
+
+.challenge {
+
+    max-width: 900px;
+
+    margin: 10px auto 50px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: #fff4dc;
+
+    border: 3px solid #dfc590;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 7px 0 #cbb27d;
+
+}
+
+
+.challenge-icon {
+
+    font-size: 50px;
+
+}
+
+
+.challenge h2 {
+
+    margin: 8px 0;
+
+    color: #80652e;
+
+}
+
+
+.challenge p {
+
+    line-height: 1.5;
+
+}
+
+
+.challenge-list {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+}
+
+
+.challenge-item {
+
+    padding: 15px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    border: 2px solid #e2d8c2;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.challenge-item:hover {
+
+    transform: scale(1.03);
+
+}
+
+
+.challenge-item.completed {
+
+    background: #eee4f5;
+
+    border-color: #ad8dc0;
+
+}
+
+
+.challenge-item span {
+
+    display: block;
+
+    font-size: 25px;
+
+    margin-bottom: 5px;
+
+}
+
+
+/* =========================================================
+   SCORE
+========================================================= */
+
+.community-score {
+
+    margin-top: 20px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #76548d;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 25px;
+
+    color: #746879;
+
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes float {
+
+    0%, 100% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-9px);
+
+    }
+
+}
+
+
+@keyframes popIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(0.95);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 750px) {
+
+    .community-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .challenge-list {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .intro {
+
+        margin-left: 20px;
+
+        margin-right: 20px;
+
+    }
+
+
+    .header h1 {
+
+        font-size: 34px;
+
+    }
+
+}
