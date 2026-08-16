@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Accessibility ♿ | LifeHub</title>
+
+    <link
+        rel="stylesheet"
+        href="accessibility.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BACK
+===================================================== -->
+
+<a
+    href="index1.html"
+    class="back-button">
+
+    ← Back to LifeHub
+
+</a>
+
+
+
+<!-- =====================================================
+     FLOATING DECORATION
+===================================================== -->
+
+<div class="float-icon float-one">♿</div>
+<div class="float-icon float-two">💡</div>
+<div class="float-icon float-three">🤝</div>
+<div class="float-icon float-four">⭐</div>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="access-container">
+
+
+    <!-- =================================================
+         HEADER
+    ================================================= -->
+
+    <header class="access-header">
+
+        <div class="access-logo">
+            ♿
+        </div>
+
+        <div>
+
+            <span class="eyebrow">
+                LIFEHUB • COMMUNITY
+            </span>
+
+            <h1>
+                Accessibility
+            </h1>
+
+            <p>
+                Make everyday spaces, communication,
+                technology and activities easier for everyone.
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         HUD
+    ================================================= -->
+
+    <section class="hud">
+
+
+        <div class="hud-card">
+
+            <span>⭐</span>
+
+            <div>
+
+                <small>
+                    ACCESS POINTS
+                </small>
+
+                <strong id="points">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="hud-card">
+
+            <span>🔥</span>
+
+            <div>
+
+                <small>
+                    STREAK
+                </small>
+
+                <strong id="streak">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="hud-card">
+
+            <span>🏆</span>
+
+            <div>
+
+                <small>
+                    LEVEL
+                </small>
+
+                <strong id="level">
+                    1
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="hud-card">
+
+            <span>♿</span>
+
+            <div>
+
+                <small>
+                    SOLVED
+                </small>
+
+                <strong id="solved">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         PROGRESS
+    ================================================= -->
+
+    <section class="progress-section">
+
+        <div class="progress-label">
+
+            <span id="progress-text">
+                Ready to begin
+            </span>
+
+            <span id="progress-percent">
+                0%
+            </span>
+
+        </div>
+
+
+        <div class="progress-bar">
+
+            <div
+                id="progress-fill"
+                class="progress-fill">
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         INTRO
+    ================================================= -->
+
+    <section
+        id="intro"
+        class="game-card intro-card">
+
+
+        <div class="big-icon">
+            ♿
+        </div>
+
+
+        <span class="section-label">
+            ACCESS QUEST
+        </span>
+
+
+        <h2>
+            Can You Make the World More Accessible?
+        </h2>
+
+
+        <p>
+
+            Everyday accessibility problems can sometimes
+            be easy to miss. In this game, you'll face
+            50 different situations and choose the solution
+            that helps remove barriers.
+
+        </p>
+
+
+        <div class="intro-features">
+
+
+            <div>
+
+                <span>🏫</span>
+
+                <strong>
+                    School
+                </strong>
+
+                <small>
+                    Learning spaces
+                </small>
+
+            </div>
+
+
+            <div>
+
+                <span>🚌</span>
+
+                <strong>
+                    Transport
+                </strong>
+
+                <small>
+                    Getting around
+                </small>
+
+            </div>
+
+
+            <div>
+
+                <span>💻</span>
+
+                <strong>
+                    Technology
+                </strong>
+
+                <small>
+                    Digital access
+                </small>
+
+            </div>
+
+
+            <div>
+
+                <span>🤝</span>
+
+                <strong>
+                    Community
+                </strong>
+
+                <small>
+                    Inclusion
+                </small>
+
+            </div>
+
+
+        </div>
+
+
+        <button
+            class="main-button"
+            onclick="startGame()">
+
+            ♿ Start Access Quest
+
+        </button>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         GAME
+    ================================================= -->
+
+    <section
+        id="game"
+        class="game-card hidden">
+
+
+        <div class="question-top">
+
+
+            <span id="question-number">
+                SITUATION 1 / 50
+            </span>
+
+
+            <span id="category">
+                🏫 SCHOOL
+            </span>
+
+
+        </div>
+
+
+
+        <div
+            id="situation-icon"
+            class="situation-icon">
+
+            🏫
+
+        </div>
+
+
+
+        <h2 id="question">
+            Situation
+        </h2>
+
+
+        <p
+            id="description"
+            class="question-description">
+
+            Description
+
+        </p>
+
+
+
+        <!-- OPTIONS -->
+
+        <div
+            id="options"
+            class="options">
+        </div>
+
+
+
+        <!-- FEEDBACK -->
+
+        <div
+            id="feedback"
+            class="feedback hidden">
+
+
+            <div
+                id="feedback-icon"
+                class="feedback-icon">
+
+                ⭐
+
+            </div>
+
+
+            <div>
+
+                <h3 id="feedback-title">
+                    Great choice!
+                </h3>
+
+
+                <p id="feedback-text">
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <button
+            id="next-button"
+            class="main-button next-button hidden"
+            onclick="nextQuestion()">
+
+            Next Situation →
+
+        </button>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         ACCESSIBILITY TOOLKIT
+    ================================================= -->
+
+    <section class="toolkit">
+
+
+        <div class="toolkit-title">
+
+            <span>
+                🧰
+            </span>
+
+            <div>
+
+                <h2>
+                    Accessibility Toolkit
+                </h2>
+
+                <p>
+                    Think about these five ideas when solving
+                    everyday accessibility problems.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="tool-grid">
+
+
+            <div class="tool-card">
+
+                <span>
+                    👀
+                </span>
+
+                <h3>
+                    See
+                </h3>
+
+                <p>
+                    Can important information be seen clearly?
+                </p>
+
+            </div>
+
+
+            <div class="tool-card">
+
+                <span>
+                    👂
+                </span>
+
+                <h3>
+                    Hear
+                </h3>
+
+                <p>
+                    Is important information available without
+                    relying only on sound?
+                </p>
+
+            </div>
+
+
+            <div class="tool-card">
+
+                <span>
+                    🖐️
+                </span>
+
+                <h3>
+                    Reach
+                </h3>
+
+                <p>
+                    Can people physically reach and use it?
+                </p>
+
+            </div>
+
+
+            <div class="tool-card">
+
+                <span>
+                    🧠
+                </span>
+
+                <h3>
+                    Understand
+                </h3>
+
+                <p>
+                    Is the information clear and easy to understand?
+                </p>
+
+            </div>
+
+
+            <div class="tool-card">
+
+                <span>
+                    🤝
+                </span>
+
+                <h3>
+                    Participate
+                </h3>
+
+                <p>
+                    Can people take part in the activity?
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         RESULT
+    ================================================= -->
+
+    <section
+        id="result"
+        class="game-card result-card hidden">
+
+
+        <div
+            id="result-icon"
+            class="result-icon">
+
+            🌟
+
+        </div>
+
+
+        <span class="section-label">
+            ACCESS QUEST COMPLETE
+        </span>
+
+
+        <h2 id="result-title">
+            Inclusion Hero!
+        </h2>
+
+
+        <p id="result-description">
+        </p>
+
+
+
+        <div class="final-stats">
+
+
+            <div>
+
+                <span>
+                    ⭐
+                </span>
+
+                <strong id="final-points">
+                    0
+                </strong>
+
+                <small>
+                    POINTS
+                </small>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    🔥
+                </span>
+
+                <strong id="final-streak">
+                    0
+                </strong>
+
+                <small>
+                    BEST STREAK
+                </small>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    🏆
+                </span>
+
+                <strong id="final-level">
+                    1
+                </strong>
+
+                <small>
+                    LEVEL
+                </small>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="final-message">
+
+            <span>
+                💡
+            </span>
+
+            <p id="final-message">
+                Accessibility means removing barriers
+                so more people can participate.
+            </p>
+
+        </div>
+
+
+
+        <button
+            class="main-button"
+            onclick="restartGame()">
+
+            🔄 Play Again
+
+        </button>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         QUICK GUIDE
+    ================================================= -->
+
+    <section class="guide">
+
+
+        <h2>
+            🌟 Remember
+        </h2>
+
+
+        <div class="guide-list">
+
+
+            <div>
+                <span>1</span>
+                <p>
+                    Don't assume what someone needs.
+                </p>
+            </div>
+
+
+            <div>
+                <span>2</span>
+                <p>
+                    Ask respectfully when appropriate.
+                </p>
+            </div>
+
+
+            <div>
+                <span>3</span>
+                <p>
+                    Offer information in different formats.
+                </p>
+            </div>
+
+
+            <div>
+                <span>4</span>
+                <p>
+                    Keep pathways and entrances accessible.
+                </p>
+            </div>
+
+
+            <div>
+                <span>5</span>
+                <p>
+                    Give people different ways to participate.
+                </p>
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<footer>
+
+    ♿ Accessibility • Inclusion • Everyone belongs 🌈
+
+</footer>
+
+
+
+<script src="accessibility.js"></script>
+
+</body>
+
+</html>
