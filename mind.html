@@ -1,0 +1,4472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mind & Communication | LifeHub</title>
+
+<style>
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e9ddff,
+            #dff0ff,
+            #fff0f6
+        );
+
+    color: #302d42;
+
+    padding: 30px 20px;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+    width: 100%;
+    max-width: 950px;
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-button {
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    background: white;
+
+    color: #574b82;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 0 rgba(0,0,0,0.08);
+
+    transition: 0.2s;
+}
+
+.back-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    text-align: center;
+
+    margin: 28px 0 30px;
+}
+
+.header h1 {
+    margin: 0;
+
+    font-size: 46px;
+
+    color: #55467d;
+
+    text-shadow:
+        3px 3px white;
+}
+
+.header p {
+    margin-top: 10px;
+
+    font-size: 18px;
+
+    color: #706a7e;
+}
+
+
+/* =========================================================
+   TOOL BUTTONS
+========================================================= */
+
+.tool-menu {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+.tool-button {
+    width: 100%;
+
+    border: none;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.95);
+
+    padding: 19px;
+
+    display: flex;
+
+    align-items: center;
+
+    text-align: left;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 0 rgba(0,0,0,0.07),
+        0 10px 20px rgba(0,0,0,0.07);
+
+    transition: 0.2s;
+}
+
+.tool-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 9px 0 rgba(0,0,0,0.07),
+        0 14px 25px rgba(0,0,0,0.10);
+}
+
+.tool-icon {
+    font-size: 38px;
+
+    width: 65px;
+
+    text-align: center;
+
+    margin-right: 15px;
+}
+
+.tool-text {
+    flex: 1;
+}
+
+.tool-title {
+    display: block;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+.tool-description {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #777180;
+
+    font-size: 14px;
+}
+
+.arrow {
+    font-size: 25px;
+
+    color: #8073a4;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content-box {
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.96);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.08);
+
+    animation: appear 0.25s ease;
+}
+
+.content-box.active {
+    display: block;
+}
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.content-box h2 {
+    margin-top: 0;
+
+    color: #55467d;
+}
+
+
+/* =========================================================
+   EMOTION EXPLORER - NEW DESIGN
+========================================================= */
+
+#emotion {
+    position: relative;
+}
+
+
+/* EMOTION GRID */
+
+#emotion .emotion-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+
+/* EMOTION CARD */
+
+.emotion-card {
+    border: none;
+
+    border-radius: 16px;
+
+    padding: 18px 10px;
+
+    background: #f5f1ff;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        background 0.2s,
+        box-shadow 0.2s;
+
+    min-height: 105px;
+
+    box-shadow:
+        0 3px 8px rgba(0,0,0,0.04);
+}
+
+
+.emotion-card:hover {
+    transform: translateY(-4px);
+
+    background: #eae3ff;
+
+    box-shadow:
+        0 7px 15px rgba(0,0,0,0.08);
+}
+
+
+.emotion-card.active {
+    background: #ddd3ff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(0,0,0,0.10);
+}
+
+
+.emotion-emoji {
+    display: block;
+
+    font-size: 34px;
+
+    margin-bottom: 7px;
+}
+
+
+.emotion-name {
+    display: block;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    color: #51456e;
+}
+
+
+/* EMOTION DETAILS */
+
+#emotion-result {
+    margin-top: 22px;
+
+    padding: 24px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #faf8ff,
+            #f5f9ff
+        );
+
+    border: 2px solid #e6def7;
+
+    line-height: 1.7;
+}
+
+
+.emotion-detail-title {
+    margin: 0;
+
+    font-size: 27px;
+
+    color: #55467d;
+}
+
+
+.emotion-description {
+    margin-top: 8px;
+
+    color: #625d6e;
+}
+
+
+.emotion-detail-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 13px;
+
+    margin-top: 20px;
+}
+
+
+.emotion-detail-card {
+    padding: 16px;
+
+    background: white;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,0.04);
+}
+
+
+.emotion-detail-card strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #62527f;
+}
+
+
+/* INTENSITY */
+
+.intensity-container {
+    margin-top: 20px;
+}
+
+
+.intensity-bar {
+    width: 100%;
+
+    height: 12px;
+
+    background: #e5e0ef;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-top: 8px;
+}
+
+
+.intensity-fill {
+    height: 100%;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #b9a8e8,
+            #7664a5
+        );
+}
+
+
+/* =========================================================
+   RELATED EMOTIONS
+========================================================= */
+
+.related-emotions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+
+/* CLICKABLE RELATED EMOTION */
+
+.related-emotion {
+    padding: 9px 14px;
+
+    border-radius: 20px;
+
+    background: #eee9fa;
+
+    border: 2px solid transparent;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    color: #655780;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* WHEN MOUSE HOVERS */
+
+.related-emotion:hover {
+    background: #ddd3ff;
+
+    border-color: #b9a8df;
+
+    color: #51416f;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+
+/* WHEN CLICKED */
+
+.related-emotion:active {
+    transform: translateY(0) scale(0.95);
+
+    box-shadow: none;
+}
+
+
+/* KEYBOARD FOCUS */
+
+.related-emotion:focus {
+    outline: none;
+
+    border-color: #8d79c2;
+
+    background: #e2daf5;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    #emotion .emotion-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .emotion-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    #emotion .emotion-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+/* =========================================================
+   SITUATION LIST
+========================================================= */
+
+.situation-list {
+    margin-top: 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+    max-height: 430px;
+
+    overflow-y: auto;
+
+    padding-right: 5px;
+}
+
+.situation-item {
+    border: none;
+
+    background: #f7f4ff;
+
+    padding: 14px 16px;
+
+    border-radius: 12px;
+
+    text-align: left;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.situation-item:hover {
+    background: #eae3ff;
+
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   ANSWER BOX
+========================================================= */
+
+.answer-box {
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 22px;
+
+    border-radius: 17px;
+
+    background: #faf8ff;
+
+    border-left: 5px solid #8172a8;
+}
+
+.answer-box.show {
+    display: block;
+}
+
+.answer-box h3 {
+    margin-top: 0;
+
+    color: #55467d;
+}
+
+.answer-card {
+    margin-top: 12px;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    background: white;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,0.05);
+
+    line-height: 1.6;
+}
+
+.answer-label {
+    font-size: 13px;
+
+    font-weight: bold;
+
+    color: #8073a4;
+
+    display: block;
+
+    margin-bottom: 5px;
+}
+
+
+/* =========================================================
+   TIPS
+========================================================= */
+
+.tip {
+    margin: 12px 0;
+
+    padding: 16px;
+
+    background: #f6f2ff;
+
+    border-radius: 14px;
+
+    line-height: 1.6;
+}
+
+.tip strong {
+    color: #55467d;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 14px;
+    }
+
+    .header h1 {
+        font-size: 34px;
+    }
+
+    .header p {
+        font-size: 16px;
+    }
+
+    .emotion-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .tool-icon {
+        font-size: 30px;
+
+        width: 45px;
+    }
+
+    .tool-title {
+        font-size: 17px;
+    }
+
+    .tool-description {
+        font-size: 12px;
+    }
+
+}
+
+/* =========================================================
+        communication tip
+========================================================= */
+
+.communication-box {
+    margin-top: 20px;
+    padding: 18px;
+    background: #fff7d6;
+    border: 3px solid #4b3f72;
+    border-radius: 20px;
+    box-shadow: 5px 5px 0 #4b3f72;
+     display: none;
+}
+
+.communication-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #4b3f72;
+    margin-bottom: 15px;
+}
+
+.mission-card,
+.combo-card,
+.starter-card,
+.xp-card {
+    padding: 13px;
+    margin: 10px 0;
+    border-radius: 15px;
+    background: white;
+    border: 2px dashed #8c7bb5;
+}
+
+.mission-card {
+    background: #e8f7ff;
+}
+
+.combo-card {
+    background: #fff0f7;
+}
+
+.starter-card {
+    background: #eefbea;
+}
+
+.xp-card {
+    background: #fff3c4;
+    text-align: center;
+}
+
+.communication-box strong {
+    font-size: 16px;
+}
+
+.communication-box p {
+    margin: 7px 0 0;
+    line-height: 1.5;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     BACK
+===================================================== -->
+
+<a href="index1.html" class="back-button">
+    ← Back to LifeHub
+</a>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <h1>
+        🧠 Mind & Communication
+    </h1>
+
+    <p>
+        Understand yourself, express yourself,
+        and communicate better.
+    </p>
+
+</header>
+
+
+<!-- =====================================================
+     MAIN MENU
+===================================================== -->
+
+<div class="tool-menu">
+
+
+<button
+    class="tool-button"
+    onclick="showTool('emotion')">
+
+    <span class="tool-icon">
+        💭
+    </span>
+
+    <span class="tool-text">
+
+        <span class="tool-title">
+            Emotion Explorer
+        </span>
+
+        <span class="tool-description">
+            Explore emotions and understand what they may mean.
+        </span>
+
+    </span>
+
+    <span class="arrow">
+        →
+    </span>
+
+</button>
+
+
+<button
+    class="tool-button"
+    onclick="showTool('say')">
+
+    <span class="tool-icon">
+        💬
+    </span>
+
+    <span class="tool-text">
+
+        <span class="tool-title">
+            What Should I Say?
+        </span>
+
+        <span class="tool-description">
+            Find different ways to respond to 100 situations.
+        </span>
+
+    </span>
+
+    <span class="arrow">
+        →
+    </span>
+
+</button>
+
+
+<button
+    class="tool-button"
+    onclick="showTool('tips')">
+
+    <span class="tool-icon">
+        🗣️
+    </span>
+
+    <span class="tool-text">
+
+        <span class="tool-title">
+            Communication Tips
+        </span>
+
+        <span class="tool-description">
+            Simple ideas for clearer and kinder communication.
+        </span>
+
+    </span>
+
+    <span class="arrow">
+        →
+    </span>
+
+</button>
+
+
+</div>
+
+
+<!-- =====================================================
+     EMOTION EXPLORER
+===================================================== -->
+
+<section
+    id="emotion"
+    class="content-box">
+
+    <h2>
+        🧠 Emotion Explorer
+    </h2>
+
+    <p>
+        Explore different emotions and learn how you might
+        understand and express them.
+    </p>
+
+
+    <!-- SEARCH -->
+
+    <input
+        type="text"
+        id="emotion-search"
+        class="search-input"
+        placeholder="🔍 Search an emotion..."
+        oninput="filterEmotions()"
+    >
+
+
+    <!-- CATEGORY -->
+
+    <select
+        id="emotion-category"
+        class="category-select"
+        onchange="filterEmotions()">
+
+        <option value="all">
+            🌈 All emotions
+        </option>
+
+        <option value="positive">
+            ☀️ Positive
+        </option>
+
+        <option value="low">
+            🌧️ Low mood
+        </option>
+
+        <option value="stress">
+            🌪️ Stress & pressure
+        </option>
+
+        <option value="social">
+            ❤️ Social emotions
+        </option>
+
+        <option value="thinking">
+            💭 Thinking & uncertainty
+        </option>
+
+        <option value="energy">
+            ⚡ Energy & excitement
+        </option>
+
+    </select>
+
+
+    <!-- EMOTION LIST -->
+
+    <div
+        id="emotion-grid"
+        class="emotion-grid">
+    </div>
+
+
+    <!-- EMOTION DETAILS -->
+
+    <div
+        id="emotion-result"
+        class="emotion-result">
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     WHAT SHOULD I SAY
+===================================================== -->
+
+<section
+    id="say"
+    class="content-box">
+
+    <h2>
+        💬 What Should I Say?
+    </h2>
+
+    <p>
+        Choose a situation and get three different ways
+        to say it.
+    </p>
+
+
+    <input
+        type="text"
+        id="situation-search"
+        class="search-input"
+        placeholder="🔍 Search situations..."
+        oninput="filterSituations()"
+    >
+
+
+    <select
+        id="category-filter"
+        class="category-select"
+        onchange="filterSituations()">
+
+        <option value="all">
+            📚 All situations
+        </option>
+
+        <option value="everyday">
+            💬 Everyday Communication
+        </option>
+
+        <option value="friendship">
+            ❤️ Friendship & Relationships
+        </option>
+
+        <option value="kindness">
+            🙏 Kindness & Appreciation
+        </option>
+
+        <option value="difficult">
+            😕 Difficult Conversations
+        </option>
+
+        <option value="boundary">
+            🚫 Boundaries
+        </option>
+
+        <option value="work">
+            📚 Work & Projects
+        </option>
+
+        <option value="formal">
+            🧑‍💼 Formal Situations
+        </option>
+
+        <option value="learning">
+            🧠 Learning & Understanding
+        </option>
+
+        <option value="social">
+            🌎 Social Situations
+        </option>
+
+        <option value="personal">
+            💭 Personal Expression
+        </option>
+
+    </select>
+
+
+    <div
+        id="situation-list"
+        class="situation-list">
+    </div>
+
+
+    <div
+        id="answer-box"
+        class="answer-box">
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     COMMUNICATION TIPS
+===================================================== -->
+
+<section
+    id="tips"
+    class="content-box">
+
+    <h2>
+        🗣️ Communication Tips
+    </h2>
+
+    <p>
+        Make conversations easier, clearer, and more fun! ✨
+    </p>
+
+    <div id="communication-tip-box" 
+    class="communication-tip-box"></div>
+
+        <div class="communication-tip-header">
+
+            <span>
+                💬 Communication Power-Up!
+            </span>
+
+            <button
+                class="close-tip-button"
+                onclick="closeCommunicationTip()">
+
+                ✕
+
+            </button>
+
+        </div>
+
+
+        <div class="communication-tip-content">
+
+
+            <!-- MISSION -->
+
+            <div class="tip-section">
+
+                <div class="tip-icon">
+                    🎯
+                </div>
+
+                <div>
+
+                    <h3>
+                        Your Mission
+                    </h3>
+
+                    <p id="communication-approach">
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- COMBO -->
+
+            <div class="tip-section">
+
+                <div class="tip-icon">
+                    🧩
+                </div>
+
+                <div>
+
+                    <h3>
+                        Try This Combo
+                    </h3>
+
+                    <p id="communication-tip">
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- EXAMPLE -->
+
+            <div class="tip-section example-section">
+
+                <div class="tip-icon">
+                    🎤
+                </div>
+
+                <div>
+
+                    <h3>
+                        Try Saying...
+                    </h3>
+
+                    <p id="communication-example">
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+</div>
+</div>
+
+
+<script>
+
+
+
+/* =========================================================
+   COMMUNICATION TIP
+========================================================= */
+
+const communication = {
+
+    approach:
+        "🎯 Your mission: Share what's making you happy and let the other person join your good mood!",
+
+    tip:
+        "🧩 Try this combo: Say what happened + how it made you feel + why it matters to you.",
+
+    example:
+        '🎤 Try saying: "I\'m really happy about this! Want to hear what happened?"'
+
+};
+
+
+/* =========================================================
+   SHOW COMMUNICATION TIPS
+========================================================= */
+
+function showCommunicationTip() {
+
+    document.getElementById("communication-approach").textContent =
+        communication.approach;
+
+    document.getElementById("communication-tip").textContent =
+        communication.tip;
+
+    document.getElementById("communication-example").textContent =
+        communication.example;
+
+}
+
+
+/* =========================================================
+   CLOSE COMMUNICATION TIPS
+========================================================= */
+
+function closeCommunicationTip() {
+
+    document.getElementById("communication-tip-box").style.display =
+        "none";
+
+}
+
+
+/* =========================================================
+   SHOW TOOL
+========================================================= */
+
+function showTool(tool) {
+
+    const sections = [
+        "emotion",
+        "say",
+        "tips"
+    ];
+
+    sections.forEach(function(id) {
+
+        const section =
+            document.getElementById(id);
+
+        if (section) {
+            section.style.display =
+                "none";
+        }
+
+    });
+
+
+    const selected =
+        document.getElementById(tool);
+
+    if (selected) {
+
+        selected.style.display =
+            "block";
+
+        selected.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }
+
+
+    /* Open communication tips */
+
+    if (tool === "tips") {
+
+        const tipBox =
+            document.getElementById(
+                "communication-tip-box"
+            );
+
+        tipBox.style.display =
+            "block";
+
+        showCommunicationTip();
+
+    }
+
+}
+
+
+/* =========================================================
+   EMOTION EXPLORER
+   50 UNIQUE EMOTIONS
+========================================================= */
+
+const emotions = [
+
+    {
+        name: "Happy",
+        emoji: "😊",
+        category: "positive",
+        intensity: 55,
+
+        description:
+        "A pleasant feeling that can appear when something enjoyable, meaningful, or satisfying happens.",
+
+        meaning:
+        "You may feel cheerful, comfortable, satisfied, or glad about something.",
+
+        connected:
+        "Good news, enjoyable activities, meaningful moments, achievements, or spending time with people you like.",
+
+        try:
+        "Notice what contributed to the feeling and enjoy the moment without rushing past it.",
+
+        express:
+        `"I'm feeling really good about how things are going."`,
+
+        related: [
+            "Joy",
+            "Content",
+            "Excited"
+        ]
+    },
+
+
+    {
+        name: "Joy",
+        emoji: "😄",
+        category: "positive",
+        intensity: 70,
+
+        description:
+        "A stronger feeling of happiness that can make a moment feel especially meaningful.",
+
+        meaning:
+        "You may feel genuinely delighted by something that matters to you.",
+
+        connected:
+        "Celebrations, achievements, close relationships, meaningful experiences, or unexpected good news.",
+
+        try:
+        "Allow yourself to appreciate the experience instead of immediately moving on to the next thing.",
+
+        express:
+        `"This moment makes me genuinely happy."`,
+
+        related: [
+            "Happy",
+            "Excited",
+            "Grateful"
+        ]
+    },
+
+
+    {
+        name: "Content",
+        emoji: "😌",
+        category: "positive",
+        intensity: 35,
+
+        description:
+        "A peaceful sense that things are okay as they are right now.",
+
+        meaning:
+        "You may not feel extremely excited, but you feel comfortable and satisfied.",
+
+        connected:
+        "A relaxing day, finishing something important, feeling safe, or enjoying a simple routine.",
+
+        try:
+        "Take a moment to notice what is making you feel comfortable.",
+
+        express:
+        `"I feel quite content with how things are right now."`,
+
+        related: [
+            "Happy",
+            "Peaceful",
+            "Relieved"
+        ]
+    },
+
+
+    {
+        name: "Grateful",
+        emoji: "🙏",
+        category: "positive",
+        intensity: 45,
+
+        description:
+        "A feeling of appreciation for something someone has done or something meaningful in your life.",
+
+        meaning:
+        "You recognize that something has value to you.",
+
+        connected:
+        "Kindness, support, opportunities, meaningful memories, or helpful actions.",
+
+        try:
+        "Tell someone specifically what you appreciate about them or the situation.",
+
+        express:
+        `"I really appreciate what you did for me."`,
+
+        related: [
+            "Happy",
+            "Joy",
+            "Loved"
+        ]
+    },
+
+
+    {
+        name: "Proud",
+        emoji: "🏆",
+        category: "positive",
+        intensity: 65,
+
+        description:
+        "A feeling of satisfaction because of something you accomplished or worked hard toward.",
+
+        meaning:
+        "You recognize your own effort, progress, or achievement.",
+
+        connected:
+        "Completing a difficult task, learning something new, helping someone, or reaching a personal goal.",
+
+        try:
+        "Think about the effort that helped you reach the result, not just the result itself.",
+
+        express:
+        `"I'm proud of the progress I've made."`,
+
+        related: [
+            "Confident",
+            "Determined",
+            "Satisfied"
+        ]
+    },
+
+
+    {
+        name: "Hopeful",
+        emoji: "🌱",
+        category: "positive",
+        intensity: 50,
+
+        description:
+        "A feeling that something good or worthwhile may happen in the future.",
+
+        meaning:
+        "You can see a possible positive direction even if the outcome is uncertain.",
+
+        connected:
+        "New opportunities, improvement, fresh starts, supportive people, or progress.",
+
+        try:
+        "Focus on the next realistic step that could move things in a positive direction.",
+
+        express:
+        `"I'm hopeful that things can improve."`,
+
+        related: [
+            "Excited",
+            "Confident",
+            "Motivated"
+        ]
+    },
+
+
+    {
+        name: "Peaceful",
+        emoji: "🕊️",
+        category: "positive",
+        intensity: 30,
+
+        description:
+        "A quiet feeling of inner calm without a strong need to react.",
+
+        meaning:
+        "Your thoughts may feel settled and your surroundings may feel comfortable.",
+
+        connected:
+        "Quiet environments, rest, familiar routines, nature, or resolving a problem.",
+
+        try:
+        "Protect some time for activities that help you maintain this sense of calm.",
+
+        express:
+        `"I feel peaceful right now, and I don't want to rush this moment."`,
+
+        related: [
+             "Content",
+             "Happy",
+             "Relieved"
+        ]
+    },
+
+
+    {
+        name: "Confident",
+        emoji: "😎",
+        category: "positive",
+        intensity: 60,
+
+        description:
+        "A feeling that you can handle a situation or trust your abilities.",
+
+        meaning:
+        "You believe you have enough knowledge, preparation, or ability to try.",
+
+        connected:
+        "Preparation, previous success, practice, encouragement, or familiarity.",
+
+        try:
+        "Remember what you have already learned rather than expecting yourself to know everything.",
+
+        express:
+        `"I feel prepared enough to give this a try."`,
+
+        related: [
+           "Proud",
+    "Determined",
+    "Motivated"
+        ]
+    },
+
+
+    {
+        name: "Inspired",
+        emoji: "✨",
+        category: "positive",
+        intensity: 75,
+
+        description:
+        "A feeling that gives you new ideas or makes you want to create or accomplish something.",
+
+        meaning:
+        "Something has sparked your imagination or motivation.",
+
+        connected:
+        "Interesting people, art, nature, stories, discoveries, or new ideas.",
+
+        try:
+        "Write down the idea while it is fresh and decide on one small way to explore it.",
+
+        express:
+        `"That gave me an idea I really want to explore."`,
+
+        related: [
+           "Motivated",
+    "Excited",
+    "Curious"
+        ]
+    },
+
+
+    {
+        name: "Motivated",
+        emoji: "🔥",
+        category: "energy",
+        intensity: 80,
+
+        description:
+        "A strong desire to take action toward something.",
+
+        meaning:
+        "You feel ready or willing to put effort into a goal.",
+
+        connected:
+        "Clear goals, progress, encouragement, personal interest, or meaningful rewards.",
+
+        try:
+        "Use the motivation to start with a manageable task rather than trying to do everything at once.",
+
+        express:
+        `"I feel ready to make some progress on this."`,
+
+        related: [
+            "Determined",
+    "Inspired",
+    "Excited"
+        ]
+    },
+
+
+    {
+        name: "Excited",
+        emoji: "🤩",
+        category: "energy",
+        intensity: 85,
+
+        description:
+        "A high-energy feeling of anticipation about something you expect to be enjoyable or important.",
+
+        meaning:
+        "You are looking forward to what is about to happen.",
+
+        connected:
+        "New experiences, celebrations, opportunities, surprises, or personal interests.",
+
+        try:
+        "Enjoy the anticipation while remembering any preparation the situation requires.",
+
+        express:
+        `"I'm really looking forward to this!"`,
+
+        related: [
+           "Joy",
+    "Happy",
+    "Eager"
+        ]
+    },
+
+
+    {
+        name: "Enthusiastic",
+        emoji: "🙌",
+        category: "energy",
+        intensity: 80,
+
+        description:
+        "A lively feeling of eagerness and strong interest in something.",
+
+        meaning:
+        "You feel energetic and genuinely interested in participating.",
+
+        connected:
+        "Interesting projects, hobbies, events, teamwork, or ideas you care about.",
+
+        try:
+        "Channel the energy into a specific action that moves the idea forward.",
+
+        express:
+        `"I'm really interested in being part of this."`,
+
+        related: [
+    "Excited",
+    "Motivated",
+    "Passionate"
+]
+
+    },
+
+
+    {
+        name: "Curious",
+        emoji: "🧐",
+        category: "thinking",
+        intensity: 45,
+
+        description:
+        "A desire to discover information or understand something unfamiliar.",
+
+        meaning:
+        "You want to learn more rather than simply accepting what you already know.",
+
+        connected:
+        "New topics, unusual experiences, unanswered questions, or interesting people.",
+
+        try:
+        "Write down the question that interests you most and investigate it.",
+
+        express:
+        `"I'm curious about how this works."`,
+
+        related: [
+    "Confused",
+    "Surprised",
+    "Thoughtful"
+        ]
+    },
+
+
+    {
+        name: "Surprised",
+        emoji: "😲",
+        category: "thinking",
+        intensity: 65,
+
+        description:
+        "A reaction that happens when something is different from what you expected.",
+
+        meaning:
+        "Your mind is adjusting to new or unexpected information.",
+
+        connected:
+        "Unexpected news, sudden changes, discoveries, or unusual events.",
+
+        try:
+        "Give yourself a moment to process the new information before reacting strongly.",
+
+        express:
+        `"I wasn't expecting that at all."`,
+
+        related: [
+    "Curious",
+    "Confused",
+    "Excited"
+]
+    },
+
+
+    {
+        name: "Confused",
+        emoji: "😵",
+        category: "thinking",
+        intensity: 55,
+
+        description:
+        "A feeling that information or circumstances are difficult to understand.",
+
+        meaning:
+        "You may need more information, clarification, or time to organize your thoughts.",
+
+        connected:
+        "Contradictory information, unfamiliar topics, complicated instructions, or misunderstandings.",
+
+        try:
+        "Identify the exact part you don't understand and ask about that part.",
+
+        express:
+        `"I'm not sure how these pieces fit together."`,
+
+        related: [
+           "Uncertain",
+    "Curious",
+    "Overwhelmed"
+        ]
+    },
+
+
+    {
+        name: "Uncertain",
+        emoji: "🤔",
+        category: "thinking",
+        intensity: 50,
+
+        description:
+        "A feeling of not knowing which outcome, choice, or direction is correct.",
+
+        meaning:
+        "You may need more information before making a decision.",
+
+        connected:
+        "New situations, difficult choices, incomplete information, or unpredictable outcomes.",
+
+        try:
+        "List what you know, what you don't know, and what information could help.",
+
+        express:
+        `"I'm not sure which option is best yet."`,
+
+        related: [
+            "Confused",
+    "Worried",
+    "Curious"
+        ]
+    },
+
+
+    {
+        name: "Thoughtful",
+        emoji: "💭",
+        category: "thinking",
+        intensity: 40,
+
+        description:
+        "A reflective state where you are carefully considering ideas or experiences.",
+
+        meaning:
+        "Your mind is spending time examining something rather than reacting immediately.",
+
+        connected:
+        "Important decisions, meaningful conversations, memories, or new perspectives.",
+
+        try:
+        "Give yourself quiet time to organize your thoughts before deciding what to do.",
+
+        express:
+        `"I've been thinking carefully about this."`,
+
+        related: [
+            "Curious",
+    "Uncertain",
+    "Peaceful"
+        ]
+    },
+
+
+    {
+        name: "Sad",
+        emoji: "😔",
+        category: "low",
+        intensity: 55,
+
+        description:
+        "A low or heavy feeling that can happen after disappointment, loss, or difficult experiences.",
+
+        meaning:
+        "Something may matter deeply to you and your emotions are responding to it.",
+
+        connected:
+        "Disappointment, separation, loss, loneliness, difficult memories, or unmet expectations.",
+
+        try:
+        "Give yourself permission to acknowledge the feeling and consider talking with someone you trust.",
+
+        express:
+        `"I'm having a difficult day and could use some understanding."`,
+
+        related: [
+            "Lonely",
+            "Disappointed",
+            "Hurt"
+        ]
+    },
+
+
+    {
+        name: "Lonely",
+        emoji: "🥺",
+        category: "low",
+        intensity: 60,
+
+        description:
+        "A feeling of wanting more connection, companionship, or understanding.",
+
+        meaning:
+        "You may be missing meaningful connection even if other people are nearby.",
+
+        connected:
+        "Isolation, changes in friendships, moving somewhere new, or feeling misunderstood.",
+
+        try:
+        "Consider reaching out to someone you feel comfortable talking with.",
+
+        express:
+        `"I've been feeling a little disconnected lately."`,
+
+        related: [
+           "Sad",
+    "Homesick",
+    "Connected"
+        ]
+    },
+
+
+    {
+        name: "Disappointed",
+        emoji: "😞",
+        category: "low",
+        intensity: 55,
+
+        description:
+        "A feeling that appears when reality does not match what you had hoped for.",
+
+        meaning:
+        "You cared about a particular outcome and it didn't happen.",
+
+        connected:
+        "Unexpected results, cancelled plans, unmet expectations, or unsuccessful attempts.",
+
+        try:
+        "Separate what went wrong from what you can learn or change next time.",
+
+        express:
+        `"This wasn't the result I was hoping for."`,
+
+        related: [
+            "Sad",
+            "Frustrated",
+            "Hurt"
+        ]
+    },
+
+
+    {
+        name: "Hurt",
+        emoji: "💔",
+        category: "low",
+        intensity: 70,
+
+        description:
+        "An emotional response to words, actions, or experiences that feel deeply upsetting.",
+
+        meaning:
+        "Something affected you in a way that feels personally significant.",
+
+        connected:
+        "Harsh comments, broken trust, rejection, conflict, or feeling ignored.",
+
+        try:
+        "Give yourself time to understand what specifically affected you.",
+
+        express:
+        `"What happened affected me more than I expected."`,
+
+        related: [
+            "Sad",
+            "Angry",
+            "Disappointed"
+        ]
+    },
+
+
+    {
+        name: "Homesick",
+        emoji: "🏠",
+        category: "low",
+        intensity: 55,
+
+        description:
+        "A longing for a familiar place, routine, people, or sense of home.",
+
+        meaning:
+        "You may be missing the comfort and familiarity of somewhere important to you.",
+
+        connected:
+        "Travel, moving, staying somewhere unfamiliar, or being away from familiar people.",
+
+        try:
+        "Stay connected with familiar people or routines while gradually becoming comfortable in the new environment.",
+
+        express:
+        `"I miss the familiarity of home more than I expected."`,
+
+        related: [
+            "Lonely",
+            "Nostalgic",
+            "Sad"
+        ]
+    },
+
+
+    {
+        name: "Nostalgic",
+        emoji: "📸",
+        category: "low",
+        intensity: 45,
+
+        description:
+        "A reflective feeling caused by memories of earlier experiences.",
+
+        meaning:
+        "You are emotionally connecting with something from your past.",
+
+        connected:
+        "Old photographs, familiar songs, childhood memories, previous friendships, or meaningful places.",
+
+        try:
+        "Enjoy the memory while remembering that new experiences can also become meaningful.",
+
+        express:
+        `"That memory brings back a lot of feelings."`,
+
+        related: [
+            "Homesick",
+            "Lonely",
+            "Grateful"
+        ]
+    },
+
+
+    {
+        name: "Worried",
+        emoji: "😟",
+        category: "stress",
+        intensity: 65,
+
+        description:
+        "A feeling of concern about something that might happen.",
+
+        meaning:
+        "Your mind is focusing on a possible problem or uncertain outcome.",
+
+        connected:
+        "Upcoming events, uncertainty, responsibilities, health of plans, or important decisions.",
+
+        try:
+        "Separate what you can control from what you cannot control.",
+
+        express:
+        `"I've been thinking a lot about what might happen."`,
+
+        related: [
+            "Nervous",
+            "Anxious",
+            "Uncertain"
+        ]
+    },
+
+
+    {
+        name: "Nervous",
+        emoji: "😰",
+        category: "stress",
+        intensity: 60,
+
+        description:
+        "A feeling of tension or uncertainty before an important or unfamiliar situation.",
+
+        meaning:
+        "You may care about the outcome and feel unsure about what will happen.",
+
+        connected:
+        "Presentations, new environments, important conversations, competitions, or first experiences.",
+
+        try:
+        "Prepare what you can and focus on the next step instead of the entire situation.",
+
+        express:
+        `"I'm a little nervous because this matters to me."`,
+
+        related: [
+            "Worried",
+            "Excited",
+            "Uncertain"
+        ]
+    },
+
+
+    {
+        name: "Anxious",
+        emoji: "😣",
+        category: "stress",
+        intensity: 75,
+
+        description:
+        "A stronger feeling of worry or uneasiness that can make it difficult to relax.",
+
+        meaning:
+        "Your mind may be repeatedly focusing on possible problems or uncertainty.",
+
+        connected:
+        "Pressure, uncertainty, stressful situations, major changes, or many responsibilities.",
+
+        try:
+        "Focus on what is happening right now and identify one manageable next step.",
+
+        express:
+        `"I've been feeling quite overwhelmed by everything on my mind."`,
+
+        related: [
+            "Worried",
+            "Overwhelmed",
+            "Nervous"
+        ]
+    },
+
+
+    {
+        name: "Overwhelmed",
+        emoji: "🌪️",
+        category: "stress",
+        intensity: 80,
+
+        description:
+        "A feeling that the amount of information, responsibility, or emotion feels difficult to manage all at once.",
+
+        meaning:
+        "You may need to reduce the number of things demanding your attention.",
+
+        connected:
+        "Busy schedules, many responsibilities, complicated problems, or several strong emotions at once.",
+
+        try:
+        "Choose one small priority and temporarily set aside less urgent concerns.",
+
+        express:
+        `"There is a lot happening at once, and I need to slow things down."`,
+
+        related: [
+            "Stressed",
+            "Anxious",
+            "Frustrated"
+        ]
+    },
+
+
+    {
+        name: "Stressed",
+        emoji: "😫",
+        category: "stress",
+        intensity: 75,
+
+        description:
+        "A feeling of pressure that can appear when demands seem difficult to manage.",
+
+        meaning:
+        "Your mind and body may be responding to a demanding situation.",
+
+        connected:
+        "Deadlines, responsibilities, conflict, uncertainty, or too many tasks.",
+
+        try:
+        "Identify the most important task and take a short break when possible.",
+
+        express:
+        `"I've been under quite a bit of pressure lately."`,
+
+        related: [
+            "Overwhelmed",
+            "Frustrated",
+            "Worried"
+        ]
+    },
+
+
+    {
+        name: "Tense",
+        emoji: "😬",
+        category: "stress",
+        intensity: 60,
+
+        description:
+        "A feeling of being on edge or unable to fully relax.",
+
+        meaning:
+        "You may be anticipating something difficult or uncertain.",
+
+        connected:
+        "Arguments, deadlines, unfamiliar situations, waiting for news, or difficult conversations.",
+
+        try:
+        "Slow down your pace and give yourself a quiet moment before responding.",
+
+        express:
+        `"I feel a bit on edge about this situation."`,
+
+        related: [
+            "Nervous",
+            "Worried",
+            "Stressed"
+        ]
+    },
+
+
+    {
+        name: "Frustrated",
+        emoji: "😤",
+        category: "stress",
+        intensity: 70,
+
+        description:
+        "A feeling that can appear when progress is blocked or something repeatedly goes wrong.",
+
+        meaning:
+        "You want something to change but are struggling to make that happen.",
+
+        connected:
+        "Repeated mistakes, delays, difficult problems, misunderstandings, or obstacles.",
+
+        try:
+        "Identify the specific obstacle instead of treating the entire situation as one problem.",
+
+        express:
+        `"I'm frustrated because I keep running into the same obstacle."`,
+
+        related: [
+            "Annoyed",
+            "Stressed",
+            "Angry"
+        ]
+    },
+
+
+    {
+        name: "Angry",
+        emoji: "😠",
+        category: "stress",
+        intensity: 80,
+
+        description:
+        "A strong emotion that can appear when something feels unfair, harmful, frustrating, or wrong.",
+
+        meaning:
+        "Something may have crossed an important expectation or boundary.",
+
+        connected:
+        "Unfair treatment, conflict, repeated problems, broken promises, or feeling disrespected.",
+
+        try:
+        "Pause before responding and identify what specifically made you angry.",
+
+        express:
+        `"I'm upset about what happened and I want to explain why."`,
+
+        related: [
+            "Frustrated",
+            "Annoyed",
+            "Hurt"
+        ]
+    },
+
+
+    {
+        name: "Annoyed",
+        emoji: "🙄",
+        category: "stress",
+        intensity: 45,
+
+        description:
+        "A milder form of irritation that can happen when something repeatedly bothers you.",
+
+        meaning:
+        "Something may be getting on your nerves without feeling deeply upsetting.",
+
+        connected:
+        "Interruptions, repetitive behavior, inconvenience, noise, or minor disagreements.",
+
+        try:
+        "Ask yourself whether the problem is important enough to address directly.",
+
+        express:
+        `"That's starting to bother me a little."`,
+
+        related: [
+            "Frustrated",
+            "Irritated",
+            "Angry"
+        ]
+    },
+
+
+    {
+        name: "Irritated",
+        emoji: "😒",
+        category: "stress",
+        intensity: 50,
+
+        description:
+        "A feeling of mild anger or discomfort caused by something bothersome.",
+
+        meaning:
+        "Something is repeatedly interfering with your comfort or patience.",
+
+        connected:
+        "Repeated interruptions, inconvenience, unwanted behavior, or frustrating delays.",
+
+        try:
+        "Identify the exact trigger and decide whether changing it is possible.",
+
+        express:
+        `"I'm finding this situation increasingly irritating."`,
+
+        related: [
+            "Annoyed",
+            "Frustrated",
+            "Impatient"
+        ]
+    },
+
+
+    {
+        name: "Impatient",
+        emoji: "⏳",
+        category: "stress",
+        intensity: 50,
+
+        description:
+        "A feeling that makes waiting or slow progress especially difficult.",
+
+        meaning:
+        "You strongly want something to happen or finish sooner.",
+
+        connected:
+        "Long waits, delays, repetitive tasks, or feeling that progress is too slow.",
+
+        try:
+        "Find something useful to focus on while you wait.",
+
+        express:
+        `"I'm finding it difficult to wait because I really want this resolved."`,
+
+        related: [
+            "Frustrated",
+            "Restless",
+            "Eager"
+        ]
+    },
+
+
+    {
+        name: "Embarrassed",
+        emoji: "😳",
+        category: "social",
+        intensity: 65,
+
+        description:
+        "A feeling of self-consciousness after something happens that you wish others had not noticed.",
+
+        meaning:
+        "You may be concerned about how other people perceived the situation.",
+
+        connected:
+        "Mistakes, awkward moments, misunderstandings, unexpected attention, or social situations.",
+
+        try:
+        "Remember that people often notice much less than you imagine.",
+
+        express:
+        `"That was a little embarrassing, but I'll laugh about it later."`,
+
+        related: [
+            "Awkward",
+            "Shy",
+            "Self-conscious"
+        ]
+    },
+
+
+    {
+        name: "Shy",
+        emoji: "🫣",
+        category: "social",
+        intensity: 45,
+
+        description:
+        "A feeling of hesitation or discomfort when interacting with other people.",
+
+        meaning:
+        "You may need more time to feel comfortable in a social situation.",
+
+        connected:
+        "Meeting unfamiliar people, speaking in groups, attention, or unfamiliar environments.",
+
+        try:
+        "Start with a small interaction rather than expecting yourself to be immediately outgoing.",
+
+        express:
+        `"I'm a little quiet at first when I'm around new people."`,
+
+        related: [
+            "Nervous",
+            "Embarrassed",
+            "Uncertain"
+        ]
+    },
+
+
+    {
+        name: "Awkward",
+        emoji: "😅",
+        category: "social",
+        intensity: 50,
+
+        description:
+        "A feeling that a social situation is uncomfortable or difficult to navigate.",
+
+        meaning:
+        "You may be unsure what to say or how to respond naturally.",
+
+        connected:
+        "Silence, misunderstandings, unfamiliar people, unexpected comments, or unusual situations.",
+
+        try:
+        "A simple honest comment can sometimes make the situation feel more natural.",
+
+        express:
+        `"That was a bit awkward, wasn't it?"`,
+
+        related: [
+            "Embarrassed",
+            "Shy",
+            "Confused"
+        ]
+    },
+
+
+    {
+        name: "Jealous",
+        emoji: "💚",
+        category: "social",
+        intensity: 60,
+
+        description:
+        "A feeling that can appear when you worry about losing attention, connection, or something you value.",
+
+        meaning:
+        "The emotion may point toward something you care about deeply.",
+
+        connected:
+        "Comparison, relationships, competition, attention, achievements, or fear of being left out.",
+
+        try:
+        "Identify what you actually want instead of focusing only on what someone else has.",
+
+        express:
+        `"I think I'm feeling jealous because this situation matters to me."`,
+
+        related: [
+            "Insecure",
+            "Envious",
+            "Worried"
+        ]
+    },
+
+
+    {
+        name: "Envious",
+        emoji: "👀",
+        category: "social",
+        intensity: 55,
+
+        description:
+        "A feeling of wanting something that another person has.",
+
+        meaning:
+        "The feeling can reveal something you value or would like to achieve yourself.",
+
+        connected:
+        "Achievements, possessions, opportunities, abilities, appearance, or experiences.",
+
+        try:
+        "Turn the comparison into information about your own goals and priorities.",
+
+        express:
+        `"Seeing that made me realize I'd like something similar in my own life."`,
+
+        related: [
+            "Jealous",
+            "Ambitious",
+            "Insecure"
+        ]
+    },
+
+
+    {
+        name: "Insecure",
+        emoji: "🥲",
+        category: "social",
+        intensity: 65,
+
+        description:
+        "A feeling of uncertainty about yourself, your abilities, or how others perceive you.",
+
+        meaning:
+        "You may be comparing yourself with others or worrying about whether you are good enough.",
+
+        connected:
+        "Comparison, criticism, unfamiliar situations, rejection, or difficult experiences.",
+
+        try:
+        "Focus on specific abilities and progress instead of making broad judgments about yourself.",
+
+        express:
+        `"I'm feeling unsure of myself in this situation."`,
+
+        related: [
+            "Self-conscious",
+            "Nervous",
+            "Worried"
+        ]
+    },
+
+
+    {
+        name: "Loved",
+        emoji: "❤️",
+        category: "social",
+        intensity: 80,
+
+        description:
+        "A warm feeling of being cared for, valued, or deeply connected to others.",
+
+        meaning:
+        "You may feel that someone genuinely cares about your wellbeing.",
+
+        connected:
+        "Supportive relationships, kindness, family, friendship, trust, or meaningful experiences.",
+
+        try:
+        "Notice the actions that create this feeling and consider expressing your appreciation.",
+
+        express:
+        `"I feel really cared for when you do things like that."`,
+
+        related: [
+            "Grateful",
+            "Safe",
+            "Connected"
+        ]
+    },
+
+
+    {
+        name: "Connected",
+        emoji: "🫶",
+        category: "social",
+        intensity: 65,
+
+        description:
+        "A feeling of meaningful connection and understanding with another person or group.",
+
+        meaning:
+        "You feel seen, understood, included, or comfortable with others.",
+
+        connected:
+        "Honest conversations, shared interests, teamwork, friendship, or supportive relationships.",
+
+        try:
+        "Make time for relationships where you can communicate openly and comfortably.",
+
+        express:
+        `"I feel like we really understand each other."`,
+
+        related: [
+            "Loved",
+            "Accepted",
+            "Safe"
+        ]
+    },
+
+
+    {
+        name: "Accepted",
+        emoji: "🤗",
+        category: "social",
+        intensity: 55,
+
+        description:
+        "A feeling that you can be yourself without worrying about being rejected.",
+
+        meaning:
+        "You feel welcomed or respected by the people around you.",
+
+        connected:
+        "Supportive communities, friendships, teamwork, understanding, and inclusion.",
+
+        try:
+        "Remember the environments where you feel accepted and invest time in those connections.",
+
+        express:
+        `"I feel comfortable being myself around you."`,
+
+        related: [
+            "Connected",
+            "Safe",
+            "Loved"
+        ]
+    },
+
+
+    {
+        name: "Safe",
+        emoji: "🛡️",
+        category: "social",
+        intensity: 35,
+
+        description:
+        "A feeling of security and freedom from immediate danger or pressure.",
+
+        meaning:
+        "You feel that you can relax because your surroundings or relationships feel trustworthy.",
+
+        connected:
+        "Supportive people, familiar environments, clear boundaries, and predictable situations.",
+
+        try:
+        "Notice which people and environments help you feel secure.",
+
+        express:
+        `"I feel comfortable and safe talking about this with you."`,
+
+        related: [
+            "Peaceful",
+    "Accepted",
+    "Connected"
+        ]
+    },
+
+
+    {
+        name: "Determined",
+        emoji: "💪",
+        category: "energy",
+        intensity: 85,
+
+        description:
+        "A strong feeling of commitment to continue working toward something.",
+
+        meaning:
+        "You are willing to keep going despite obstacles.",
+
+        connected:
+        "Important goals, personal values, challenges, progress, or meaningful reasons to continue.",
+
+        try:
+        "Turn determination into a specific next action rather than relying only on motivation.",
+
+        express:
+        `"This is difficult, but I'm committed to working through it."`,
+
+        related: [
+            "Motivated",
+    "Confident",
+    "Proud"
+        ]
+    },
+
+
+    {
+        name: "Restless",
+        emoji: "🌀",
+        category: "energy",
+        intensity: 55,
+
+        description:
+        "A feeling that makes it difficult to sit still, settle down, or feel satisfied with doing nothing.",
+
+        meaning:
+        "You may have excess energy or feel that something needs to change.",
+
+        connected:
+        "Boredom, waiting, uncertainty, lack of activity, or feeling stuck.",
+
+        try:
+        "Give the energy somewhere useful to go, such as a walk, creative activity, or manageable task.",
+
+        express:
+        `"I feel like I need to do something rather than sit around."`,
+
+        related: [
+            "Impatient",
+            "Excited",
+            "Bored"
+        ]
+    },
+
+
+    {
+        name: "Bored",
+        emoji: "🥱",
+        category: "energy",
+        intensity: 40,
+
+        description:
+        "A feeling that there is not enough interesting or meaningful stimulation.",
+
+        meaning:
+        "Your attention may be looking for something more engaging.",
+
+        connected:
+        "Repetitive activities, long waiting periods, lack of challenge, or limited choices.",
+
+        try:
+        "Try something small that adds curiosity, creativity, movement, or challenge.",
+
+        express:
+        `"I'm finding this a little repetitive. Could we try something different?"`,
+
+        related: [
+            "Restless",
+            "Thoughtful",
+            "Curious"
+        ]
+    },
+
+
+    {
+        name: "Eager",
+        emoji: "🌟",
+        category: "energy",
+        intensity: 70,
+
+        description:
+        "A strong desire to begin or experience something.",
+
+        meaning:
+        "You are ready and interested in moving forward.",
+
+        connected:
+        "New opportunities, upcoming events, personal goals, or interesting possibilities.",
+
+        try:
+        "Use your enthusiasm to prepare before the opportunity arrives.",
+
+        express:
+        `"I'm really looking forward to getting started."`,
+
+        related: [
+            "Excited",
+            "Motivated",
+            "Enthusiastic"
+        ]
+    },
+
+
+    {
+        name: "Passionate",
+        emoji: "🔥",
+        category: "energy",
+        intensity: 90,
+
+        description:
+        "A powerful feeling of enthusiasm and personal importance toward a subject or activity.",
+
+        meaning:
+        "Something matters strongly to you and can inspire sustained effort.",
+
+        connected:
+        "Creative interests, causes, hobbies, careers, relationships, or personal values.",
+
+        try:
+        "Balance your enthusiasm with rest so the interest remains enjoyable over time.",
+
+        express:
+        `"This is something I genuinely care about."`,
+
+        related: [
+            "Inspired",
+            "Motivated",
+            "Enthusiastic"
+        ]
+    },
+
+
+    {
+        name: "Relieved",
+        emoji: "😮‍💨",
+        category: "positive",
+        intensity: 60,
+
+        description:
+        "A feeling of pressure becoming lighter after a difficult or uncertain situation improves.",
+
+        meaning:
+        "Something you were concerned about has become less threatening or has been resolved.",
+
+        connected:
+        "Finishing difficult tasks, receiving good news, solving problems, or waiting for important results.",
+
+        try:
+        "Take a moment to recover instead of immediately moving on to another stressful task.",
+
+        express:
+        `"I'm glad that's finally sorted out. I feel much lighter now."`,
+
+        related: [
+            "Happy",
+            "Peaceful",
+            "Grateful"
+        ]
+    },
+
+
+    {
+        name: "Reluctant",
+        emoji: "😕",
+        category: "thinking",
+        intensity: 50,
+
+        description:
+        "A feeling of hesitation or unwillingness about doing something.",
+
+        meaning:
+        "Part of you may have concerns or reservations about moving forward.",
+
+        connected:
+        "Uncertainty, previous experiences, lack of confidence, inconvenience, or conflicting priorities.",
+
+        try:
+        "Identify exactly what is making you hesitate before deciding.",
+
+        express:
+        `"I'm not completely comfortable with this idea yet."`,
+
+        related: [
+            "Uncertain",
+            "Nervous",
+            "Hesitant"
+        ]
+    },
+
+
+    {
+        name: "Hesitant",
+        emoji: "🤨",
+        category: "thinking",
+        intensity: 45,
+
+        description:
+        "A feeling that makes you pause before making a decision or taking action.",
+
+        meaning:
+        "You may want more information or time before committing.",
+
+        connected:
+        "Important decisions, unfamiliar choices, possible risks, or conflicting thoughts.",
+
+        try:
+        "Ask what information would make the decision clearer.",
+
+        express:
+        `"I'd like a little more time to think before deciding."`,
+
+        related: [
+            "Reluctant",
+            "Uncertain",
+            "Worried"
+        ]
+    },
+
+
+    
+    
+
+];
+
+
+/* =========================================================
+   DISPLAY EMOTIONS
+========================================================= */
+
+function displayEmotions(list) {
+
+    const grid =
+        document.getElementById("emotion-grid");
+
+    grid.innerHTML = "";
+
+
+    if (list.length === 0) {
+
+        grid.innerHTML = `
+            <div class="tip">
+                🔍 No emotion found.
+                Try another search.
+            </div>
+        `;
+
+        return;
+    }
+
+
+    list.forEach(function(emotion) {
+
+        const button =
+            document.createElement("button");
+
+        button.className =
+            "emotion-card";
+
+
+        button.innerHTML = `
+
+            <span class="emotion-emoji">
+                ${emotion.emoji}
+            </span>
+
+            <span class="emotion-name">
+                ${emotion.name}
+            </span>
+
+        `;
+
+
+        button.onclick = function() {
+
+            showEmotion(emotion, button);
+
+        };
+
+
+        grid.appendChild(button);
+
+    });
+
+}
+
+
+/* =========================================================
+   FILTER EMOTIONS
+========================================================= */
+
+function filterEmotions() {
+
+    const search =
+        document
+        .getElementById("emotion-search")
+        .value
+        .toLowerCase()
+        .trim();
+
+
+    const category =
+        document
+        .getElementById("emotion-category")
+        .value;
+
+
+    const filtered =
+        emotions.filter(function(emotion) {
+
+            const matchesSearch =
+                emotion.name
+                .toLowerCase()
+                .includes(search);
+
+
+            const matchesCategory =
+                category === "all" ||
+                emotion.category === category;
+
+
+            return matchesSearch &&
+                   matchesCategory;
+
+        });
+
+
+    displayEmotions(filtered);
+
+}
+
+
+/* =========================================================
+   SHOW EMOTION DETAILS
+========================================================= */
+
+function showEmotion(emotion, button) {
+
+    document
+        .querySelectorAll(".emotion-card")
+        .forEach(function(card) {
+
+            card.classList.remove("active");
+
+        });
+
+
+    button.classList.add("active");
+
+
+    const result =
+        document.getElementById("emotion-result");
+
+
+    result.innerHTML = `
+
+        <h3 class="emotion-detail-title">
+
+            ${emotion.emoji}
+            ${emotion.name}
+
+        </h3>
+
+
+        <p class="emotion-description">
+
+            ${emotion.description}
+
+        </p>
+
+
+        <div class="emotion-detail-grid">
+
+
+            <div class="emotion-detail-card">
+
+                <strong>
+                    💭 What might it mean?
+                </strong>
+
+                ${emotion.meaning}
+
+            </div>
+
+
+            <div class="emotion-detail-card">
+
+                <strong>
+                    🔎 What can be connected to it?
+                </strong>
+
+                ${emotion.connected}
+
+            </div>
+
+
+            <div class="emotion-detail-card">
+
+                <strong>
+                    🌱 Something you could try
+                </strong>
+
+                ${emotion.try}
+
+            </div>
+
+
+            <div class="emotion-detail-card">
+
+                <strong>
+                    💬 How could you express it?
+                </strong>
+
+                ${emotion.express}
+
+            </div>
+
+
+        </div>
+
+
+        <div class="intensity-container">
+
+            <strong>
+                🌡️ Typical intensity
+            </strong>
+
+            <div class="intensity-bar">
+
+                <div
+                    class="intensity-fill"
+                    style="width: ${emotion.intensity}%">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div style="margin-top:20px;">
+
+            <strong>
+                🔗 Related emotions
+            </strong>
+
+            <div class="related-emotions">
+
+    ${emotion.related.map(function(item) {
+
+        return `
+            <button
+                class="related-emotion"
+                onclick="openRelatedEmotion('${item}')">
+
+                ${item}
+
+            </button>
+        `;
+
+    }).join("")}
+
+</div>
+
+        </div>
+
+    `;
+
+
+    result.classList.add("show");
+
+
+    result.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+    });
+
+}
+
+
+
+/* =========================================================
+   OPEN RELATED EMOTION
+========================================================= */
+
+function openRelatedEmotion(emotionName) {
+
+    /* Find the emotion */
+
+    const emotion = emotions.find(function(item) {
+
+        return item.name.toLowerCase() ===
+               emotionName.toLowerCase();
+
+    });
+
+
+    /* If the emotion does not exist */
+
+    if (!emotion) {
+
+        console.log(
+            "Emotion not found:",
+            emotionName
+        );
+
+        return;
+
+    }
+
+
+    /* Find the emotion card if it is currently displayed */
+
+    const buttons =
+        document.querySelectorAll(".emotion-card");
+
+
+    let matchingButton = null;
+
+
+    buttons.forEach(function(button) {
+
+        const name =
+            button.querySelector(".emotion-name");
+
+
+        if (
+            name &&
+            name.textContent.trim().toLowerCase() ===
+            emotion.name.toLowerCase()
+        ) {
+
+            matchingButton = button;
+
+        }
+
+    });
+
+
+    /*
+       If the card is visible,
+       use it as the active button.
+    */
+
+    if (matchingButton) {
+
+        showEmotion(
+            emotion,
+            matchingButton
+        );
+
+    }
+
+
+    /*
+       If the card is NOT visible because of
+       search/category filtering, still show
+       the emotion details.
+    */
+
+    else {
+
+        showEmotionWithoutButton(emotion);
+
+    }
+
+
+    /* Scroll to the emotion details */
+
+    document
+        .getElementById("emotion-result")
+        .scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "start"
+
+        });
+
+}
+
+/* =========================================================
+   SHOW RELATED EMOTION WITHOUT CARD
+========================================================= */
+
+function showEmotionWithoutButton(emotion) {
+
+    const result =
+        document.getElementById("emotion-result");
+
+
+    result.innerHTML = `
+
+        <h3 class="emotion-detail-title">
+
+            ${emotion.emoji}
+            ${emotion.name}
+
+        </h3>
+
+
+        <p class="emotion-description">
+
+            ${emotion.description}
+
+        </p>
+
+
+        <div class="emotion-detail-grid">
+
+
+            <div class="emotion-detail-card">
+
+                <strong>
+                    💭 What might it mean?
+                </strong>
+
+                ${emotion.meaning}
+
+            </div>
+
+
+            <div class="emotion-detail-card">
+
+                <strong>
+                    🔎 What can be connected to it?
+                </strong>
+
+                ${emotion.connected}
+
+            </div>
+
+
+            <div class="emotion-detail-card">
+
+                <strong>
+                    🌱 Something you could try
+                </strong>
+
+                ${emotion.try}
+
+            </div>
+
+
+            <div class="emotion-detail-card">
+
+                <strong>
+                    💬 How could you express it?
+                </strong>
+
+                ${emotion.express}
+
+            </div>
+
+
+        </div>
+
+
+        <div class="intensity-container">
+
+            <strong>
+                🌡️ Typical intensity
+            </strong>
+
+
+            <div class="intensity-bar">
+
+                <div
+                    class="intensity-fill"
+                    style="width: ${emotion.intensity}%">
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div style="margin-top:20px;">
+
+            <strong>
+                🔗 Related emotions
+            </strong>
+
+
+            <div class="related-emotions">
+
+                ${emotion.related.map(function(item) {
+
+                    return `
+
+                        <button
+                            type="button"
+                            class="related-emotion"
+                            onclick="openRelatedEmotion('${item}')">
+
+                            ${item}
+
+                        </button>
+
+                    `;
+
+                }).join("")}
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    result.classList.add("show");
+
+}
+
+/* =========================================================
+   INITIALIZE EMOTION EXPLORER
+========================================================= */
+
+displayEmotions(emotions);
+
+
+/* =========================================================
+   100 SITUATIONS
+   Each situation contains 3 different responses.
+========================================================= */
+
+const situations = [
+
+/* =========================================================
+   EVERYDAY COMMUNICATION
+========================================================= */
+
+{
+category:"everyday",
+text:"👋 Introduce yourself to someone new",
+responses:[
+`"Hi, I'm ____. It's great to meet you."`,
+`"Hello! My name is ____. I don't think we've met before."`,
+`"Hey, I'm ____. Nice to meet you!"`
+]},
+
+{
+category:"everyday",
+text:"💬 Start a conversation",
+responses:[
+`"Hey! How has your day been so far?"`,
+`"Hi! What have you been up to today?"`,
+`"Hello! I was wondering, how are things going?"`
+]},
+
+{
+category:"everyday",
+text:"🧑‍🤝‍🧑 Join a conversation already happening",
+responses:[
+`"Hey, would it be okay if I joined the conversation?"`,
+`"That sounds interesting. Can I join you?"`,
+`"Mind if I sit with you guys for a while?"`
+]},
+
+{
+category:"everyday",
+text:"🔄 Keep a conversation going",
+responses:[
+`"Really? What happened after that?"`,
+`"That's interesting! What made you think about it that way?"`,
+`"I'd like to hear more. How did that happen?"`
+]},
+
+{
+category:"everyday",
+text:"👋 End a conversation politely",
+responses:[
+`"I should get going now, but it was lovely talking with you."`,
+`"Thanks for the chat! I'll catch you later."`,
+`"I need to head off, but I enjoyed talking with you."`
+]},
+
+{
+category:"everyday",
+text:"🧊 Break the ice with someone",
+responses:[
+`"I don't think we've talked before. I'm ____. What's your name?"`,
+`"Hi! I thought I'd come over and introduce myself."`,
+`"Hey! How do you know everyone here?"`
+]},
+
+{
+category:"everyday",
+text:"❓ Ask someone about their interests",
+responses:[
+`"What do you usually enjoy doing in your free time?"`,
+`"Is there anything you're really interested in lately?"`,
+`"What kind of hobbies do you have?"`
+]},
+
+{
+category:"everyday",
+text:"🎯 Change the subject",
+responses:[
+`"Anyway, I wanted to ask you about something else."`,
+`"That reminds me — have you heard about ____?"`,
+`"Could we switch topics for a moment? I wanted to tell you about ____."`
+]},
+
+{
+category:"everyday",
+text:"🤫 Ask for a quieter conversation",
+responses:[
+`"Would you mind lowering your voice a little?"`,
+`"Could we talk somewhere a little quieter?"`,
+`"It's a bit noisy here. Can we move somewhere calmer?"`
+]},
+
+{
+category:"everyday",
+text:"📱 Reply when you don't know what to say",
+responses:[
+`"I'm not sure how to respond, but I'm listening."`,
+`"Give me a moment to think about that."`,
+`"I don't really know what to say yet, but I understand."`
+]},
+
+
+/* =========================================================
+   FRIENDSHIP
+========================================================= */
+
+{
+category:"friendship",
+text:"🤝 Ask someone to hang out",
+responses:[
+`"Are you free sometime this week? We could hang out."`,
+`"Would you like to spend some time together this weekend?"`,
+`"Do you want to meet up sometime soon?"`
+]},
+
+{
+category:"friendship",
+text:"🎉 Invite someone to an event",
+responses:[
+`"We're going to ____ this weekend. Would you like to come?"`,
+`"I'm going to an event on ____. Want to join me?"`,
+`"There's something happening on Saturday that you might enjoy. Would you like to come?"`
+]},
+
+{
+category:"friendship",
+text:"🙅 Decline an invitation",
+responses:[
+`"Thanks for inviting me! I won't be able to make it this time."`,
+`"That sounds fun, but I already have plans."`,
+`"I appreciate the invitation, but I'll have to pass this time."`
+]},
+
+{
+category:"friendship",
+text:"📅 Cancel plans",
+responses:[
+`"I'm sorry, but something has come up and I need to cancel."`,
+`"I won't be able to make it today. Could we plan another day?"`,
+`"I'm afraid I need to change our plans. Sorry about that!"`
+]},
+
+{
+category:"friendship",
+text:"⏰ Tell someone you're running late",
+responses:[
+`"I'm running behind schedule. I'll be there as soon as I can."`,
+`"Sorry! I'm going to arrive a little later than planned."`,
+`"I'm delayed right now. I'll update you when I'm closer."`
+]},
+
+{
+category:"friendship",
+text:"🔄 Change plans",
+responses:[
+`"Could we move our plans to another day?"`,
+`"Would you be open to doing something different instead?"`,
+`"Something changed on my side. Can we adjust our plans?"`
+]},
+
+{
+category:"friendship",
+text:"🫶 Check on a friend",
+responses:[
+`"You've seemed a little quiet lately. How are you doing?"`,
+`"I just wanted to see how things have been going for you."`,
+`"Hey, how have you been feeling recently?"`
+]},
+
+{
+category:"friendship",
+text:"🌟 Encourage a friend",
+responses:[
+`"You've already made a lot of progress. Keep going!"`,
+`"Don't give up yet — you're capable of getting through this."`,
+`"I believe you can handle this one step at a time."`
+]},
+
+{
+category:"friendship",
+text:"🎉 Congratulate a friend",
+responses:[
+`"You did it! Congratulations on the achievement!"`,
+`"That's fantastic news! You worked hard for this."`,
+`"Well done! You should be really proud of yourself."`
+]},
+
+{
+category:"friendship",
+text:"💐 Celebrate someone's achievement",
+responses:[
+`"Your effort really paid off. I'm happy to celebrate this with you!"`,
+`"You've come a long way. This is definitely worth celebrating."`,
+`"You earned this moment. Congratulations!"`
+]},
+
+
+/* =========================================================
+   KINDNESS
+========================================================= */
+
+{
+category:"kindness",
+text:"❤️ Thank someone for helping",
+responses:[
+`"Thanks for stepping in when I needed help."`,
+`"I really appreciate you taking the time to help me."`,
+`"Your help made things much easier for me. Thank you!"`
+]},
+
+{
+category:"kindness",
+text:"💖 Show appreciation",
+responses:[
+`"I just wanted you to know that I value what you do."`,
+`"Your effort hasn't gone unnoticed. I really appreciate it."`,
+`"It means a lot to me that you took the time to do that."`
+]},
+
+{
+category:"kindness",
+text:"🏆 Give someone credit",
+responses:[
+`"I want to make sure ____ gets recognition for this."`,
+`"A lot of this success came from ____'s contribution."`,
+`"We should acknowledge the work ____ put into this."`
+]},
+
+{
+category:"kindness",
+text:"🎁 Thank someone for a gift",
+responses:[
+`"This is such a thoughtful gift. Thank you!"`,
+`"I really like it! That's very kind of you."`,
+`"You didn't have to get me anything, but I really appreciate it."`
+]},
+
+{
+category:"kindness",
+text:"🌟 Compliment someone's work",
+responses:[
+`"The way you organized this makes it really easy to understand."`,
+`"I can tell you put a lot of thought into this. Great work!"`,
+`"There's a lot of detail here, and it really shows."`
+]},
+
+{
+category:"kindness",
+text:"🎨 Compliment someone's creativity",
+responses:[
+`"That's such an original way of approaching the idea."`,
+`"I really like how you made this your own."`,
+`"Your idea has a really interesting perspective."`
+]},
+
+{
+category:"kindness",
+text:"💪 Recognize someone's effort",
+responses:[
+`"I noticed how much time you put into making this work."`,
+`"Even though it wasn't easy, you kept working at it."`,
+`"Your persistence really stands out."`
+]},
+
+{
+category:"kindness",
+text:"🫶 Offer emotional support",
+responses:[
+`"You don't have to explain everything. I'm happy to listen."`,
+`"If talking would help, I'm here to hear you out."`,
+`"You can take your time. I'm willing to listen whenever you're ready."`
+]},
+
+{
+category:"kindness",
+text:"🤝 Offer practical help",
+responses:[
+`"Would it help if I took care of part of the task?"`,
+`"I have some time available. Is there something specific I can do?"`,
+`"If there's a practical way I can make this easier, let me know."`
+]},
+
+{
+category:"kindness",
+text:"😊 Welcome someone who is new",
+responses:[
+`"Welcome! Let me know if you need help finding anything."`,
+`"It's nice to have you here. Feel free to ask me anything."`,
+`"Glad you're here! I'll show you around if you'd like."`
+]},
+
+
+/* =========================================================
+   DIFFICULT CONVERSATIONS
+========================================================= */
+
+{
+category:"difficult",
+text:"🙏 Apologize for something you did",
+responses:[
+`"I realize I handled that badly, and I'm sorry."`,
+`"I shouldn't have done that. I understand why it upset you."`,
+`"I take responsibility for what happened, and I apologize."`
+]},
+
+{
+category:"difficult",
+text:"😕 Explain a misunderstanding",
+responses:[
+`"I think we understood the situation differently. What I meant was..."`,
+`"I may not have explained myself clearly earlier."`,
+`"I think there was some confusion about what I was trying to say."`
+]},
+
+{
+category:"difficult",
+text:"🗣️ Bring up a difficult topic",
+responses:[
+`"There's something important I'd like to discuss with you."`,
+`"I'd like to talk about something that's been bothering me."`,
+`"Can we have a conversation about what happened earlier?"`
+]},
+
+{
+category:"difficult",
+text:"⚖️ Resolve a disagreement",
+responses:[
+`"I'd rather solve this than keep arguing about it."`,
+`"Can we compare our viewpoints and see where we agree?"`,
+`"Let's focus on finding a solution instead of deciding who's right."`
+]},
+
+{
+category:"difficult",
+text:"🤔 Explain why you disagree",
+responses:[
+`"I see where you're coming from, but my reasoning is different."`,
+`"I respect your opinion, although I reached a different conclusion."`,
+`"That's one way of looking at it. My concern is..."` 
+]},
+
+{
+category:"difficult",
+text:"🧩 Find a compromise",
+responses:[
+`"What if we each give a little and meet somewhere in the middle?"`,
+`"Could we combine parts of both ideas?"`,
+`"Maybe there's an option that addresses both of our concerns."`
+]},
+
+{
+category:"difficult",
+text:"🛑 Stop an argument from getting worse",
+responses:[
+`"We're both getting frustrated. Let's pause before this gets worse."`,
+`"I don't think we're hearing each other right now. Can we take a break?"`,
+`"Let's step away from this conversation and come back when we're calmer."`
+]},
+
+{
+category:"difficult",
+text:"💭 Explain your point of view",
+responses:[
+`"The way I experienced the situation was..."`,
+`"From where I was standing, it seemed like..."`,
+`"What I was thinking at the time was..."` 
+]},
+
+{
+category:"difficult",
+text:"🧠 Admit that you were wrong",
+responses:[
+`"After thinking about it, I realize your point was correct."`,
+`"I misunderstood the situation earlier. You were right about that."`,
+`"I've reconsidered what happened, and I can see my mistake."`
+]},
+
+{
+category:"difficult",
+text:"🔄 Repair a damaged relationship",
+responses:[
+`"I don't want one difficult moment to define our relationship."`,
+`"I'd like to understand what went wrong and see whether we can move forward."`,
+`"I know things haven't felt right between us. Can we talk honestly about it?"`
+]},
+
+
+/* =========================================================
+   BOUNDARIES
+========================================================= */
+
+{
+category:"boundary",
+text:"🚫 Say no to an invitation",
+responses:[
+`"Thank you for thinking of me, but I don't want to go."`,
+`"I appreciate the invitation, but I'll sit this one out."`,
+`"That doesn't work for me, so I'll have to decline."`
+]},
+
+{
+category:"boundary",
+text:"🙅 Decline a request",
+responses:[
+`"I'm not able to take that on right now."`,
+`"I don't have the capacity to do that at the moment."`,
+`"I won't be able to help with that, but I hope you find someone who can."`
+]},
+
+{
+category:"boundary",
+text:"🛑 Ask someone to stop",
+responses:[
+`"Please stop. I don't want this to continue."`,
+`"I'd like you to stop doing that now."`,
+`"That isn't okay with me. Please leave it alone."`
+]},
+
+{
+category:"boundary",
+text:"🔒 Ask someone to respect your privacy",
+responses:[
+`"I'd rather keep that information to myself."`,
+`"Please don't discuss that with other people."`,
+`"That's personal to me, so I'd like you to respect my privacy."`
+]},
+
+{
+category:"boundary",
+text:"📵 Ask someone not to contact you for a while",
+responses:[
+`"I need some quiet time right now, so please give me some space."`,
+`"I'd prefer not to talk for a little while. I'll get back to you later."`,
+`"I need a break from messages at the moment. Thanks for understanding."`
+]},
+
+{
+category:"boundary",
+text:"🗣️ Ask someone not to interrupt",
+responses:[
+`"Please let me finish this thought before you respond."`,
+`"I'd like to finish explaining, then I'd love to hear your side."`,
+`"Could you hold that thought until I'm done speaking?"`
+]},
+
+{
+category:"boundary",
+text:"🙏 Ask someone not to share something",
+responses:[
+`"I'd really appreciate you keeping this information private."`,
+`"Please don't pass this along to anyone else."`,
+`"This is something I only wanted you to know."`
+]},
+
+{
+category:"boundary",
+text:"🧍 Ask for personal space",
+responses:[
+`"Could you give me a little room, please?"`,
+`"I need some physical space right now."`,
+`"I'd feel more comfortable if you stepped back a little."`
+]},
+
+{
+category:"boundary",
+text:"⏸️ Tell someone you need a break",
+responses:[
+`"I need some time to collect my thoughts before continuing."`,
+`"Can we pause this conversation and return to it later?"`,
+`"I need a short break so I can think clearly."`
+]},
+
+{
+category:"boundary",
+text:"⚠️ Tell someone something makes you uncomfortable",
+responses:[
+`"That situation isn't comfortable for me."`,
+`"I'd prefer if we didn't continue with that."`,
+`"I'm not okay with what is happening. Could we change course?"`
+]},
+
+
+/* =========================================================
+   WORK & PROJECTS
+========================================================= */
+
+{
+category:"work",
+text:"🤝 Ask someone to work together",
+responses:[
+`"Would you be interested in teaming up on this?"`,
+`"I think our skills could work well together. Want to collaborate?"`,
+`"Would you like to tackle this project as a team?"`
+]},
+
+{
+category:"work",
+text:"📋 Divide responsibilities",
+responses:[
+`"Let's list everything that needs doing and decide who handles each part."`,
+`"Which tasks would each of us prefer to take responsibility for?"`,
+`"How about assigning different sections so the workload is balanced?"`
+]},
+
+{
+category:"work",
+text:"💡 Suggest an idea",
+responses:[
+`"I have an idea that might make this easier."`,
+`"Could we consider trying a different approach?"`,
+`"Another possibility might be to..."` 
+]},
+
+{
+category:"work",
+text:"🔎 Ask for someone's opinion",
+responses:[
+`"I'd like to hear your perspective before we decide."`,
+`"What stands out to you about this idea?"`,
+`"Do you see any strengths or weaknesses in this approach?"`
+]},
+
+{
+category:"work",
+text:"👂 Ask for feedback",
+responses:[
+`"Could you tell me which parts are working well?"`,
+`"I'd appreciate your thoughts on how I could improve this."`,
+`"What would you change if you were working on this?"`
+]},
+
+{
+category:"work",
+text:"💬 Give constructive feedback",
+responses:[
+`"The main idea is strong. I think the explanation could be clearer here."`,
+`"This part works well, although adding an example might help."`,
+`"I like the direction you're taking. One adjustment I'd consider is..."` 
+]},
+
+{
+category:"work",
+text:"❓ Ask for clarification",
+responses:[
+`"Could you clarify what you mean by that requirement?"`,
+`"Which part would you like me to focus on?"`,
+`"Could you explain what the expected result should look like?"`
+]},
+
+{
+category:"work",
+text:"📝 Explain your part of a project",
+responses:[
+`"I was responsible for researching this section."`,
+`"My role was to develop the part about ____."`,
+`"I focused mainly on this section and handled ____."`
+]},
+
+{
+category:"work",
+text:"⏰ Ask for more time",
+responses:[
+`"Could I have an extension so I can finish this properly?"`,
+`"I need a little additional time to complete the remaining work."`,
+`"Would it be possible to move the deadline slightly?"`
+]},
+
+{
+category:"work",
+text:"🔔 Remind someone about a task",
+responses:[
+`"Just checking in about the part you were going to complete."`,
+`"I wanted to remind you that we still need ____."`,
+`"When you get a chance, could you take care of ____?"`
+]},
+
+
+/* =========================================================
+   FORMAL
+========================================================= */
+
+{
+category:"formal",
+text:"👩‍🏫 Ask a teacher a question",
+responses:[
+`"Excuse me, could you explain this part again?"`,
+`"May I ask you about something I didn't understand?"`,
+`"Could I check something with you when you have a moment?"`
+]},
+
+{
+category:"formal",
+text:"🧑‍💼 Ask someone for professional help",
+responses:[
+`"Could you advise me on the best way to handle this?"`,
+`"I'd appreciate your guidance regarding this matter."`,
+`"Would you be able to point me in the right direction?"`
+]},
+
+{
+category:"formal",
+text:"📩 Write a polite email",
+responses:[
+`"Dear ____, I am writing regarding ____."`,
+`"Hello ____, I hope you're doing well. I wanted to ask about ____."`,
+`"Good day. I would like to enquire about ____."`
+]},
+
+{
+category:"formal",
+text:"📞 Make a polite phone request",
+responses:[
+`"Hello, I'm calling to ask about ____."`,
+`"Good morning. Could you help me with some information about ____?"`,
+`"Hi, I'd like to make an enquiry regarding ____."`
+]},
+
+{
+category:"formal",
+text:"📅 Request an appointment",
+responses:[
+`"I'd like to arrange a meeting at a suitable time."`,
+`"Could you let me know what appointment times are available?"`,
+`"May I schedule a consultation for ____?"`
+]},
+
+{
+category:"formal",
+text:"🔄 Reschedule an appointment",
+responses:[
+`"Something has changed, so I'd like to request a different appointment time."`,
+`"Would there be another date available for my appointment?"`,
+`"I'm unable to attend at the original time. Could we rearrange it?"`
+]},
+
+{
+category:"formal",
+text:"❌ Cancel an appointment",
+responses:[
+`"Unfortunately, I need to cancel my scheduled appointment."`,
+`"I won't be able to attend, so I'd like to cancel the appointment."`,
+`"Please could you help me cancel my appointment?"`
+]},
+
+{
+category:"formal",
+text:"📢 Make a formal complaint",
+responses:[
+`"I'd like to formally raise a concern regarding this matter."`,
+`"I would like to report an issue and ask what can be done about it."`,
+`"I'm dissatisfied with what happened and would appreciate a resolution."`
+]},
+
+{
+category:"formal",
+text:"💬 Respond to criticism",
+responses:[
+`"I understand the concern and I'll take it into consideration."`,
+`"Thank you for pointing that out. I'll work on improving it."`,
+`"That's useful feedback. I'll think about how I can address it."`
+]},
+
+{
+category:"formal",
+text:"🙏 Ask for an explanation",
+responses:[
+`"Could you please clarify the reason for this decision?"`,
+`"Would you mind explaining how this conclusion was reached?"`,
+`"Could I ask for some more information about why this occurred?"`
+]},
+
+
+/* =========================================================
+   LEARNING
+========================================================= */
+
+{
+category:"learning",
+text:"❓ Say that you don't understand",
+responses:[
+`"I'm having trouble understanding this part."`,
+`"I don't think I've understood the idea correctly."`,
+`"Could we go over this once more? I'm still unsure."`
+]},
+
+{
+category:"learning",
+text:"🔁 Ask someone to repeat something",
+responses:[
+`"Sorry, I missed that. Could you say it again?"`,
+`"Would you mind repeating the last part?"`,
+`"I didn't catch what you said. Could you repeat it?"`
+]},
+
+{
+category:"learning",
+text:"🐢 Ask someone to explain more slowly",
+responses:[
+`"Could you slow down a little so I can follow?"`,
+`"Would you mind going through that at a slower pace?"`,
+`"I'm having trouble keeping up. Could we take it step by step?"`
+]},
+
+{
+category:"learning",
+text:"📖 Ask for an example",
+responses:[
+`"Could you show me a real example?"`,
+`"What would this look like in practice?"`,
+`"Can you give me an example that demonstrates the idea?"`
+]},
+
+{
+category:"learning",
+text:"🧩 Ask for another explanation",
+responses:[
+`"Could you approach the explanation from another angle?"`,
+`"Is there a simpler way to think about this?"`,
+`"Could you explain it using a different example?"`
+]},
+
+{
+category:"learning",
+text:"🔍 Ask where to find information",
+responses:[
+`"Do you know where I could look this up?"`,
+`"Is there a reliable source where I can learn more?"`,
+`"Could you point me toward some useful information about this?"`
+]},
+
+{
+category:"learning",
+text:"💡 Ask for advice",
+responses:[
+`"What approach would you recommend?"`,
+`"If you were in this situation, what would you consider first?"`,
+`"What do you think would be a sensible next step?"`
+]},
+
+{
+category:"learning",
+text:"📝 Ask someone to check your work",
+responses:[
+`"Could you review this and tell me if anything seems unclear?"`,
+`"Would you mind checking whether I've made any mistakes?"`,
+`"Could you look through this and let me know what needs fixing?"`
+]},
+
+{
+category:"learning",
+text:"🎯 Ask how to improve",
+responses:[
+`"What area should I focus on improving first?"`,
+`"Which part of my work could become stronger?"`,
+`"What would make this noticeably better?"`
+]},
+
+{
+category:"learning",
+text:"🧠 Explain that you're confused",
+responses:[
+`"I'm getting mixed up between these two ideas."`,
+`"I understand the first part, but I'm lost here."`,
+`"Something about this isn't clicking for me yet."`
+]},
+
+
+/* =========================================================
+   SOCIAL
+========================================================= */
+
+{
+category:"social",
+text:"🪑 Ask if you can sit somewhere",
+responses:[
+`"Excuse me, is anyone sitting here?"`,
+`"Would it be alright if I sat here?"`,
+`"Hi, is this seat available?"`
+]},
+
+{
+category:"social",
+text:"🚪 Ask if you can enter",
+responses:[
+`"Excuse me, may I come inside?"`,
+`"Is it alright if I enter?"`,
+`"Would it be okay for me to come in now?"`
+]},
+
+{
+category:"social",
+text:"🧭 Ask for directions",
+responses:[
+`"Excuse me, could you tell me which way I should go?"`,
+`"Could you point me toward ____?"`,
+`"I'm trying to find ____. Do you know how I can get there?"`
+]},
+
+{
+category:"social",
+text:"⭐ Ask for a recommendation",
+responses:[
+`"What would you personally recommend?"`,
+`"Is there something here that you think is particularly good?"`,
+`"If you were choosing, what would you pick?"`
+]},
+
+{
+category:"social",
+text:"🛍️ Ask a shop worker for help",
+responses:[
+`"Excuse me, could you help me locate this item?"`,
+`"Do you know where I can find something like this?"`,
+`"Could you show me where this section is?"`
+]},
+
+{
+category:"social",
+text:"🍽️ Ask about something on a menu",
+responses:[
+`"Could you tell me what comes with this dish?"`,
+`"What are the main ingredients in this item?"`,
+`"Could you explain what this menu item includes?"`
+]},
+
+{
+category:"social",
+text:"🎟️ Ask about an event",
+responses:[
+`"What time does the event begin?"`,
+`"Could you tell me what activities are planned?"`,
+`"Is there anything I should know before attending?"`
+]},
+
+{
+category:"social",
+text:"📍 Ask where something is",
+responses:[
+`"Excuse me, where would I find ____?"`,
+`"Could you show me where ____ is located?"`,
+`"Do you happen to know the location of ____?"`
+]},
+
+{
+category:"social",
+text:"🚌 Ask about transportation",
+responses:[
+`"Which bus would take me to ____?"`,
+`"Where should I go to catch the train for ____?"`,
+`"Could you tell me the best way to travel there?"`
+]},
+
+{
+category:"social",
+text:"👥 Ask someone to make space",
+responses:[
+`"Excuse me, could I squeeze through?"`,
+`"Would you mind moving over slightly?"`,
+`"Could you leave a little room for me, please?"`
+]},
+
+
+/* =========================================================
+   PERSONAL EXPRESSION
+========================================================= */
+
+{
+category:"personal",
+text:"💭 Share your opinion",
+responses:[
+`"Personally, I think this approach makes the most sense."`,
+`"My view is that we should consider another option."`,
+`"I see it this way: ____."`
+]},
+
+{
+category:"personal",
+text:"😊 Say how you're feeling",
+responses:[
+`"I've been feeling pretty good about things lately."`,
+`"My mood has been a little up and down recently."`,
+`"I wanted to be honest about how I've been feeling."`
+]},
+
+{
+category:"personal",
+text:"😰 Explain that you're nervous",
+responses:[
+`"I'm feeling a little uneasy about what comes next."`,
+`"I have some nerves about doing this for the first time."`,
+`"I'm excited to try, but I'm also feeling quite nervous."`
+]},
+
+{
+category:"personal",
+text:"😕 Explain that you're confused",
+responses:[
+`"I'm struggling to understand what happened."`,
+`"I'm not sure how all these pieces fit together."`,
+`"I need some clarification because I'm feeling a bit lost."`
+]},
+
+{
+category:"personal",
+text:"😔 Tell someone you're disappointed",
+responses:[
+`"I was really looking forward to this, so I'm disappointed."`,
+`"This wasn't the outcome I had hoped for."`,
+`"I understand what happened, but I'm still feeling let down."`
+]},
+
+{
+category:"personal",
+text:"😡 Explain that you're frustrated",
+responses:[
+`"I'm getting frustrated because I keep running into the same problem."`,
+`"I've tried several things and I'm having trouble making progress."`,
+`"This situation is starting to wear me down."`
+]},
+
+{
+category:"personal",
+text:"🥳 Share exciting news",
+responses:[
+`"Guess what? Something really exciting happened today!"`,
+`"I have some great news that I can't wait to tell you."`,
+`"You'll never guess what happened — I got some amazing news!"`
+]},
+
+{
+category:"personal",
+text:"🙏 Ask someone for reassurance",
+responses:[
+`"Could you tell me if you think I'm handling this okay?"`,
+`"I could use a little reassurance that I'm on the right track."`,
+`"Would you mind reminding me that it's okay to take this one step at a time?"`
+]},
+
+{
+category:"personal",
+text:"💬 Tell someone what you need",
+responses:[
+`"What would help me most right now is some time to think."`,
+`"I think I need someone to listen rather than solve the problem."`,
+`"The thing I need from you at the moment is a little patience."`
+]},
+
+{
+category:"personal",
+text:"❤️ Tell someone that you appreciate them",
+responses:[
+`"I'm grateful for the way you've supported me."`,
+`"I don't say it often enough, but I really value you."`,
+`"Having someone like you around makes a positive difference."`
+]}
+
+];
+
+
+/* =========================================================
+   DISPLAY SITUATIONS
+========================================================= */
+
+function displaySituations(list) {
+
+    const container =
+        document.getElementById("situation-list");
+
+    container.innerHTML = "";
+
+
+    if (list.length === 0) {
+
+        container.innerHTML = `
+            <div class="tip">
+                🔍 No situations found.
+                Try a different word or category.
+            </div>
+        `;
+
+        return;
+    }
+
+
+    list.forEach(function(item) {
+
+        const button =
+            document.createElement("button");
+
+        button.className =
+            "situation-item";
+
+        button.textContent =
+            item.text;
+
+        button.onclick = function() {
+
+            showAnswers(item);
+
+        };
+
+        container.appendChild(button);
+
+    });
+
+}
+
+
+
+
+/* =========================================================
+   FILTER SITUATIONS
+========================================================= */
+
+function filterSituations() {
+
+    const search =
+        document
+        .getElementById("situation-search")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const category =
+        document
+        .getElementById("category-filter")
+        .value;
+
+    const filtered =
+        situations.filter(function(item) {
+
+            const matchesSearch =
+                item.text
+                .toLowerCase()
+                .includes(search);
+
+            const matchesCategory =
+                category === "all" ||
+                item.category === category;
+
+            return matchesSearch &&
+                   matchesCategory;
+
+        });
+
+    displaySituations(filtered);
+
+}
+
+
+/* =========================================================
+   SHOW 3 UNIQUE ANSWERS
+========================================================= */
+
+function showAnswers(item) {
+
+    const box =
+        document.getElementById("answer-box");
+
+    box.innerHTML = `
+
+        <h3>
+            ${item.text}
+        </h3>
+
+        <div class="answer-card">
+
+            <span class="answer-label">
+                🌿 NATURAL
+            </span>
+
+            ${item.responses[0]}
+
+        </div>
+
+        <div class="answer-card">
+
+            <span class="answer-label">
+                😊 FRIENDLY
+            </span>
+
+            ${item.responses[1]}
+
+        </div>
+
+        <div class="answer-card">
+
+            <span class="answer-label">
+                💬 SIMPLE
+            </span>
+
+            ${item.responses[2]}
+
+        </div>
+
+    `;
+
+    box.classList.add("show");
+
+    box.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+    });
+
+}
+
+/* =========================================================
+   PLAYFUL COMMUNICATION TIP
+========================================================= */
+function showCommunicationTip() {
+
+    document.getElementById("communication-approach").textContent =
+        communication.approach;
+
+    document.getElementById("communication-tip").textContent =
+        communication.tip;
+
+    document.getElementById("communication-example").textContent =
+        communication.example;
+
+    document
+        .getElementById("communication-tip-box")
+        .classList.add("show");
+}
+
+
+function closeCommunicationTip() {
+
+    document
+        .getElementById("communication-tip-box")
+        .classList.remove("show");
+
+}
+
+
+/* =========================================================
+   INITIAL DISPLAY
+========================================================= */
+
+displaySituations(situations);
+
+
+
+
+</script>
+
+</body>
+
+</html>
