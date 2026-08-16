@@ -1,0 +1,2097 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family:
+        "Comic Sans MS",
+        "Trebuchet MS",
+        sans-serif;
+
+    color: #485448;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 10%,
+            #e5f6d8,
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 90%,
+            #dff3ff,
+            transparent 30%
+        ),
+
+        #fbfff8;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-button {
+
+    display: inline-block;
+
+    margin: 20px;
+
+    padding: 11px 18px;
+
+    border-radius: 15px;
+
+    background: #465247;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 4px 0 #303930;
+
+    transition: 0.2s;
+
+}
+
+
+.back-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    background: #5d6c5d;
+
+}
+
+
+/* =========================================================
+   FLOATING DECORATIONS
+========================================================= */
+
+.floating-decoration {
+
+    position: fixed;
+
+    z-index: -1;
+
+    opacity: 0.16;
+
+    font-size: 45px;
+
+    animation:
+        floatDecoration 5s ease-in-out infinite;
+
+}
+
+
+.decoration-one {
+
+    top: 13%;
+
+    left: 4%;
+
+}
+
+
+.decoration-two {
+
+    top: 30%;
+
+    right: 5%;
+
+    animation-delay: 1s;
+
+}
+
+
+.decoration-three {
+
+    bottom: 25%;
+
+    left: 6%;
+
+    animation-delay: 2s;
+
+}
+
+
+.decoration-four {
+
+    bottom: 10%;
+
+    right: 7%;
+
+    animation-delay: 3s;
+
+}
+
+
+@keyframes floatDecoration {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-18px)
+            rotate(8deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.habit-container {
+
+    width: min(
+        1000px,
+        calc(100% - 40px)
+    );
+
+    margin: 0 auto 50px;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.habit-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    padding: 25px 10px 35px;
+
+}
+
+
+.header-icon {
+
+    width: 105px;
+
+    height: 105px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #e8f6dc;
+
+    border: 4px solid #9bc47d;
+
+    border-radius: 32px;
+
+    font-size: 62px;
+
+    box-shadow:
+        0 8px 0 #7fa966;
+
+    animation:
+        plantFloat 3s ease-in-out infinite;
+
+}
+
+
+@keyframes plantFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(-2deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px)
+            rotate(2deg);
+
+    }
+
+}
+
+
+.small-title {
+
+    color: #75935f;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+}
+
+
+.habit-header h1 {
+
+    margin: 5px 0;
+
+    color: #536a4b;
+
+    font-size: 48px;
+
+}
+
+
+.habit-header p {
+
+    margin: 0;
+
+    color: #778174;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   HUD
+========================================================= */
+
+.habit-hud {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+
+}
+
+
+.hud-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 15px;
+
+    background: white;
+
+    border: 3px solid #d8e2d2;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 5px 0 #c5d0c0;
+
+}
+
+
+.hud-icon {
+
+    font-size: 30px;
+
+}
+
+
+.hud-item small {
+
+    display: block;
+
+    color: #879082;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+}
+
+
+.hud-item strong {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: #53674e;
+
+    font-size: 20px;
+
+}
+
+
+/* =========================================================
+   XP BAR
+========================================================= */
+
+.xp-section {
+
+    margin-top: 18px;
+
+    padding: 15px 18px;
+
+    background: #eff8ea;
+
+    border: 2px solid #c9dfbd;
+
+    border-radius: 18px;
+
+}
+
+
+.xp-label {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 7px;
+
+    color: #637958;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+}
+
+
+.xp-bar {
+
+    height: 14px;
+
+    background: #dce8d5;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+.xp-fill {
+
+    width: 0%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #83b56d,
+            #b8d86c
+        );
+
+    border-radius: 20px;
+
+    transition:
+        width 0.5s ease;
+
+}
+
+
+/* =========================================================
+   SCREENS
+========================================================= */
+
+.screen {
+
+    margin-top: 35px;
+
+}
+
+
+.hidden {
+
+    display: none !important;
+
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro-screen {
+
+    padding: 40px 30px;
+
+    text-align: center;
+
+    background: white;
+
+    border: 4px solid #d8e2d2;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 8px 0 #c3cec0;
+
+}
+
+
+.intro-plant {
+
+    font-size: 85px;
+
+    animation:
+        plantBounce 1.7s ease-in-out infinite;
+
+}
+
+
+@keyframes plantBounce {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-12px);
+
+    }
+
+}
+
+
+.intro-screen h2 {
+
+    margin: 10px 0;
+
+    color: #536b4d;
+
+    font-size: 32px;
+
+}
+
+
+.intro-screen > p {
+
+    max-width: 680px;
+
+    margin: auto;
+
+    color: #778174;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   CATEGORIES
+========================================================= */
+
+.habit-categories {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+
+    max-width: 850px;
+
+    margin: 30px auto;
+
+}
+
+
+.category-card {
+
+    padding: 18px;
+
+    background: #f3faef;
+
+    border: 2px solid #d2e2ca;
+
+    border-radius: 20px;
+
+}
+
+
+.category-card span {
+
+    display: block;
+
+    font-size: 35px;
+
+}
+
+
+.category-card strong {
+
+    display: block;
+
+    margin-top: 7px;
+
+    color: #5d7355;
+
+}
+
+
+.category-card small {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: #84907f;
+
+    line-height: 1.4;
+
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.main-button {
+
+    border: none;
+
+    padding: 14px 24px;
+
+    border-radius: 16px;
+
+    background: #72995f;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 0 #587848;
+
+    transition: 0.2s;
+
+}
+
+
+.main-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    background: #82a96c;
+
+}
+
+
+.main-button:active {
+
+    transform:
+        translateY(2px);
+
+    box-shadow:
+        0 2px 0 #587848;
+
+}
+
+
+/* =========================================================
+   QUESTION
+========================================================= */
+
+.question-card {
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: white;
+
+    border: 4px solid #d8e2d2;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 8px 0 #c3cec0;
+
+}
+
+
+.question-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+}
+
+
+.question-top span {
+
+    padding: 7px 12px;
+
+    background: #edf5e9;
+
+    border-radius: 12px;
+
+    color: #708063;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+}
+
+
+.habit-question-icon {
+
+    margin-top: 15px;
+
+    font-size: 65px;
+
+}
+
+
+.question-card h2 {
+
+    max-width: 750px;
+
+    margin: 10px auto;
+
+    color: #53684d;
+
+    line-height: 1.4;
+
+}
+
+
+.question-card p {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    color: #7b8577;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   CHOICES
+========================================================= */
+
+.habit-choices {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 22px;
+
+}
+
+
+.habit-choice {
+
+    min-height: 165px;
+
+    padding: 20px;
+
+    background: white;
+
+    border: 3px solid #d5dfd0;
+
+    border-radius: 22px;
+
+    font-family: inherit;
+
+    color: #596456;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 0 #c5cec1;
+
+    transition: 0.2s;
+
+}
+
+
+.habit-choice:hover {
+
+    transform:
+        translateY(-6px);
+
+    background: #f8fcf5;
+
+    border-color: #9cbb8b;
+
+}
+
+
+.habit-choice:disabled {
+
+    cursor: default;
+
+}
+
+
+.habit-choice span {
+
+    display: block;
+
+    font-size: 45px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.habit-choice strong {
+
+    display: block;
+
+    font-size: 15px;
+
+    line-height: 1.4;
+
+}
+
+
+.habit-choice small {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: #8b9587;
+
+}
+
+
+/* =========================================================
+   FEEDBACK
+========================================================= */
+
+.habit-feedback {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 20px;
+
+    padding: 20px;
+
+    background: #edf8e9;
+
+    border: 3px solid #bfd8b5;
+
+    border-radius: 20px;
+
+}
+
+
+.feedback-icon {
+
+    font-size: 42px;
+
+}
+
+
+.habit-feedback h3 {
+
+    margin: 0 0 5px;
+
+    color: #59714f;
+
+}
+
+
+.habit-feedback p {
+
+    margin: 0;
+
+    color: #697666;
+
+    line-height: 1.5;
+
+}
+
+
+.next-button {
+
+    display: block;
+
+    margin: 20px auto 0;
+
+}
+
+
+/* =========================================================
+   HABIT GARDEN
+========================================================= */
+
+.garden-section {
+
+    margin-top: 40px;
+
+    padding: 25px;
+
+    background: #eff8eb;
+
+    border: 3px solid #ccdfc3;
+
+    border-radius: 28px;
+
+}
+
+
+.garden-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.garden-header > div:first-child span {
+
+    color: #79906c;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+}
+
+
+.garden-header h2 {
+
+    margin: 5px 0 0;
+
+    color: #53694d;
+
+}
+
+
+.garden-level {
+
+    width: 80px;
+
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: white;
+
+    border: 3px solid #c4d9b9;
+
+    border-radius: 50%;
+
+    font-size: 15px;
+
+}
+
+
+.habit-garden {
+
+    position: relative;
+
+    height: 190px;
+
+    margin-top: 20px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background:
+
+        linear-gradient(
+            #cce9f0 0 48%,
+            #a9d495 48%
+        );
+
+}
+
+
+.habit-garden::before {
+
+    content: "☁️        ☁️";
+
+    position: absolute;
+
+    top: 15px;
+
+    left: 15%;
+
+    width: 70%;
+
+    text-align: center;
+
+    font-size: 30px;
+
+    opacity: 0.7;
+
+}
+
+
+.garden-ground {
+
+    position: absolute;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 55%;
+
+    background:
+        linear-gradient(
+            #9dcc80,
+            #7fb467
+        );
+
+}
+
+
+.plant,
+.flower {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    font-size: 38px;
+
+    transition: 0.4s;
+
+}
+
+
+.plant-one {
+
+    left: 10%;
+
+}
+
+
+.plant-two {
+
+    left: 30%;
+
+}
+
+
+.plant-three {
+
+    right: 30%;
+
+}
+
+
+.plant-four {
+
+    right: 10%;
+
+}
+
+
+.flower-one {
+
+    left: 21%;
+
+    bottom: 13px;
+
+}
+
+
+.flower-two {
+
+    right: 20%;
+
+    bottom: 13px;
+
+}
+
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+.result-screen {
+
+    padding: 40px 30px;
+
+    text-align: center;
+
+    background: white;
+
+    border: 4px solid #d8e2d2;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 8px 0 #c3cec0;
+
+}
+
+
+.result-icon {
+
+    font-size: 80px;
+
+}
+
+
+.result-label {
+
+    display: inline-block;
+
+    margin-top: 10px;
+
+    color: #72905f;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+}
+
+
+.result-screen h2 {
+
+    margin: 8px 0;
+
+    color: #53684c;
+
+    font-size: 35px;
+
+}
+
+
+.result-screen > p {
+
+    max-width: 600px;
+
+    margin: auto;
+
+    color: #7a8576;
+
+    line-height: 1.5;
+
+}
+
+
+.final-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    max-width: 600px;
+
+    margin: 30px auto;
+
+    gap: 12px;
+
+}
+
+
+.final-stats > div {
+
+    padding: 18px;
+
+    background: #f2f9ed;
+
+    border: 2px solid #cfe0c7;
+
+    border-radius: 18px;
+
+}
+
+
+.final-stats span {
+
+    display: block;
+
+    font-size: 30px;
+
+}
+
+
+.final-stats strong {
+
+    display: block;
+
+    margin: 5px;
+
+    color: #5d704f;
+
+    font-size: 22px;
+
+}
+
+
+.final-stats small {
+
+    color: #87927f;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+}
+
+
+.final-message {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    max-width: 600px;
+
+    margin: 0 auto 25px;
+
+    padding: 15px;
+
+    background: #eef8ff;
+
+    border: 2px solid #c8dce8;
+
+    border-radius: 18px;
+
+}
+
+
+.final-message span {
+
+    font-size: 30px;
+
+}
+
+
+.final-message p {
+
+    margin: 0;
+
+    color: #657987;
+
+}
+
+
+/* =========================================================
+   TIPS
+========================================================= */
+
+.tips-section {
+
+    margin-top: 45px;
+
+    padding: 28px;
+
+    background: #f4faef;
+
+    border: 3px solid #d5e3ce;
+
+    border-radius: 28px;
+
+}
+
+
+.tips-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.tips-title > span {
+
+    font-size: 40px;
+
+}
+
+
+.tips-title h2 {
+
+    margin: 0;
+
+    color: #5c7054;
+
+}
+
+
+.tips-title p {
+
+    margin: 4px 0;
+
+    color: #849080;
+
+}
+
+
+.tips-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+}
+
+
+.tip-card {
+
+    padding: 18px;
+
+    background: white;
+
+    border: 2px solid #dbe6d6;
+
+    border-radius: 18px;
+
+}
+
+
+.tip-card > span {
+
+    font-size: 32px;
+
+}
+
+
+.tip-card h3 {
+
+    margin: 7px 0;
+
+    color: #5c7054;
+
+}
+
+
+.tip-card p {
+
+    margin: 0;
+
+    color: #7d8879;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    color: #899185;
+
+}
+
+/* =========================================================
+   PLANTING GAME
+========================================================= */
+
+.planting-game {
+
+    margin-top: 35px;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #314d3a,
+            #52785b
+        );
+
+    border:
+        4px solid #1c2920;
+
+    border-radius: 30px;
+
+    color: white;
+
+    box-shadow:
+        0 10px 0 #172119;
+
+}
+
+
+/* =========================================================
+   PLANTING GAME
+========================================================= */
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.planting-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.planting-icon {
+
+    width: 75px;
+
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #dff3c4;
+
+    border: 3px solid #1c2920;
+
+    border-radius: 20px;
+
+    font-size: 42px;
+
+    transform: rotate(-4deg);
+
+    flex-shrink: 0;
+
+}
+
+
+.planting-header h2 {
+
+    margin: 0;
+
+    font-size: 30px;
+
+}
+
+
+.planting-header p {
+
+    margin-top: 6px;
+
+    color: #e1eedf;
+
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.garden-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.garden-stat {
+
+    background: #203528;
+
+    border: 2px solid #759879;
+
+    border-radius: 15px;
+
+    padding: 14px;
+
+    text-align: center;
+
+}
+
+
+.garden-stat span {
+
+    display: block;
+
+    font-size: 14px;
+
+}
+
+
+.garden-stat strong {
+
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 24px;
+
+    color: #e8f59d;
+
+}
+
+
+/* =========================================================
+   GARDEN AREA
+========================================================= */
+
+.garden-area {
+
+    background: #bde4f0;
+
+    border: 4px solid #1c2920;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   SKY
+========================================================= */
+
+.garden-sky {
+
+    height: 90px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-around;
+
+    font-size: 38px;
+
+    background:
+        linear-gradient(
+            #9edcf0,
+            #d7f2f7
+        );
+
+}
+
+
+.garden-sky span {
+
+    font-size: 28px;
+
+}
+
+
+/* =========================================================
+   GARDEN
+========================================================= */
+
+.garden {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 260px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #8a5a3b 0 18%,
+            #68432d 18% 100%
+        );
+
+    /*
+       IMPORTANT FOR POINTER DRAGGING
+    */
+
+    touch-action: none;
+
+}
+
+
+/* =========================================================
+   EMPTY GARDEN
+========================================================= */
+
+.empty-garden {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: #ead8bd;
+
+    pointer-events: none;
+
+}
+
+
+.empty-icon {
+
+    font-size: 55px;
+
+}
+
+
+.empty-garden p {
+
+    margin: 8px 0 0;
+
+    font-size: 16px;
+
+}
+
+
+/* =========================================================
+   PLANTS
+========================================================= */
+
+.plant {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 90px;
+
+    text-align: center;
+
+    cursor: grab;
+
+    user-select: none;
+
+    -webkit-user-select: none;
+
+    /*
+       VERY IMPORTANT:
+       Prevent browser touch scrolling
+       while dragging.
+    */
+
+    touch-action: none;
+
+    /*
+       Prevent normal browser image dragging.
+    */
+
+    -webkit-user-drag: none;
+
+    /*
+       Centre plant on its x/y position.
+    */
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 5;
+
+    /*
+       Makes movement feel immediate.
+    */
+
+    will-change: left, top, transform;
+
+}
+
+
+/* =========================================================
+   PLANT BEING DRAGGED
+========================================================= */
+
+.plant.being-dragged {
+
+    cursor: grabbing;
+
+    z-index: 100;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.15)
+        rotate(4deg);
+
+    filter:
+        drop-shadow(
+            0 8px 5px
+            rgba(0, 0, 0, 0.3)
+        );
+
+}
+
+
+/* =========================================================
+   PLANT EMOJI
+========================================================= */
+
+.plant-emoji {
+
+    display: block;
+
+    font-size: 55px;
+
+    line-height: 1;
+
+    pointer-events: none;
+
+    transition:
+        transform 0.2s ease;
+
+}
+
+
+/* =========================================================
+   PLANT HOVER
+========================================================= */
+
+.plant:hover .plant-emoji {
+
+    transform:
+        translateY(-6px)
+        rotate(-4deg);
+
+}
+
+
+/*
+   Don't apply hover movement
+   while dragging.
+*/
+
+.plant.being-dragged:hover .plant-emoji {
+
+    transform: none;
+
+}
+
+
+/* =========================================================
+   PLANT NAME
+========================================================= */
+
+.plant-name {
+
+    display: inline-block;
+
+    margin-top: 5px;
+
+    background: #f5e5b9;
+
+    color: #3b2b20;
+
+    padding:
+        4px 8px;
+
+    border-radius: 10px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   GARDEN DRAG OVER
+========================================================= */
+
+.garden.drag-over {
+
+    outline:
+        4px dashed #e8f59d;
+
+    outline-offset:
+        -10px;
+
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.garden-actions {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+}
+
+
+.garden-button {
+
+    padding: 14px;
+
+    border:
+        3px solid #1c2920;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-weight: bold;
+
+    font-size: 15px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.garden-button:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 5px 0 #1c2920;
+
+}
+
+
+.garden-button:active {
+
+    transform:
+        translateY(1px);
+
+    box-shadow:
+        none;
+
+}
+
+
+/* =========================================================
+   PLANT BUTTON
+========================================================= */
+
+.plant-button {
+
+    background: #d7ef9b;
+
+}
+
+
+/* =========================================================
+   WATER BUTTON
+========================================================= */
+
+.water-button {
+
+    background: #a9e4f7;
+
+}
+
+
+/* =========================================================
+   SUN BUTTON
+========================================================= */
+
+.sun-button {
+
+    background: #ffe68b;
+
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.garden-message {
+
+    margin-top: 18px;
+
+    padding: 15px;
+
+    background: #203528;
+
+    border:
+        2px solid #759879;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    min-height: 22px;
+
+    transition:
+        transform 0.18s ease;
+
+}
+
+
+/* =========================================================
+   LEVEL
+========================================================= */
+
+.garden-level {
+
+    margin-top: 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding:
+        14px 18px;
+
+    background: #18291f;
+
+    border-radius: 15px;
+
+}
+
+
+.garden-level strong {
+
+    color: #e8f59d;
+
+    font-size: 20px;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .garden-stats {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .garden-actions {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .planting-header {
+
+        align-items: flex-start;
+
+    }
+
+
+    .planting-header h2 {
+
+        font-size: 24px;
+
+    }
+
+
+    .planting-icon {
+
+        width: 60px;
+
+        height: 60px;
+
+        font-size: 34px;
+
+    }
+
+
+    .garden {
+
+        min-height: 300px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .garden-stats {
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 8px;
+
+    }
+
+
+    .garden-stat {
+
+        padding: 10px;
+
+    }
+
+
+    .garden-stat strong {
+
+        font-size: 20px;
+
+    }
+
+
+    .plant {
+
+        width: 75px;
+
+    }
+
+
+    .plant-emoji {
+
+        font-size: 45px;
+
+    }
+
+
+    .plant-name {
+
+        font-size: 10px;
+
+        padding:
+            3px 6px;
+
+    }
+
+}
