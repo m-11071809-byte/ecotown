@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Everyday Life 🌈 | LifeHub</title>
+
+    <link
+        rel="stylesheet"
+        href="everyday.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     FLOATING DECORATIONS
+===================================================== -->
+
+<div class="float-item item1">☀️</div>
+<div class="float-item item2">⭐</div>
+<div class="float-item item3">🍀</div>
+<div class="float-item item4">💡</div>
+
+
+
+<!-- =====================================================
+     BACK
+===================================================== -->
+
+<a
+    href="index1.html"
+    class="back-button">
+
+    ← Back to LifeHub
+
+</a>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+    <div class="hero-icon">
+        🌈
+    </div>
+
+    <div>
+
+        <span class="mini-title">
+            LIFEHUB • EVERYDAY LIFE
+        </span>
+
+        <h1>
+            Everyday Life
+        </h1>
+
+        <p>
+            Turn everyday problems into small,
+            practical solutions! ✨
+        </p>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     PLAYER CARD
+===================================================== -->
+
+<section class="life-status">
+
+    <div class="avatar">
+
+        🧑‍🎓
+
+    </div>
+
+
+    <div class="player-name">
+
+        <strong>
+            Life Explorer
+        </strong>
+
+        <span id="life-rank">
+            🌱 Just Starting
+        </span>
+
+    </div>
+
+
+    <div class="life-xp">
+
+        <div class="xp-label">
+
+            <span>
+                🌟 Life XP
+            </span>
+
+            <span id="life-score">
+                0 XP
+            </span>
+
+        </div>
+
+
+        <div class="xp-bar">
+
+            <div
+                id="life-xp-fill"
+                class="xp-fill">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LIFE MAP
+===================================================== -->
+
+<section class="life-map">
+
+    <div class="map-title">
+
+        <span>
+            🗺️
+        </span>
+
+        <div>
+
+            <h2>
+                Your Everyday Life Map
+            </h2>
+
+            <p>
+                Pick an area you want to improve.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="map-grid">
+
+
+        <button
+            class="life-place"
+            onclick="startLifeQuest('morning')">
+
+            <span>
+                ☀️
+            </span>
+
+            <strong>
+                Morning
+            </strong>
+
+            <small>
+                Start your day
+            </small>
+
+        </button>
+
+
+        <button
+            class="life-place"
+            onclick="startLifeQuest('study')">
+
+            <span>
+                📚
+            </span>
+
+            <strong>
+                Study
+            </strong>
+
+            <small>
+                Get things done
+            </small>
+
+        </button>
+
+
+        <button
+            class="life-place"
+            onclick="startLifeQuest('time')">
+
+            <span>
+                ⏰
+            </span>
+
+            <strong>
+                Time
+            </strong>
+
+            <small>
+                Manage your day
+            </small>
+
+        </button>
+
+
+        <button
+            class="life-place"
+            onclick="startLifeQuest('social')">
+
+            <span>
+                💬
+            </span>
+
+            <strong>
+                Social
+            </strong>
+
+            <small>
+                Handle situations
+            </small>
+
+        </button>
+
+
+        <button
+            class="life-place"
+            onclick="startLifeQuest('money')">
+
+            <span>
+                💰
+            </span>
+
+            <strong>
+                Money
+            </strong>
+
+            <small>
+                Make thoughtful choices
+            </small>
+
+        </button>
+
+
+        <button
+            class="life-place"
+            onclick="startLifeQuest('home')">
+
+            <span>
+                🏠
+            </span>
+
+            <strong>
+                Home
+            </strong>
+
+            <small>
+                Daily responsibilities
+            </small>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LIFE DECISION
+===================================================== -->
+
+<section
+    id="life-question"
+    class="life-question">
+
+    <span class="question-label">
+        🎮 LIFE DECISION
+    </span>
+
+
+    <h2 id="life-question-title">
+        Choose an area above!
+    </h2>
+
+
+    <p id="life-question-text">
+
+        A real-life situation will appear here.
+
+    </p>
+
+
+    <div
+        id="life-answers"
+        class="life-answers">
+    </div>
+
+
+    <div
+        id="life-feedback"
+        class="life-feedback">
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DAILY MINI MISSION
+===================================================== -->
+
+<section class="daily-mission">
+
+    <div class="mission-icon">
+        🎯
+    </div>
+
+
+    <div class="mission-text">
+
+        <span>
+            TODAY'S MINI MISSION
+        </span>
+
+        <h2 id="daily-mission">
+            Make your bed or tidy one small area.
+        </h2>
+
+        <p>
+            Small actions can make everyday life easier.
+        </p>
+
+    </div>
+
+
+    <button
+        class="mission-button"
+        onclick="newDailyMission()">
+
+        🎲 New Mission
+
+    </button>
+
+</section>
+
+<!-- =====================================================
+     MY LITTLE HOUSE GAME
+===================================================== -->
+
+<section class="house-game">
+
+    <div class="house-header">
+
+        <div>
+
+            <span class="house-label">
+                🏠 EVERYDAY LIFE MINI GAME
+            </span>
+
+            <h2>
+                My Little House
+            </h2>
+
+            <p>
+                Complete little chores and turn your messy
+                house into a happy home! ✨
+            </p>
+
+        </div>
+
+
+        <div class="house-stats">
+
+            <div>
+
+                <span>
+                    ⭐
+                </span>
+
+                <strong id="house-xp">
+                    0
+                </strong>
+
+                <small>
+                    XP
+                </small>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    🪙
+                </span>
+
+                <strong id="house-coins">
+                    0
+                </strong>
+
+                <small>
+                    Coins
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- HOUSE -->
+
+    <div class="house">
+
+        <div class="roof">
+
+            <div class="roof-window">
+                🪟
+            </div>
+
+        </div>
+
+
+        <div class="house-body">
+
+
+            <!-- CLOUDS -->
+
+            <div class="house-cloud cloud-one">
+                ☁️
+            </div>
+
+            <div class="house-cloud cloud-two">
+                ☁️
+            </div>
+
+
+            <!-- WINDOW -->
+
+            <div class="house-window">
+
+                🌤️
+
+            </div>
+
+
+            <!-- DOOR -->
+
+            <div class="house-door">
+
+                <span>
+                    🚪
+                </span>
+
+            </div>
+
+
+            <!-- GARDEN -->
+
+            <div class="garden">
+
+                <span>
+                    🌱
+                </span>
+
+                <span>
+                    🌷
+                </span>
+
+                <span>
+                    🌱
+                </span>
+
+                <span>
+                    🌻
+                </span>
+
+            </div>
+
+
+            <!-- PET -->
+
+            <div
+                id="house-pet"
+                class="house-pet">
+
+                🐱
+
+            </div>
+
+
+            <!-- MESS -->
+
+            <div
+                id="mess1"
+                class="house-mess">
+
+                🧦
+
+            </div>
+
+
+            <div
+                id="mess2"
+                class="house-mess">
+
+                🗑️
+
+            </div>
+
+
+            <div
+                id="mess3"
+                class="house-mess">
+
+                🍽️
+
+            </div>
+
+
+            <div
+                id="mess4"
+                class="house-mess">
+
+                👕 
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- TASKS -->
+
+    <div class="house-task-panel">
+
+        <div class="task-title">
+
+            <span>
+                🧹
+            </span>
+
+            <div>
+
+                <h3>
+                    House Tasks
+                </h3>
+
+                <p>
+                    Complete chores to make your house happier!
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="house-tasks">
+
+
+            <button
+                class="house-task"
+                onclick="completeHouseTask('bed')">
+
+                <span>
+                    🛏️
+                </span>
+
+                <strong>
+                    Make the Bed
+                </strong>
+
+                <small>
+                    +10 XP
+                </small>
+
+            </button>
+
+
+            <button
+                class="house-task"
+                onclick="completeHouseTask('trash')">
+
+                <span>
+                    🗑️
+                </span>
+
+                <strong>
+                    Clean Up
+                </strong>
+
+                <small>
+                    +10 XP
+                </small>
+
+            </button>
+
+
+            <button
+                class="house-task"
+                onclick="completeHouseTask('clothes')">
+
+                <span>
+                    👕
+                </span>
+
+                <strong>
+                    Put Clothes Away
+                </strong>
+
+                <small>
+                    +10 XP
+                </small>
+
+            </button>
+
+
+            <button
+                class="house-task"
+                onclick="completeHouseTask('dishes')">
+
+                <span>
+                    🍽️
+                </span>
+
+                <strong>
+                    Wash Dishes
+                </strong>
+
+                <small>
+                    +10 XP
+                </small>
+
+            </button>
+
+
+            <button
+                class="house-task"
+                onclick="completeHouseTask('plant')">
+
+                <span>
+                    🌱
+                </span>
+
+                <strong>
+                    Water Plants
+                </strong>
+
+                <small>
+                    +10 XP
+                </small>
+
+            </button>
+
+
+            <button
+                class="house-task"
+                onclick="completeHouseTask('pet')">
+
+                <span>
+                    🐱
+                </span>
+
+                <strong>
+                    Check on Pet
+                </strong>
+
+                <small>
+                    +10 XP
+                </small>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- HOUSE PROGRESS -->
+
+    <div class="house-progress">
+
+        <div class="progress-info">
+
+            <span>
+                🏠 House Happiness
+            </span>
+
+            <span id="house-happiness-text">
+                0%
+            </span>
+
+        </div>
+
+
+        <div class="house-progress-bar">
+
+            <div
+                id="house-progress-fill"
+                class="house-progress-fill">
+            </div>
+
+        </div>
+
+
+        <p id="house-message">
+
+            Your house is waiting for you! 🏠
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LIFE HACK
+===================================================== -->
+
+<section class="life-hack">
+
+    <div class="hack-icon">
+        💡
+    </div>
+
+
+    <div>
+
+        <span>
+            LIFE HACK
+        </span>
+
+        <h2>
+            Don't solve everything at once.
+        </h2>
+
+        <p>
+            Break a big problem into one small action
+            you can do right now.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    🌈 Everyday problems.
+    Small solutions.
+    Better days. ✨
+
+</footer>
+
+
+
+<script src="everyday.js"></script>
+
+</body>
+
+</html>
