@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Problem → Solution | LifeHub</title>
+
+    <link
+        rel="stylesheet"
+        href="problem-solution.css">
+
+
+
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BACK BUTTON
+===================================================== -->
+
+<a
+    href="index1.html"
+    class="back-button">
+
+    ← Back to LifeHub
+
+</a>
+
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <div class="header-icon">
+        💡
+    </div>
+
+    <h1>
+        Problem → Solution
+    </h1>
+
+    <p>
+        Turn everyday problems into possible solutions! 🌱
+    </p>
+
+</header>
+
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="intro-box">
+
+    <div class="intro-icon">
+        🧩
+    </div>
+
+    <div>
+
+        <h2>
+            Every Problem Has a Starting Point!
+        </h2>
+
+        <p>
+            Instead of only thinking about what's wrong,
+            try asking:
+        </p>
+
+        <strong>
+            "What could I do to make this a little better?"
+        </strong>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROBLEM CARDS
+===================================================== -->
+
+<main class="problem-container">
+
+
+    <!-- =================================================
+         PROBLEM 1
+    ================================================== -->
+
+    <div class="problem-card">
+
+        <div class="problem-icon">
+            📚
+        </div>
+
+        <div class="problem-content">
+
+            <span class="problem-label">
+                EVERYDAY PROBLEM
+            </span>
+
+            <h2>
+                "I keep forgetting my homework."
+            </h2>
+
+            <p class="problem-description">
+                Sometimes there are too many things to remember,
+                especially when several subjects give work at once.
+            </p>
+
+
+            <button
+                class="solution-button"
+                onclick="showSolution(1)">
+
+                💡 Find a Possible Solution
+
+            </button>
+
+
+            <div
+                id="solution-1"
+                class="solution-box">
+
+                <h3>
+                    🌱 Possible Solution
+                </h3>
+
+                <p>
+                    Keep one simple homework checklist.
+                    Write down the subject, task, and due date
+                    as soon as the teacher gives it.
+                </p>
+
+                <div class="mini-tip">
+                    ⭐ Tip: Check your list before going to bed.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PROBLEM 2
+    ================================================== -->
+
+    <div class="problem-card">
+
+        <div class="problem-icon">
+            📱
+        </div>
+
+        <div class="problem-content">
+
+            <span class="problem-label">
+                EVERYDAY PROBLEM
+            </span>
+
+            <h2>
+                "I spend too much time on my phone."
+            </h2>
+
+            <p class="problem-description">
+                Phones are useful and entertaining, but they can
+                easily distract us from other things.
+            </p>
+
+
+            <button
+                class="solution-button"
+                onclick="showSolution(2)">
+
+                💡 Find a Possible Solution
+
+            </button>
+
+
+            <div
+                id="solution-2"
+                class="solution-box">
+
+                <h3>
+                    🌱 Possible Solution
+                </h3>
+
+                <p>
+                    Choose specific times for checking social media
+                    or playing games. During homework or important
+                    tasks, place your phone somewhere less distracting.
+                </p>
+
+                <div class="mini-tip">
+                    ⭐ Tip: Replace some screen time with a hobby,
+                    walk, drawing, reading, or chatting with someone.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PROBLEM 3
+    ================================================== -->
+
+    <div class="problem-card">
+
+        <div class="problem-icon">
+            😣
+        </div>
+
+        <div class="problem-content">
+
+            <span class="problem-label">
+                EVERYDAY PROBLEM
+            </span>
+
+            <h2>
+                "I don't know how to deal with stress."
+            </h2>
+
+            <p class="problem-description">
+                Schoolwork, responsibilities, and everyday situations
+                can sometimes feel overwhelming.
+            </p>
+
+
+            <button
+                class="solution-button"
+                onclick="showSolution(3)">
+
+                💡 Find a Possible Solution
+
+            </button>
+
+
+            <div
+                id="solution-3"
+                class="solution-box">
+
+                <h3>
+                    🌱 Possible Solution
+                </h3>
+
+                <p>
+                    Break a large task into smaller steps.
+                    Focus on one thing at a time instead of
+                    trying to solve everything immediately.
+                </p>
+
+                <div class="mini-tip">
+                    ⭐ Tip: Take a short break, breathe slowly,
+                    and talk to someone you trust if you need support.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PROBLEM 4
+    ================================================== -->
+
+    <div class="problem-card">
+
+        <div class="problem-icon">
+            🗣️
+        </div>
+
+        <div class="problem-content">
+
+            <span class="problem-label">
+                EVERYDAY PROBLEM
+            </span>
+
+            <h2>
+                "I don't know how to start a difficult conversation."
+            </h2>
+
+            <p class="problem-description">
+                It can be difficult to explain how you feel,
+                especially when you are worried about the other
+                person's reaction.
+            </p>
+
+
+            <button
+                class="solution-button"
+                onclick="showSolution(4)">
+
+                💡 Find a Possible Solution
+
+            </button>
+
+
+            <div
+                id="solution-4"
+                class="solution-box">
+
+                <h3>
+                    🌱 Possible Solution
+                </h3>
+
+                <p>
+                    Start calmly by explaining what happened,
+                    how you feel, and what you hope to change.
+                </p>
+
+                <div class="mini-tip">
+                    ⭐ Tip: Try using "I feel..." instead of
+                    immediately blaming the other person.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PROBLEM 5
+    ================================================== -->
+
+    <div class="problem-card">
+
+        <div class="problem-icon">
+            🗑️
+        </div>
+
+        <div class="problem-content">
+
+            <span class="problem-label">
+                COMMUNITY PROBLEM
+            </span>
+
+            <h2>
+                "There is too much rubbish around my area."
+            </h2>
+
+            <p class="problem-description">
+                Litter can make shared spaces unpleasant and
+                can also harm the environment.
+            </p>
+
+
+            <button
+                class="solution-button"
+                onclick="showSolution(5)">
+
+                💡 Find a Possible Solution
+
+            </button>
+
+
+            <div
+                id="solution-5"
+                class="solution-box">
+
+                <h3>
+                    🌱 Possible Solution
+                </h3>
+
+                <p>
+                    Start small. Encourage people around you to
+                    use rubbish bins, reduce unnecessary waste,
+                    and keep shared spaces clean.
+                </p>
+
+                <div class="mini-tip">
+                    ⭐ Tip: A small community clean-up can make
+                    a visible difference.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PROBLEM 6
+    ================================================== -->
+
+    <div class="problem-card">
+
+        <div class="problem-icon">
+            ⏰
+        </div>
+
+        <div class="problem-content">
+
+            <span class="problem-label">
+                EVERYDAY PROBLEM
+            </span>
+
+            <h2>
+                "I always run out of time."
+            </h2>
+
+            <p class="problem-description">
+                When everything feels urgent, it can be hard
+                to know what to do first.
+            </p>
+
+
+            <button
+                class="solution-button"
+                onclick="showSolution(6)">
+
+                💡 Find a Possible Solution
+
+            </button>
+
+
+            <div
+                id="solution-6"
+                class="solution-box">
+
+                <h3>
+                    🌱 Possible Solution
+                </h3>
+
+                <p>
+                    Write down everything you need to do and
+                    choose the most important task first.
+                    Give yourself realistic amounts of time.
+                </p>
+
+                <div class="mini-tip">
+                    ⭐ Tip: Don't try to finish everything
+                    at the same time.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     CREATE YOUR OWN
+===================================================== -->
+
+<section class="create-section">
+
+    <div class="create-icon">
+        🔍
+    </div>
+
+    <h2>
+        Got Your Own Problem?
+    </h2>
+
+    <p>
+        Turn your own everyday challenge into a possible solution!
+    </p>
+
+
+    <div class="problem-input-area">
+
+        <input
+            type="text"
+            id="problemInput"
+            placeholder="Type an everyday problem...">
+
+        <button
+            onclick="createSolution()">
+
+            💡 Solve It
+
+        </button>
+
+    </div>
+
+
+    <div
+        id="customSolution"
+        class="custom-solution">
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    🌱 Small ideas can create big changes.
+
+</footer>
+
+
+
+<script src="problem-solution.js"></script>
+
+
+
+</body>
+
+</html>
