@@ -1,1115 +1,133 @@
 /* =========================================================
-   SAFETY QUEST — MAIN
+   SHOW SOLUTION
 ========================================================= */
 
-* {
-    box-sizing: border-box;
-}
+function showSolution(number) {
 
-html {
-    min-height: 100%;
-}
-
-body {
-    margin: 0;
-    min-height: 100vh;
-
-    font-family:
-        "Trebuchet MS",
-        "Segoe UI",
-        Arial,
-        sans-serif;
-
-    background:
-        radial-gradient(circle at 10% 10%, #dff7ff 0, transparent 28%),
-        radial-gradient(circle at 90% 20%, #fff3c4 0, transparent 25%),
-        linear-gradient(135deg, #eef8ff, #f8f4ff 50%, #fff9e9);
-
-    color: #25324a;
-
-    padding: 25px;
-
-    overflow-x: hidden;
-}
-
-
-/* =========================================================
-   FLOATING DECORATIONS
-========================================================= */
-
-.bubble {
-    position: fixed;
-
-    width: 60px;
-    height: 60px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: rgba(255, 255, 255, 0.8);
-
-    box-shadow:
-        0 8px 20px rgba(50, 70, 100, 0.12);
-
-    font-size: 28px;
-
-    pointer-events: none;
-
-    z-index: 0;
-
-    animation: floatBubble 4s ease-in-out infinite;
-}
-
-.bubble1 {
-    top: 100px;
-    left: 20px;
-}
-
-.bubble2 {
-    top: 240px;
-    right: 25px;
-    animation-delay: 1s;
-}
-
-.bubble3 {
-    bottom: 150px;
-    left: 30px;
-    animation-delay: 2s;
-}
-
-.bubble4 {
-    bottom: 50px;
-    right: 35px;
-    animation-delay: 0.5s;
-}
-
-@keyframes floatBubble {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-12px);
-    }
-}
-
-
-/* =========================================================
-   BACK BUTTON
-========================================================= */
-
-.back-button {
-    position: relative;
-    z-index: 2;
-
-    display: inline-block;
-
-    margin-bottom: 20px;
-
-    padding: 11px 18px;
-
-    border-radius: 14px;
-
-    background: white;
-
-    color: #3949ab;
-
-    text-decoration: none;
-
-    font-weight: bold;
-
-    box-shadow:
-        0 6px 18px rgba(50, 70, 100, 0.12);
-
-    transition:
-        transform 0.2s,
-        box-shadow 0.2s;
-}
-
-.back-button:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 10px 24px rgba(50, 70, 100, 0.18);
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero {
-    position: relative;
-    z-index: 1;
-
-    max-width: 1100px;
-
-    margin: 0 auto 25px;
-
-    padding: 35px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 25px;
-
-    border-radius: 30px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #5967e8,
-            #7667df
+    const solution =
+        document.getElementById(
+            "solution-" + number
         );
 
-    color: white;
 
-    box-shadow:
-        0 15px 35px rgba(75, 70, 160, 0.25);
-}
+    if (!solution) {
+        return;
+    }
 
-.shield {
-    width: 100px;
-    height: 100px;
 
-    flex-shrink: 0;
+    if (solution.style.display === "block") {
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        solution.style.display = "none";
 
-    border-radius: 28px;
+        return;
 
-    background: rgba(255, 255, 255, 0.18);
+    }
 
-    font-size: 58px;
 
-    box-shadow:
-        inset 0 0 20px rgba(255, 255, 255, 0.12);
-}
+    solution.style.display = "block";
 
-.mini-title {
-    margin: 0 0 6px;
-
-    font-size: 13px;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    opacity: 0.8;
-}
-
-.hero h1 {
-    margin: 0;
-
-    font-size: clamp(36px, 6vw, 58px);
-
-    line-height: 1;
-}
-
-.hero-text {
-    margin: 14px 0 0;
-
-    max-width: 700px;
-
-    font-size: 17px;
-
-    line-height: 1.6;
 }
 
 
 /* =========================================================
-   PLAYER BAR
+   CREATE YOUR OWN SOLUTION
 ========================================================= */
 
-.player-bar {
-    position: relative;
-    z-index: 1;
+function createSolution() {
 
-    max-width: 1100px;
-
-    margin: 0 auto 25px;
-
-    padding: 20px 25px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 25px;
-
-    background: white;
-
-    border-radius: 22px;
-
-    box-shadow:
-        0 10px 28px rgba(50, 70, 100, 0.1);
-}
-
-.player-info {
-    display: flex;
-    align-items: center;
-
-    gap: 14px;
-
-    font-size: 35px;
-}
-
-.player-info strong {
-    display: block;
-
-    font-size: 17px;
-
-    color: #293653;
-}
-
-.player-info small {
-    display: block;
-
-    margin-top: 3px;
-
-    font-size: 13px;
-
-    color: #68758d;
-}
-
-.xp-container {
-    width: 55%;
-
-    min-width: 250px;
-}
-
-.xp-text {
-    display: flex;
-    justify-content: space-between;
-
-    margin-bottom: 8px;
-
-    font-size: 14px;
-
-    font-weight: bold;
-}
-
-.xp-bar {
-    width: 100%;
-
-    height: 15px;
-
-    overflow: hidden;
-
-    border-radius: 20px;
-
-    background: #e7eaf5;
-}
-
-.xp-fill {
-    width: 0%;
-
-    height: 100%;
-
-    border-radius: inherit;
-
-    background:
-        linear-gradient(
-            90deg,
-            #ffd166,
-            #ff9f43,
-            #ff6b6b
+    const input =
+        document.getElementById(
+            "problemInput"
         );
 
-    transition: width 0.4s ease;
-}
-
-
-/* =========================================================
-   RADAR
-========================================================= */
-
-.radar-section {
-    position: relative;
-    z-index: 1;
-
-    max-width: 1100px;
-
-    margin: 0 auto 25px;
-
-    padding: 30px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 35px;
-
-    border-radius: 28px;
-
-    background: #202846;
-
-    color: white;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 12px 30px rgba(30, 35, 65, 0.2);
-}
-
-.radar {
-    position: relative;
-
-    width: 180px;
-    height: 180px;
-
-    flex-shrink: 0;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(80, 255, 170, 0.16),
-            rgba(30, 40, 70, 0.5)
+    const result =
+        document.getElementById(
+            "customSolution"
         );
 
-    border: 2px solid rgba(110, 255, 180, 0.5);
 
-    overflow: hidden;
-}
+    const problem =
+        input.value.trim();
 
-.radar-ring {
-    position: absolute;
 
-    left: 50%;
-    top: 50%;
+    if (problem === "") {
 
-    transform: translate(-50%, -50%);
+        result.style.display = "block";
 
-    border: 1px solid rgba(100, 255, 180, 0.35);
+        result.innerHTML =
+            "🧐 Tell me about the problem first!";
 
-    border-radius: 50%;
-}
+        return;
 
-.ring1 {
-    width: 55px;
-    height: 55px;
-}
-
-.ring2 {
-    width: 110px;
-    height: 110px;
-}
-
-.ring3 {
-    width: 165px;
-    height: 165px;
-}
-
-.radar-line {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 80px;
-    height: 2px;
-
-    transform-origin: left center;
-
-    background: #66ffb0;
-
-    animation: radarSpin 3s linear infinite;
-
-    box-shadow:
-        0 0 10px #66ffb0;
-}
-
-@keyframes radarSpin {
-    from {
-        transform: rotate(0deg);
     }
 
-    to {
-        transform: rotate(360deg);
-    }
-}
 
-.radar-dot {
-    position: absolute;
+    const solutions = [
 
-    width: 34px;
-    height: 34px;
+        "Break the problem into smaller steps and solve one part at a time. 🧩",
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        "Talk to someone you trust and ask for another perspective. 🗣️",
 
-    border-radius: 50%;
+        "Think of three possible solutions, then choose the simplest one to try first. 💡",
 
-    background: rgba(255, 255, 255, 0.1);
+        "Ask yourself: \"What is one small thing I can change today?\" 🌱",
 
-    font-size: 18px;
-}
+        "Write down what is causing the problem and what you can control. ✍️"
 
-.dot1 {
-    top: 28px;
-    right: 25px;
-}
+    ];
 
-.dot2 {
-    bottom: 28px;
-    left: 25px;
-}
 
-.dot3 {
-    bottom: 38px;
-    right: 35px;
-}
+    const randomSolution =
+        solutions[
+            Math.floor(
+                Math.random() *
+                solutions.length
+            )
+        ];
 
-.radar-center {
-    position: absolute;
 
-    left: 50%;
-    top: 50%;
+    result.style.display = "block";
 
-    transform: translate(-50%, -50%);
 
-    width: 45px;
-    height: 45px;
+    result.innerHTML = `
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        <h3>
+            🔎 Problem:
+        </h3>
 
-    border-radius: 50%;
+        <p>
+            ${escapeHTML(problem)}
+        </p>
 
-    background: #3949ab;
+        <h3>
+            💡 Possible Solution:
+        </h3>
 
-    font-size: 23px;
+        <p>
+            ${randomSolution}
+        </p>
 
-    box-shadow:
-        0 0 20px rgba(100, 130, 255, 0.7);
-}
+        <p>
+            ⭐ Remember: A possible solution doesn't
+            have to be perfect. Start small!
+        </p>
 
-.radar-label {
-    display: inline-block;
-
-    margin-bottom: 5px;
-
-    font-size: 12px;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    color: #72ffc0;
-}
-
-.radar-text h2 {
-    margin: 0 0 8px;
-
-    font-size: 28px;
-}
-
-.radar-text p {
-    margin: 0;
-
-    max-width: 550px;
-
-    line-height: 1.6;
-
-    color: #d9def0;
-}
-
-
-/* =========================================================
-   QUEST SECTION
-========================================================= */
-
-.quest-section {
-    position: relative;
-    z-index: 1;
-
-    max-width: 1100px;
-
-    margin: 0 auto 25px;
-
-    padding: 30px;
-
-    border-radius: 28px;
-
-    background: white;
-
-    box-shadow:
-        0 10px 30px rgba(50, 70, 100, 0.1);
-}
-
-.section-heading {
-    display: flex;
-    align-items: center;
-
-    gap: 15px;
-
-    margin-bottom: 25px;
-}
-
-.section-heading > span {
-    width: 55px;
-    height: 55px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 17px;
-
-    background: #eef0ff;
-
-    font-size: 30px;
-}
-
-.section-heading h2 {
-    margin: 0;
-
-    color: #293653;
-}
-
-.section-heading p {
-    margin: 5px 0 0;
-
-    color: #758097;
-}
-
-
-/* =========================================================
-   QUEST GRID
-========================================================= */
-
-.quest-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 15px;
-}
-
-.quest-card {
-    position: relative;
-
-    min-height: 180px;
-
-    padding: 22px;
-
-    border: 3px solid transparent;
-
-    border-radius: 22px;
-
-    background:
-        linear-gradient(#f8f9ff, #f8f9ff)
-        padding-box,
-        linear-gradient(
-            135deg,
-            #cbd0ff,
-            #e8eaff
-        )
-        border-box;
-
-    cursor: pointer;
-
-    text-align: left;
-
-    transition:
-        transform 0.2s,
-        box-shadow 0.2s,
-        border-color 0.2s;
-}
-
-.quest-card:hover {
-    transform: translateY(-6px);
-
-    box-shadow:
-        0 12px 25px rgba(70, 80, 150, 0.15);
-
-    border-color: #7b83e8;
-}
-
-.quest-card:active {
-    transform: translateY(-2px) scale(0.98);
-}
-
-.quest-icon {
-    display: block;
-
-    margin-bottom: 15px;
-
-    font-size: 45px;
-}
-
-.quest-card strong {
-    display: block;
-
-    margin-bottom: 7px;
-
-    font-size: 18px;
-
-    color: #303b5a;
-}
-
-.quest-card small {
-    color: #78839b;
-
-    line-height: 1.4;
-}
-
-
-/* =========================================================
-   QUESTION AREA
-========================================================= */
-
-.question-area {
-    position: relative;
-    z-index: 1;
-
-    max-width: 1100px;
-
-    margin: 0 auto 25px;
-
-    padding: 35px;
-
-    border-radius: 28px;
-
-    background: white;
-
-    box-shadow:
-        0 10px 30px rgba(50, 70, 100, 0.1);
-
-    text-align: center;
-}
-
-.question-badge {
-    display: inline-block;
-
-    padding: 8px 14px;
-
-    border-radius: 20px;
-
-    background: #eef0ff;
-
-    color: #5962c9;
-
-    font-size: 12px;
-
-    font-weight: bold;
-
-    letter-spacing: 1px;
-}
-
-.question-area h2 {
-    margin: 18px auto 10px;
-
-    max-width: 800px;
-
-    font-size: 28px;
-
-    color: #293653;
-}
-
-.question-area > p {
-    max-width: 750px;
-
-    margin: 0 auto 25px;
-
-    color: #68758d;
-
-    line-height: 1.6;
-}
-
-.answers {
-    max-width: 800px;
-
-    margin: 0 auto;
-
-    display: grid;
-
-    gap: 12px;
-}
-
-.answers button {
-    width: 100%;
-
-    padding: 17px 20px;
-
-    border: 2px solid #e0e4f2;
-
-    border-radius: 17px;
-
-    background: #f9faff;
-
-    color: #303b5a;
-
-    font-size: 15px;
-
-    font-family: inherit;
-
-    font-weight: bold;
-
-    text-align: left;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.2s,
-        background 0.2s,
-        border-color 0.2s;
-}
-
-.answers button:hover {
-    transform: translateX(5px);
-
-    background: #eef0ff;
-
-    border-color: #7b83e8;
-}
-
-.answers button.correct {
-    background: #e7fff1;
-
-    border-color: #42c980;
-
-    color: #197a4c;
-}
-
-.answers button.wrong {
-    background: #fff0f0;
-
-    border-color: #ef7777;
-
-    color: #a63e3e;
-}
-
-.feedback {
-    max-width: 800px;
-
-    margin: 20px auto 0;
-
-    padding: 18px;
-
-    border-radius: 18px;
-
-    background: #f5f7ff;
-
-    color: #4a5570;
-
-    line-height: 1.6;
-}
-
-
-/* =========================================================
-   DAILY MISSION
-========================================================= */
-
-.mission {
-    position: relative;
-    z-index: 1;
-
-    max-width: 1100px;
-
-    margin: 0 auto 25px;
-
-    padding: 25px 30px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 20px;
-
-    border-radius: 25px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff3bd,
-            #ffe8a3
-        );
-
-    box-shadow:
-        0 10px 25px rgba(170, 130, 50, 0.12);
-}
-
-.mission-icon {
-    width: 65px;
-    height: 65px;
-
-    flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 20px;
-
-    background: rgba(255, 255, 255, 0.6);
-
-    font-size: 35px;
-}
-
-.mission-content {
-    flex: 1;
-}
-
-.mission-content > span {
-    font-size: 12px;
-
-    font-weight: bold;
-
-    letter-spacing: 1.5px;
-
-    color: #85691c;
-}
-
-.mission-content h2 {
-    margin: 5px 0;
-
-    color: #4d3d15;
-}
-
-.mission-content p {
-    margin: 0;
-
-    color: #6e5b27;
-}
-
-.mission-button {
-    padding: 13px 18px;
-
-    border: none;
-
-    border-radius: 14px;
-
-    background: #fff;
-
-    color: #68551a;
-
-    font-family: inherit;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 5px 12px rgba(100, 80, 20, 0.1);
-
-    transition: transform 0.2s;
-}
-
-.mission-button:hover {
-    transform: translateY(-3px);
-}
-
-
-/* =========================================================
-   GOLDEN RULE
-========================================================= */
-
-.golden-rule {
-    position: relative;
-    z-index: 1;
-
-    max-width: 1100px;
-
-    margin: 0 auto 30px;
-
-    padding: 30px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 20px;
-
-    border-radius: 25px;
-
-    background: #252d48;
-
-    color: white;
-
-    box-shadow:
-        0 12px 30px rgba(30, 35, 60, 0.2);
-}
-
-.rule-icon {
-    width: 70px;
-    height: 70px;
-
-    flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 20px;
-
-    background: rgba(255, 255, 255, 0.1);
-
-    font-size: 40px;
-}
-
-.golden-rule span {
-    font-size: 12px;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    color: #ffd966;
-}
-
-.golden-rule h2 {
-    margin: 5px 0 8px;
-
-    font-size: 27px;
-}
-
-.golden-rule p {
-    margin: 0;
-
-    max-width: 800px;
-
-    color: #dce1f0;
-
-    line-height: 1.6;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-    position: relative;
-    z-index: 1;
-
-    max-width: 1100px;
-
-    margin: 0 auto;
-
-    padding: 20px;
-
-    text-align: center;
-
-    color: #707b91;
-
-    font-size: 14px;
-}
-
-
-/* =========================================================
-   RESPONSIVE — TABLET
-========================================================= */
-
-@media (max-width: 850px) {
-
-    body {
-        padding: 15px;
-    }
-
-    .quest-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-    .player-bar {
-        flex-direction: column;
-
-        align-items: stretch;
-    }
-
-    .xp-container {
-        width: 100%;
-
-        min-width: 0;
-    }
-
-    .radar-section {
-        flex-direction: column;
-
-        text-align: center;
-    }
-
-    .mission {
-        flex-wrap: wrap;
-    }
+    `;
 
 }
 
 
 /* =========================================================
-   RESPONSIVE — PHONE
+   SAFELY DISPLAY USER TEXT
 ========================================================= */
 
-@media (max-width: 600px) {
+function escapeHTML(text) {
 
-    .hero {
-        padding: 25px;
+    const div =
+        document.createElement("div");
 
-        flex-direction: column;
+    div.textContent = text;
 
-        text-align: center;
-    }
-
-    .shield {
-        width: 80px;
-        height: 80px;
-
-        font-size: 45px;
-    }
-
-    .hero h1 {
-        font-size: 40px;
-    }
-
-    .quest-section,
-    .question-area,
-    .radar-section,
-    .mission,
-    .golden-rule {
-        padding: 22px;
-    }
-
-    .quest-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .radar {
-        width: 150px;
-        height: 150px;
-    }
-
-    .golden-rule {
-        flex-direction: column;
-
-        text-align: center;
-    }
-
-    .mission {
-        flex-direction: column;
-
-        text-align: center;
-    }
-
-    .mission-button {
-        width: 100%;
-    }
-
-    .section-heading {
-        align-items: flex-start;
-    }
-
-    .question-area h2 {
-        font-size: 23px;
-    }
+    return div.innerHTML;
 
 }
