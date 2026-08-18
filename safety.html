@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Safety Quest 🛡️ | LifeHub</title>
+
+    <link
+        rel="stylesheet"
+        href="safety_FIXED.css"
+        >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     FLOATING DECORATIONS
+===================================================== -->
+
+<div class="bubble bubble1">🛡️</div>
+<div class="bubble bubble2">⭐</div>
+<div class="bubble bubble3">🚦</div>
+<div class="bubble bubble4">💡</div>
+
+
+
+<!-- =====================================================
+     BACK
+===================================================== -->
+
+<a
+    href="index.html"
+    class="back-button">
+
+    ← Back to LifeHub
+
+</a>
+
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="hero">
+
+    <div class="shield">
+
+        🛡️
+
+    </div>
+
+
+    <div>
+
+        <p class="mini-title">
+            LIFEHUB • SAFETY QUEST
+        </p>
+
+        <h1>
+            Safety Quest
+        </h1>
+
+        <p class="hero-text">
+            Explore everyday situations,
+            make smart choices,
+            and level up your safety skills! ⭐
+        </p>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     PLAYER BAR
+===================================================== -->
+
+<section class="player-bar">
+
+    <div class="player-info">
+
+        <span>
+            🧑‍🚀
+        </span>
+
+        <div>
+
+            <strong>
+                Safety Explorer
+            </strong>
+
+            <small id="rank">
+                🌱 Beginner
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <div class="xp-container">
+
+        <div class="xp-text">
+
+            <span>
+                ⭐ Safety XP
+            </span>
+
+            <span id="score">
+                0 XP
+            </span>
+
+        </div>
+
+
+        <div class="xp-bar">
+
+            <div
+                id="xp-fill"
+                class="xp-fill">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SAFETY RADAR
+===================================================== -->
+
+<section class="radar-section">
+
+    <div class="radar">
+
+        <div class="radar-ring ring1"></div>
+
+        <div class="radar-ring ring2"></div>
+
+        <div class="radar-ring ring3"></div>
+
+        <div class="radar-line"></div>
+
+        <div class="radar-dot dot1">
+            🚦
+        </div>
+
+        <div class="radar-dot dot2">
+            📱
+        </div>
+
+        <div class="radar-dot dot3">
+            🏠
+        </div>
+
+        <div class="radar-center">
+            🛡️
+        </div>
+
+    </div>
+
+
+    <div class="radar-text">
+
+        <span class="radar-label">
+            SAFETY RADAR
+        </span>
+
+        <h2>
+            How alert are you?
+        </h2>
+
+        <p>
+            Your choices throughout this page
+            increase your Safety XP.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SITUATION SELECTOR
+===================================================== -->
+
+<section class="quest-section">
+
+    <div class="section-heading">
+
+        <span>
+            🎮
+        </span>
+
+        <div>
+
+            <h2>
+                Choose Your Quest
+            </h2>
+
+            <p>
+                Pick a situation and see how you would respond.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="quest-grid">
+
+
+        <button
+            class="quest-card"
+            onclick="startQuest('road')">
+
+            <span class="quest-icon">
+                🚦
+            </span>
+
+            <strong>
+                Road Quest
+            </strong>
+
+            <small>
+                Can you stay alert?
+            </small>
+
+        </button>
+
+
+        <button
+            class="quest-card"
+            onclick="startQuest('online')">
+
+            <span class="quest-icon">
+                📱
+            </span>
+
+            <strong>
+                Online Quest
+            </strong>
+
+            <small>
+                Protect your digital world.
+            </small>
+
+        </button>
+
+
+        <button
+            class="quest-card"
+            onclick="startQuest('home')">
+
+            <span class="quest-icon">
+                🏠
+            </span>
+
+            <strong>
+                Home Quest
+            </strong>
+
+            <small>
+                Spot the hidden hazards.
+            </small>
+
+        </button>
+
+
+        <button
+            class="quest-card"
+            onclick="startQuest('emergency')">
+
+            <span class="quest-icon">
+                🆘
+            </span>
+
+            <strong>
+                Emergency Quest
+            </strong>
+
+            <small>
+                What would you do?
+            </small>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     QUESTION AREA
+===================================================== -->
+
+<section
+    id="question-area"
+    class="question-area">
+
+    <div class="question-badge">
+        🧠 SAFETY DECISION
+    </div>
+
+
+    <h2 id="question-title">
+        Choose a quest above!
+    </h2>
+
+
+    <p id="question-text">
+        Your challenge will appear here.
+    </p>
+
+
+    <div
+        id="answers"
+        class="answers">
+    </div>
+
+
+    <div
+        id="feedback"
+        class="feedback">
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DAILY SAFETY MISSION
+===================================================== -->
+
+<section class="mission">
+
+    <div class="mission-icon">
+        🎯
+    </div>
+
+
+    <div class="mission-content">
+
+        <span>
+            TODAY'S SAFETY MISSION
+        </span>
+
+        <h2 id="mission-text">
+            Think before you act!
+        </h2>
+
+        <p>
+            Try to notice one possible safety risk
+            around you today.
+        </p>
+
+    </div>
+
+
+    <button
+        onclick="newMission()"
+        class="mission-button">
+
+        🔄 New Mission
+
+    </button>
+
+</section>
+
+
+
+<!-- =====================================================
+     SAFETY RULE
+===================================================== -->
+
+<section class="golden-rule">
+
+    <div class="rule-icon">
+        💎
+    </div>
+
+
+    <div>
+
+        <span>
+            THE GOLDEN SAFETY RULE
+        </span>
+
+        <h2>
+            Stop • Think • Check
+        </h2>
+
+        <p>
+            Before doing something uncertain,
+            pause, think about the possible risk,
+            and ask someone trustworthy when needed.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    🛡️ Smart choices today.
+    Safer tomorrows. 🌟
+
+</footer>
+
+
+
+<script src="safety.js"></script>
+
+</body>
+
+</html>
